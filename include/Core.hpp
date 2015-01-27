@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 using namespace sf;
 
+class Scene;
 class Core
 {
 public:
@@ -16,6 +17,7 @@ public:
 
 private:
   RenderWindow *m_window;
+  Scene *m_current_scene;
 };
 
 #endif
