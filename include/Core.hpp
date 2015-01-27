@@ -16,6 +16,8 @@ public:
 
 private:
   RenderWindow *m_window;
+  double m_dt;
+  Clock m_clock;
 };
 
 #endif
