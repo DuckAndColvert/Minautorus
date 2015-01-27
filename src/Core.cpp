@@ -1,4 +1,6 @@
 #include <Core.hpp>
+#include <Scene.hpp>
+#include <InGame.hpp>
 
 
 using namespace std;
@@ -8,16 +10,23 @@ Core::Core(RenderWindow *w): m_window(w)
   // Avoiding dt=0;
   m_dt=1;
   m_clock.restart();
+  m_current_scene = new InGame(this);
 }
 
 void Core::update(int dt)
 {
- 
+  if(m_current_scene)
+    {
+      m_current_scene->update(dt);
+    }
 }
 
 void Core::display()
 {
-  cout << m_dt << endl;
+  if(m_current_scene)
+    {
+      m_current_scene->display(m_window);
+    }
 }
 
 
@@ -69,4 +78,5 @@ void Core::run()
 
 Core::~Core()
 {
+  delete m_current_scene;
 }

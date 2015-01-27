@@ -11,8 +11,8 @@ public:
   Scene(Core* c);
   ~Scene();
 
-  void update(int dt);
-  void display(RenderWindow* w);
+  virtual void update(int dt)=0;
+  virtual void display(RenderWindow* w)=0;
 
 
 protected:
