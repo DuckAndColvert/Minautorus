@@ -1,16 +1,24 @@
 #include <Core.hpp>
-#include <Scene.hpp>
-#include <InGame.hpp>
 
 
 using namespace std;
 
+#include <Scene.hpp>
+#include <InGame.hpp>
+#include<TextureLoader.hpp>
 Core::Core(RenderWindow *w): m_window(w)
 {
   // Avoiding dt=0;
   m_dt=1;
   m_clock.restart();
   m_current_scene = new InGame(this);
+  load();
+}
+
+void Core::load()
+// Supposed to load every data we need
+{
+  m_textureLoader=new TextureLoader();
 }
 
 void Core::update(int dt)

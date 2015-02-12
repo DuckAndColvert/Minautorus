@@ -10,8 +10,8 @@ GLOB_RECURSE
 
 src_path
 
-src/*
-include/*
+src/*.cpp
+include/*.hpp
 
 )
 
