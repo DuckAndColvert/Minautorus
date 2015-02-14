@@ -5,15 +5,18 @@
 
 using namespace sf;
 
+class TextureLoader;
+
 class InGame: public Scene
 {
 public:
-  InGame(Core *c);
+
+  InGame(Core *c, TextureLoader* textLoad);
   ~InGame();
   void update(int dt);
   void display(RenderWindow *w);
+
 protected:
-  RectangleShape *m_rs;
 };
 
 

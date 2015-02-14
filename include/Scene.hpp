@@ -3,12 +3,14 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 using namespace sf;
+
 class Core;
+class TextureLoader;
 
 class Scene
 {
 public:
-  Scene(Core* c);
+  Scene(Core* c, TextureLoader* textLoadx);
   ~Scene();
 
   virtual void update(int dt)=0;
@@ -17,6 +19,7 @@ public:
 
 protected:
     Core *m_core;
+  TextureLoader* m_textLoad;
 };
 
 #endif

@@ -18,10 +18,12 @@ public:
   TextureLoader();
   const Texture* get(string key);
   bool load();
+  ~TextureLoader();
   
 
 private:
-  bool loadPNG(string path, size_t nb_x, size_t nb_y, size_t tile_width=TILE_WIDTH, size_t tile_height=TILE_HEIGHT);
+  bool loadPNG(string file, size_t nb_x, size_t nb_y, size_t tile_width=TILE_WIDTH, size_t tile_height=TILE_HEIGHT);
+  void const display();
 
   unordered_map<string,Texture*> m_textures;
 };

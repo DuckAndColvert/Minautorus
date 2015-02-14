@@ -11,9 +11,10 @@ Core::Core(RenderWindow *w): m_window(w)
   // Avoiding dt=0;
   m_dt=1;
   m_clock.restart();
-  m_current_scene = new InGame(this);
   load();
+  m_current_scene = new InGame(this,m_textureLoader);
 }
+
 
 void Core::load()
 // Supposed to load every data we need
