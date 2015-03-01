@@ -17,6 +17,7 @@ public:
   Tile(double x, double y, short id, TextureLoader* te);
 
   void display(sf::RenderWindow* w) const;
+  virtual void update(double dt);
 
   // ==== GETTER ===
   string getID() const {return m_id;}

@@ -4,10 +4,12 @@
 #include<Tile.hpp>
 #include<assert.h>
 #include<Global.hpp>
+#include<Player.hpp>
 
 InGame::InGame(Core *c, TextureLoader* textLoad): Scene(c)
 {
   initTiles(textLoad);
+  initCharacters(textLoad);
 }
 
 void InGame::initTiles(TextureLoader* te)
@@ -19,15 +21,24 @@ void InGame::initTiles(TextureLoader* te)
     {
       for(size_t j(0);j<10;++j)
 	{
-	  short randomInt= rand()%2;
+	  short randomInt= rand()%1+1;
 	  m_tiles.push_back(new Tile(j*TILE_WIDTH,i*TILE_HEIGHT,randomInt,te));
 	}
     }
 }
 
+void InGame::initCharacters(TextureLoader* te)
+{
+  m_tiles.push_back(new Player(0,0,"Player",te));
+}
+
 void InGame::update(int dt)
 {
-  
+  for(Tile* t:m_tiles)
+    {
+      assert(t);
+      t->update(dt);
+    }
 }
 
 void InGame::display(RenderWindow *w)

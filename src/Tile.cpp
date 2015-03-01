@@ -36,6 +36,11 @@ void Tile::display(RenderWindow* w)  const
   w->draw(*m_shape);
 }
 
+void Tile::update(double dt)
+{
+  
+}
+
 Tile::~Tile()
 {
   delete m_shape;
