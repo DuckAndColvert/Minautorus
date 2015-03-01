@@ -3,6 +3,13 @@
 #include<assert.h>
 #include<iostream>
 
+unordered_map<short,string> TextureLoader::TILES_IDENTIFIER =
+  {
+    {0,"error"},
+    {1,"ground"}
+  };
+
+
 TextureLoader::TextureLoader()
 {
   m_textures.clear(); //empty
@@ -29,10 +36,18 @@ bool TextureLoader::load()
   if(TEXTURE_DEBUG_DETAILS){cout << " ======== TEXTURE_LOADING ======  \n";}
   // Insert the textures to load
   if(
-     !loadPNG("error",1,1)
-     || !loadPNG("sol",1,1)
+     !loadTiles()
      ){return false;}
   if(TEXTURE_DEBUG_DETAILS){cout << " ------ END  \n";}
+  return true;
+}
+
+bool TextureLoader::loadTiles()
+{
+  for(size_t i(0);i<TILES_IDENTIFIER.size();++i)
+    {
+      if(!loadPNG(TILES_IDENTIFIER[i])){return false;} // /!\ Load only the first 32x32 tile of tile.png YANGN-more :p
+    }
   return true;
 }
 

@@ -18,11 +18,14 @@ public:
   TextureLoader();
   const Texture* get(string key);
   bool load();
-  ~TextureLoader();
+  static unordered_map<short,string> TILES_IDENTIFIER; // Should it be constant ?
+
+~TextureLoader();
   
 
 private:
-  bool loadPNG(string file, size_t nb_x, size_t nb_y, size_t tile_width=TILE_WIDTH, size_t tile_height=TILE_HEIGHT);
+  bool loadTiles();
+  bool loadPNG(string file, size_t nb_x=1, size_t nb_y=1, size_t tile_width=TILE_WIDTH, size_t tile_height=TILE_HEIGHT);
   void const display();
 
   unordered_map<string,Texture*> m_textures;

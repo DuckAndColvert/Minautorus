@@ -10,7 +10,7 @@ class TextureLoader;
 class Scene
 {
 public:
-  Scene(Core* c, TextureLoader* textLoadx);
+  Scene(Core* c);
   ~Scene();
 
   virtual void update(int dt)=0;
@@ -19,7 +19,6 @@ public:
 
 protected:
     Core *m_core;
-  TextureLoader* m_textLoad;
 };
 
 #endif
