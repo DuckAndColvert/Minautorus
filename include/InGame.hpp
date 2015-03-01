@@ -20,6 +20,8 @@ public:
 
 protected:
   void initTiles(TextureLoader* te);
+  void displayTiles(RenderWindow* w)  const;
+
   vector<Tile*> m_tiles;
 };
 

@@ -16,7 +16,7 @@ TextureLoader::TextureLoader()
   assert(load());
 }
 
-const Texture* TextureLoader::get(string key) 
+Texture* TextureLoader::get(string key) 
 // Main method of a Loader, let us get the textures loaded in the load() method.
 {
   Texture* t=m_textures[key];

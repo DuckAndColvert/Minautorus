@@ -16,7 +16,7 @@ class TextureLoader
 {
 public:
   TextureLoader();
-  const Texture* get(string key);
+  Texture* get(string key); //should it be constant ?
   bool load();
   static unordered_map<short,string> TILES_IDENTIFIER; // Should it be constant ?
 
