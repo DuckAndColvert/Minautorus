@@ -1,11 +1,15 @@
 #include <Core.hpp>
 #include <Scene.hpp>
 #include <Menu.hpp>
+#include <InGame.hpp>
+#include <TextureManager.hpp>
 
 Core::Core(sf::RenderWindow *win): m_window(win), m_dt(1.)
 {
-  m_currentScene = new Menu(this);
-
+  m_currentScene = new InGame(this);
+  
+  m_texture_manager = new TextureManager;
+  m_texture_manager->load();
 }
 
 void Core::update(float dt)
@@ -74,4 +78,5 @@ Core::~Core()
     {
       delete m_currentScene;
     }
+    delete m_texture_manager;
 }

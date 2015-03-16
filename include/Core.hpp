@@ -4,14 +4,17 @@
 #include <SFML/Graphics.hpp>
 #include <chrono>
 
-class Scene;
 
+class Scene;
+class TextureManager;
 class Core
 {
 public:
   Core(sf::RenderWindow *win);
   ~Core();
 
+  TextureManager *getTextureManager(){return m_texture_manager;}
+  
   void update(float dt);
   void display();
   void render();
@@ -19,9 +22,11 @@ public:
 private:
   Core(Core const& c) = delete;
   Core& operator=(Core const& c) = delete;
-  
+
+  TextureManager *m_texture_manager;
   sf::RenderWindow *m_window;
   Scene *m_currentScene;
+  
 
   /* TIME */
   //chrono which take the m_dt
