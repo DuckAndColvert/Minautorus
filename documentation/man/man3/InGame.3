@@ -1,0 +1,87 @@
+.TH "InGame" 3 "Tue Mar 17 2015" "Minautorus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+InGame \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <InGame\&.hpp>\fP
+.PP
+Inherits \fBScene\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBInGame\fP (\fBCore\fP *owner)"
+.br
+.ti -1c
+.RI "\fB~InGame\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBupdate\fP (float dt)"
+.br
+.ti -1c
+.RI "virtual void \fBdisplay\fP (sf::RenderWindow *win)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBInGame\fP & \fBoperator=\fP (\fBInGame\fP const &ig)=delete"
+.br
+.ti -1c
+.RI "\fBInGame\fP (\fBInGame\fP const &ig)=delete"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBMap\fP \fBm_map\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 12 of file InGame\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "InGame::InGame (\fBCore\fP * owner)"
+
+.PP
+Definition at line 3 of file InGame\&.cpp\&.
+.SS "InGame::~InGame ()"
+
+.PP
+Definition at line 17 of file InGame\&.cpp\&.
+.SS "InGame::InGame (\fBInGame\fP const & ig)\fC [private]\fP, \fC [delete]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void InGame::display (sf::RenderWindow * win)\fC [virtual]\fP"
+
+.PP
+Implements \fBScene\fP\&.
+.PP
+Definition at line 12 of file InGame\&.cpp\&.
+.SS "\fBInGame\fP& InGame::operator= (\fBInGame\fP const & ig)\fC [private]\fP, \fC [delete]\fP"
+
+.SS "void InGame::update (float dt)\fC [virtual]\fP"
+
+.PP
+Implements \fBScene\fP\&.
+.PP
+Definition at line 8 of file InGame\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBMap\fP InGame::m_map\fC [private]\fP"
+
+.PP
+Definition at line 25 of file InGame\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minautorus from the source code\&.

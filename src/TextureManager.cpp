@@ -11,6 +11,7 @@ sf::Texture* TextureManager::get(std::string name)
   return m_textures[name];
 }
 
+
 void TextureManager::load()
 {
   std::string data_path = DATA_PATH;
@@ -19,6 +20,7 @@ void TextureManager::load()
   load("error", img_path + "error.png");
   load("ground", img_path + "ground.png");
 }
+
 
 void TextureManager::load(std::string name, std::string path)
 {

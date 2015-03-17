@@ -1,6 +1,12 @@
 #ifndef GLOBAL_HPP
 #define GLOBAL_HPP
 
+/**
+ * \file Global.hpp
+ *
+ * \brief All the macros and constante values
+ *
+ **/
 #define DATA_PATH "data/"
 #define IMG_PATH "img/"
 

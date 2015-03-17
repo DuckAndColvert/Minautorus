@@ -7,6 +7,16 @@
 
 class Scene;
 class TextureManager;
+/**
+ * \class Core
+ *
+ * \brief Core game management
+ *
+ * Main structure of the game, contain the differents
+ * scene of the game.
+ *
+ * \author bog
+ **/
 class Core
 {
 public:
@@ -17,6 +27,12 @@ public:
   
   void update(float dt);
   void display();
+
+  /**
+   * \fn void Core::render()
+   * \brief Launch the main game loop 
+   * \author bog
+   **/ 
   void render();
   
 private:

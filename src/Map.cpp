@@ -7,10 +7,12 @@ Map::Map()
   initTiles();
 }
 
+
 void Map::display(sf::RenderWindow *win)
 {
   win->draw(m_vertex_array);
 }
+
 
 void Map::initTiles()
 {
@@ -28,6 +30,7 @@ void Map::initTiles()
 	  }
     }
 }
+
 
 void Map::createVertexTile(size_t i, size_t j,size_t w,size_t h, sf::Color color)
 {

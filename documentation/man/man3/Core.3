@@ -1,0 +1,144 @@
+.TH "Core" 3 "Tue Mar 17 2015" "Minautorus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Core \- \fBCore\fP game management\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Core\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCore\fP (sf::RenderWindow *win)"
+.br
+.ti -1c
+.RI "\fB~Core\fP ()"
+.br
+.ti -1c
+.RI "\fBTextureManager\fP * \fBgetTextureManager\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdate\fP (float dt)"
+.br
+.ti -1c
+.RI "void \fBdisplay\fP ()"
+.br
+.ti -1c
+.RI "void \fBrender\fP ()"
+.br
+.RI "\fILaunch the main game loop\&. \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCore\fP (\fBCore\fP const &c)=delete"
+.br
+.ti -1c
+.RI "\fBCore\fP & \fBoperator=\fP (\fBCore\fP const &c)=delete"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBTextureManager\fP * \fBm_texture_manager\fP"
+.br
+.ti -1c
+.RI "sf::RenderWindow * \fBm_window\fP"
+.br
+.ti -1c
+.RI "\fBScene\fP * \fBm_currentScene\fP"
+.br
+.ti -1c
+.RI "std::chrono::steady_clock::time_point \fBm_loopTimer\fP"
+.br
+.ti -1c
+.RI "float \fBm_dt\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBCore\fP game management\&. 
+
+Main structure of the game, contain the differents scene of the game\&.
+.PP
+\fBAuthor:\fP
+.RS 4
+bog 
+.RE
+.PP
+
+.PP
+Definition at line 20 of file Core\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Core::Core (sf::RenderWindow * win)"
+
+.PP
+Definition at line 7 of file Core\&.cpp\&.
+.SS "Core::~Core ()"
+
+.PP
+Definition at line 76 of file Core\&.cpp\&.
+.SS "Core::Core (\fBCore\fP const & c)\fC [private]\fP, \fC [delete]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void Core::display ()"
+
+.PP
+Definition at line 23 of file Core\&.cpp\&.
+.SS "\fBTextureManager\fP* Core::getTextureManager ()\fC [inline]\fP"
+
+.PP
+Definition at line 26 of file Core\&.hpp\&.
+.SS "\fBCore\fP& Core::operator= (\fBCore\fP const & c)\fC [private]\fP, \fC [delete]\fP"
+
+.SS "void Core::render ()"
+
+.PP
+Launch the main game loop\&. 
+.PP
+\fBAuthor:\fP
+.RS 4
+bog 
+.RE
+.PP
+
+.PP
+Definition at line 32 of file Core\&.cpp\&.
+.SS "void Core::update (float dt)"
+
+.PP
+Definition at line 15 of file Core\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBScene\fP* Core::m_currentScene\fC [private]\fP"
+
+.PP
+Definition at line 44 of file Core\&.hpp\&.
+.SS "float Core::m_dt\fC [private]\fP"
+
+.PP
+Definition at line 53 of file Core\&.hpp\&.
+.SS "std::chrono::steady_clock::time_point Core::m_loopTimer\fC [private]\fP"
+
+.PP
+Definition at line 49 of file Core\&.hpp\&.
+.SS "\fBTextureManager\fP* Core::m_texture_manager\fC [private]\fP"
+
+.PP
+Definition at line 42 of file Core\&.hpp\&.
+.SS "sf::RenderWindow* Core::m_window\fC [private]\fP"
+
+.PP
+Definition at line 43 of file Core\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minautorus from the source code\&.

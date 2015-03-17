@@ -28,6 +28,7 @@ void Core::display()
     }
 }
 
+
 void Core::render()
 {
   sf::Event event;

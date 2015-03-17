@@ -1,0 +1,139 @@
+.TH "Map" 3 "Tue Mar 17 2015" "Minautorus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Map \- \fBMap\fP generation and displaying\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Map\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMap\fP ()"
+.br
+.ti -1c
+.RI "\fB~Map\fP ()"
+.br
+.ti -1c
+.RI "void \fBdisplay\fP (sf::RenderWindow *win)"
+.br
+.RI "\fIDisplay the map on a RenderWindow\&. \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBinitTiles\fP ()"
+.br
+.RI "\fIInitialize the tiles of the map\&. \fP"
+.ti -1c
+.RI "void \fBcreateVertexTile\fP (size_t i, size_t j, size_t w, size_t h, sf::Color color)"
+.br
+.RI "\fICreate a vertex in the vertex array\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBTile\fP * \fBm_tiles\fP [\fBNB_TILE_HEIGHT\fP][\fBNB_TILE_WIDTH\fP]"
+.br
+.ti -1c
+.RI "sf::VertexArray \fBm_vertex_array\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBMap\fP generation and displaying\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+bog 
+.RE
+.PP
+
+.PP
+Definition at line 28 of file Map\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Map::Map ()"
+
+.PP
+Definition at line 4 of file Map\&.cpp\&.
+.SS "Map::~Map ()"
+
+.PP
+Definition at line 59 of file Map\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Map::createVertexTile (size_t i, size_t j, size_t w, size_t h, sf::Color color)\fC [private]\fP"
+
+.PP
+Create a vertex in the vertex array\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi\fP the coordinate of the vertex to create (line) 
+.br
+\fIj\fP the coordinate of the vertex to create (column) 
+.br
+\fIw\fP the width of the vertex to create 
+.br
+\fIh\fP the height of the vertex to create 
+.br
+\fIcolor\fP color of the vertex to create
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+bog 
+.RE
+.PP
+
+.PP
+Definition at line 35 of file Map\&.cpp\&.
+.SS "void Map::display (sf::RenderWindow * win)"
+
+.PP
+Display the map on a RenderWindow\&. 
+.PP
+\fBAuthor:\fP
+.RS 4
+bog 
+.RE
+.PP
+
+.PP
+Definition at line 11 of file Map\&.cpp\&.
+.SS "void Map::initTiles ()\fC [private]\fP"
+
+.PP
+Initialize the tiles of the map\&. 
+.PP
+\fBAuthor:\fP
+.RS 4
+bog 
+.RE
+.PP
+
+.PP
+Definition at line 17 of file Map\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBTile\fP* Map::m_tiles[\fBNB_TILE_HEIGHT\fP][\fBNB_TILE_WIDTH\fP]\fC [private]\fP"
+
+.PP
+Definition at line 43 of file Map\&.hpp\&.
+.SS "sf::VertexArray Map::m_vertex_array\fC [private]\fP"
+
+.PP
+Definition at line 44 of file Map\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minautorus from the source code\&.

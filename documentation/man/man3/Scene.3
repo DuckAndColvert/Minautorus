@@ -1,0 +1,94 @@
+.TH "Scene" 3 "Tue Mar 17 2015" "Minautorus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Scene \- Abstract class that describe a \fBScene\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Scene\&.hpp>\fP
+.PP
+Inherited by \fBInGame\fP, and \fBMenu\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBScene\fP (\fBCore\fP *owner)"
+.br
+.ti -1c
+.RI "virtual \fB~Scene\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBupdate\fP (float dt)=0"
+.br
+.ti -1c
+.RI "virtual void \fBdisplay\fP (sf::RenderWindow *win)=0"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBCore\fP * \fBm_owner\fP"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBScene\fP & \fBoperator=\fP (\fBScene\fP const &s)=delete"
+.br
+.ti -1c
+.RI "\fBScene\fP (\fBScene\fP const &s)=delete"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Abstract class that describe a \fBScene\fP\&. 
+
+As in theatre, a \fBScene\fP is a place where some events takes place\&. It could be a menu, a dialog scene in a game etc\&.
+.PP
+\fBAuthor:\fP
+.RS 4
+bog 
+.RE
+.PP
+
+.PP
+Definition at line 19 of file Scene\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Scene::Scene (\fBCore\fP * owner)"
+
+.PP
+Definition at line 3 of file Scene\&.cpp\&.
+.SS "Scene::~Scene ()\fC [virtual]\fP"
+
+.PP
+Definition at line 7 of file Scene\&.cpp\&.
+.SS "Scene::Scene (\fBScene\fP const & s)\fC [private]\fP, \fC [delete]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void Scene::display (sf::RenderWindow * win)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBMenu\fP, and \fBInGame\fP\&.
+.SS "\fBScene\fP& Scene::operator= (\fBScene\fP const & s)\fC [private]\fP, \fC [delete]\fP"
+
+.SS "virtual void Scene::update (float dt)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBMenu\fP, and \fBInGame\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBCore\fP* Scene::m_owner\fC [protected]\fP"
+
+.PP
+Definition at line 29 of file Scene\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minautorus from the source code\&.

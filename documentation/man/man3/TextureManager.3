@@ -1,0 +1,121 @@
+.TH "TextureManager" 3 "Tue Mar 17 2015" "Minautorus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TextureManager \- Texture loader\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <TextureManager\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTextureManager\fP ()"
+.br
+.ti -1c
+.RI "\fB~TextureManager\fP ()"
+.br
+.ti -1c
+.RI "sf::Texture * \fBget\fP (std::string name)"
+.br
+.ti -1c
+.RI "void \fBload\fP ()"
+.br
+.RI "\fILoad all the textures required by the game\&. \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTextureManager\fP & \fBoperator=\fP (\fBTextureManager\fP const &tm)=delete"
+.br
+.ti -1c
+.RI "\fBTextureManager\fP (\fBTextureManager\fP const &tm)=delete"
+.br
+.ti -1c
+.RI "void \fBload\fP (std::string name, std::string path)"
+.br
+.RI "\fIload a texture and ad it in the map \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::unordered_map< std::string, sf::Texture * > \fBm_textures\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Texture loader\&. 
+
+Load and give an access to all the texture required by the other moduels of the game\&.
+.PP
+\fBAuthor:\fP
+.RS 4
+bog 
+.RE
+.PP
+
+.PP
+Definition at line 18 of file TextureManager\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "TextureManager::TextureManager ()"
+
+.PP
+Definition at line 3 of file TextureManager\&.cpp\&.
+.SS "TextureManager::~TextureManager ()"
+
+.PP
+Definition at line 33 of file TextureManager\&.cpp\&.
+.SS "TextureManager::TextureManager (\fBTextureManager\fP const & tm)\fC [private]\fP, \fC [delete]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "sf::Texture * TextureManager::get (std::string name)"
+
+.PP
+Definition at line 9 of file TextureManager\&.cpp\&.
+.SS "void TextureManager::load ()"
+
+.PP
+Load all the textures required by the game\&. 
+.PP
+\fBAuthor:\fP
+.RS 4
+bog 
+.RE
+.PP
+
+.PP
+Definition at line 15 of file TextureManager\&.cpp\&.
+.SS "void TextureManager::load (std::string name, std::string path)\fC [private]\fP"
+
+.PP
+load a texture and ad it in the map 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP name of the key in the map relative to the texture to load 
+.br
+\fIpath\fP path to the texture
+.RE
+.PP
+Load a texture designed by its path, and add it in the map at the key given by the name\&. 
+.PP
+Definition at line 25 of file TextureManager\&.cpp\&.
+.SS "\fBTextureManager\fP& TextureManager::operator= (\fBTextureManager\fP const & tm)\fC [private]\fP, \fC [delete]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "std::unordered_map<std::string,sf::Texture*> TextureManager::m_textures\fC [private]\fP"
+
+.PP
+Definition at line 49 of file TextureManager\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minautorus from the source code\&.

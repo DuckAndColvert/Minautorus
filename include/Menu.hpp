@@ -7,6 +7,17 @@
 #include <Scene.hpp>
 #include <Core.hpp>
 
+/**
+ * \class Menu
+ *
+ * \brief Menu of the Game
+ *
+ * Scene where the player can choose between different game mode
+ * basically he can choose PLAY - SETTINGS or QUIT
+ *
+ * \author bog
+ *
+ **/
 class Menu: public Scene
 {
   

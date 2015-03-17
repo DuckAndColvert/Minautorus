@@ -1,0 +1,86 @@
+.TH "Menu" 3 "Tue Mar 17 2015" "Minautorus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Menu \- \fBMenu\fP of the Game\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Menu\&.hpp>\fP
+.PP
+Inherits \fBScene\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMenu\fP (\fBCore\fP *owner)"
+.br
+.ti -1c
+.RI "void \fBupdate\fP (float dt)"
+.br
+.ti -1c
+.RI "void \fBdisplay\fP (sf::RenderWindow *win)"
+.br
+.ti -1c
+.RI "\fB~Menu\fP ()"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMenu\fP & \fBoperator=\fP (\fBMenu\fP const &m)=delete"
+.br
+.ti -1c
+.RI "\fBMenu\fP (\fBMenu\fP const &m)=delete"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+\fBMenu\fP of the Game\&. 
+
+\fBScene\fP where the player can choose between different game mode basically he can choose PLAY - SETTINGS or QUIT
+.PP
+\fBAuthor:\fP
+.RS 4
+bog 
+.RE
+.PP
+
+.PP
+Definition at line 21 of file Menu\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Menu::Menu (\fBCore\fP * owner)"
+
+.PP
+Definition at line 4 of file Menu\&.cpp\&.
+.SS "Menu::~Menu ()"
+
+.PP
+Definition at line 23 of file Menu\&.cpp\&.
+.SS "Menu::Menu (\fBMenu\fP const & m)\fC [private]\fP, \fC [delete]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void Menu::display (sf::RenderWindow * win)\fC [virtual]\fP"
+
+.PP
+Implements \fBScene\fP\&.
+.PP
+Definition at line 13 of file Menu\&.cpp\&.
+.SS "\fBMenu\fP& Menu::operator= (\fBMenu\fP const & m)\fC [private]\fP, \fC [delete]\fP"
+
+.SS "void Menu::update (float dt)\fC [virtual]\fP"
+
+.PP
+Implements \fBScene\fP\&.
+.PP
+Definition at line 9 of file Menu\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minautorus from the source code\&.
