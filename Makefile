@@ -1,4 +1,4 @@
-EXEC= minautorus
+EXEC= minautorus.out
 CXX= g++
 CXXFLAGS= -g -std=c++11 -I"include/" -Wall -lsfml-graphics -lsfml-window -lsfml-system
 SRC= $(wildcard src/*.cpp)
