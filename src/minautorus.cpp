@@ -9,7 +9,6 @@ int main(int argc, char** argv)
 {
   /* MINAUTORUS */
   cout<<"MINAUTORUS"<<endl;
-
   RenderWindow window(VideoMode(640,480),"Minautorus");
 
   Core core(&window);
