@@ -22,9 +22,9 @@ class Menu: public Scene
 {
   
 public:
-  Menu(Core *owner);
+  Menu(Core *owner, sf::RenderWindow *win);
   void update(float dt);
-  void display(sf::RenderWindow *win);
+  void display();
   ~Menu();
   
 private:

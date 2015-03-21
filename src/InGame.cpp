@@ -1,17 +1,20 @@
 #include <InGame.hpp>
 
-InGame::InGame(Core *owner): Scene(owner)
+InGame::InGame(Core *owner, sf::RenderWindow *win): Scene(owner, win)
 {
-  
+  m_view.reset(sf::FloatRect(0,0,SCREEN_WIDTH,SCREEN_HEIGHT));
+  m_window->setView(m_view);
 }
 
 void InGame::update(float dt)
 {
+  
 }
 
-void InGame::display(sf::RenderWindow *win)
+void InGame::display()
 {
-  m_map.display(win);
+  
+  m_map.display(m_window);
 }
 
 InGame::~InGame()

@@ -1,6 +1,6 @@
 #include <Scene.hpp>
 
-Scene::Scene(Core* owner): m_owner(owner)
+Scene::Scene(Core* owner, sf::RenderWindow *win): m_owner(owner), m_window(win)
 {
 }
 

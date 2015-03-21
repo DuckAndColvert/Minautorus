@@ -12,11 +12,11 @@
 
 
 
-#define TILE_WIDTH 8
+#define TILE_WIDTH 4
 #define TILE_HEIGHT TILE_WIDTH
 
-#define NB_BLOC_WIDTH 15
-#define NB_BLOC_HEIGHT 15
+#define NB_BLOC_WIDTH 30
+#define NB_BLOC_HEIGHT 30
 #define BLOC_SIZE 5
 
 #define SCREEN_WIDTH 1024

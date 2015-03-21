@@ -19,18 +19,22 @@
 class Scene
 {
 public:
-  Scene(Core* owner);
+  Scene(Core* owner, sf::RenderWindow *win);
   virtual ~Scene();
 
   virtual void update(float dt) = 0;
-  virtual void display(sf::RenderWindow *win) = 0;
+  virtual void display() = 0;
   
 protected:
   Core *m_owner;
+  sf::RenderWindow *m_window;
   
 private:
   Scene& operator=(Scene const& s) = delete;
   Scene(Scene const& s) = delete;
+
+
+
 };
 
 #endif
