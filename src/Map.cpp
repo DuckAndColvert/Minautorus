@@ -33,34 +33,37 @@ void Map::initTiles()
 	  }
     }
 
-  
-  MazeGenerator::Maze maze(NB_BLOC_HEIGHT,NB_BLOC_WIDTH);
+  placeMaze(0, 0, NB_BLOC_WIDTH, NB_BLOC_HEIGHT);
+
+
+}
+
+void Map::placeMaze(size_t I, size_t J, size_t W, size_t H)
+{
+  MazeGenerator::Maze maze(H, W);
   maze.compute();
  
-  for( size_t i = 0; i < NB_BLOC_HEIGHT; i++ )
+  for( size_t i = 0; i < H; i++ )
     {
-      for( size_t j = 0; j < NB_BLOC_WIDTH; j++ )
+      for( size_t j = 0; j < W; j++ )
 	{
 	  bool *b = maze.get(i,j)->border;
 	 
 	  /* entrance and exit */
-	  if( i == NB_BLOC_HEIGHT-1 && j == NB_BLOC_WIDTH-1 )
+	  if( i == H-1 && j == W-1 )
 	    {
-	      //b[1] = false;
 	      b[3] = false ;
 	    }
 
 	  if( i == 0 && j == 0 )
 	    {
-	      //b[0] = false;
 	      b[2] = false ;
 	    }
 	  
-	  putBloc(i * (BLOC_SIZE+1), j * (BLOC_SIZE+1),
+	  putBloc(I + i * (BLOC_SIZE+1), J + j * (BLOC_SIZE+1),
 		  BLOC_SIZE, BLOC_SIZE, b);
 	}
     }
-  
 }
 
 void Map::putBloc(size_t I, size_t J, size_t W, size_t H, bool border[4])

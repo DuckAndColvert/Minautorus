@@ -88,6 +88,16 @@ public:
    **/
   void putBloc(size_t I, size_t J, size_t W, size_t H, bool border[4]);
 
+  /**
+   * \fn void Map::placeMaze(size_t I, size_t J, size_t W, size_t H)
+   * \brief Set a maze at the coordinate (I, J)
+   * \param I i coordinate of the maze
+   * \param J j coordinate of the maze
+   * \param W width of the maze
+   * \param H width of the maze
+   * \author bog
+   **/
+  void placeMaze(size_t I, size_t J, size_t W, size_t H);
 
   /**
    * \fn   bool Map::isAWall(size_t i, size_t j)
