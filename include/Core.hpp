@@ -48,9 +48,8 @@ private:
   //chrono which take the m_dt
   std::chrono::steady_clock::time_point m_loopTimer;
   //duration of the main game loop in microseconds
-
-  
   float m_dt;
+  
 };
 
 #endif

@@ -7,8 +7,9 @@
 
 enum TileType
   {
-    GROUND = 0,
-    WALL = 0
+    NONE = 0,
+    GROUND = 1,
+    WALL = 2
   };
 
 struct Tile
@@ -62,7 +63,27 @@ public:
    *
    * \author bog
    **/
-  void createVertexTile(size_t i, size_t j,size_t w,size_t h, sf::Color color); 
+  void createVertexTile(size_t i, size_t j,size_t w,size_t h, sf::Color color);
+
+  /**
+   * \fn   void Map::createVertexTile(Tile *tile);
+   * \brief Create a vertex related with a tile
+   * \param tile 
+   * \author bog
+   **/
+  void createVertexTile(Tile *tile);
+
+  /**
+   * \fn void Map::putBloc(size_t I, size_t J, size_t W, size_t H)
+   * \brief put a W*H at the position I J
+   * \param I i coordinate of the bloc
+   * \param J j coordinate of the bloc
+   * \param W width of the bloc
+   * \param H width of the bloc
+   * \param border array containing the state of the borders
+   * \author bog
+   **/
+  void putBloc(size_t I, size_t J, size_t W, size_t H, bool border[4]);
   
 };
 

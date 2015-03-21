@@ -10,16 +10,22 @@
 #define DATA_PATH "data/"
 #define IMG_PATH "img/"
 
-#define SCREEN_WIDTH 640
-#define SCREEN_HEIGHT 480
 
-#define WIDTH 640
-#define HEIGHT 480
 
-#define BLOC_WIDTH 16
-#define BLOC_HEIGHT BLOC_WIDTH
+#define TILE_WIDTH 8
+#define TILE_HEIGHT TILE_WIDTH
 
-#define NB_TILE_WIDTH ((WIDTH)/(BLOC_WIDTH))
-#define NB_TILE_HEIGHT ((HEIGHT)/(BLOC_HEIGHT))
+#define NB_BLOC_WIDTH 20
+#define NB_BLOC_HEIGHT 20
+#define BLOC_SIZE 3
+
+#define SCREEN_WIDTH 1024
+#define SCREEN_HEIGHT 768
+
+#define WIDTH SCREEN_WIDTH
+#define HEIGHT SCREEN_HEIGHT
+
+#define NB_TILE_WIDTH ((WIDTH)/(TILE_WIDTH))
+#define NB_TILE_HEIGHT ((HEIGHT)/(TILE_HEIGHT))
 
 #endif

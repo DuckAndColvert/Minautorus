@@ -1,5 +1,6 @@
 #include <Map.hpp>
-
+#include <Maze.hpp>
+#include <cassert>
 
 Map::Map()
 {
@@ -16,6 +17,7 @@ void Map::display(sf::RenderWindow *win)
 
 void Map::initTiles()
 {
+  
   for(size_t i=0; i < NB_TILE_HEIGHT; i++)
     {
         for(size_t j=0; j < NB_TILE_WIDTH; j++)
@@ -24,20 +26,106 @@ void Map::initTiles()
 	    m_tiles[i][j]->i = i;
 	    m_tiles[i][j]->j = j;
 	    m_tiles[i][j]->obstacle = false;
-	    m_tiles[i][j]->type = GROUND;
-	    createVertexTile(i, j, BLOC_WIDTH, BLOC_HEIGHT, sf::Color::Black);
+	    m_tiles[i][j]->type = NONE;
+	    
+	    createVertexTile(m_tiles[i][j]);
 
 	  }
     }
+
+  
+  MazeGenerator::Maze maze(NB_BLOC_HEIGHT,NB_BLOC_WIDTH);
+  maze.compute();
+ 
+  for( size_t i = 0; i < NB_BLOC_HEIGHT; i++ )
+    {
+      for( size_t j = 0; j < NB_BLOC_WIDTH; j++ )
+	{
+	  bool *b = maze.get(i,j)->border;
+	 
+	  /* entrance and exit */
+	  if( i == NB_BLOC_HEIGHT-1 && j == NB_BLOC_WIDTH-1 )
+	    {
+	      //b[1] = false;
+	      b[3] = false ;
+	    }
+
+	  if( i == 0 && j == 0 )
+	    {
+	      //b[0] = false;
+	      b[2] = false ;
+	    }
+	  
+	  putBloc(i * (BLOC_SIZE+1), j * (BLOC_SIZE+1),
+		  BLOC_SIZE, BLOC_SIZE, b);
+	}
+    }
+  
 }
 
+void Map::putBloc(size_t I, size_t J, size_t W, size_t H, bool border[4])
+{
+  assert(border);
+  assert( I >= 0 );
+  assert( I < NB_TILE_HEIGHT );
+  assert( J >= 0 );
+  assert( J < NB_TILE_WIDTH );
+  
+  for(size_t i = 0; i < H+2; i++)
+    {
+      for(size_t j = 0; j < W+2; j++)
+	{
+	  if( ( i == 0 && border[0] ) || ( i == H+1 && border[1]) 
+	      || ( j == 0 && border[2] ) || ( j == W+1 && border[3])
+	      )
+	    {
+	      m_tiles[i + I][j + J]->type = WALL;
+	    }
+	  else
+	    {
+	      // walls can't be removed
+	      if( m_tiles[i + I][j + J]->type != WALL )
+		{
+		  m_tiles[i + I][j + J]->type = GROUND;
+		}
+	      
+	    }
+	  
+	  createVertexTile(m_tiles[i + I][j + J]);
+	}
+    }
+}
+
+void Map::createVertexTile(Tile *tile)
+{
+  assert(tile);
+  
+  sf::Color color;
+
+  switch( tile->type )
+    {
+    case GROUND:
+      color = sf::Color::Green;
+      break;
+
+    case WALL:
+      color = sf::Color::Black;
+      break;
+      
+    default:
+      color = sf::Color::Red;
+      break;
+    }
+  
+  createVertexTile(tile->i, tile->j, TILE_WIDTH, TILE_HEIGHT,color);
+}
 
 void Map::createVertexTile(size_t i, size_t j,size_t w,size_t h, sf::Color color)
 {
 
   //real coordinate in the windows
-  size_t I = i * BLOC_HEIGHT;
-  size_t J = j * BLOC_WIDTH;
+  size_t I = i * TILE_HEIGHT;
+  size_t J = j * TILE_WIDTH;
 
   //get a pointer on the vertex at the coord (i,j)
   sf::Vertex* tile = &m_vertex_array[ (i * NB_TILE_WIDTH + j) * 4 ];
@@ -67,4 +155,5 @@ Map::~Map()
 
 	}
     }
+
 }
