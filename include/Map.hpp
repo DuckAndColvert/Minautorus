@@ -7,9 +7,12 @@
 
 enum TileType
   {
-    NONE = 0,
-    GROUND = 1,
-    WALL = 2
+    NONE,
+    GROUND,
+    WALL_UP,
+    WALL_DOWN,
+    WALL_LEFT,
+    WALL_RIGHT,
   };
 
 struct Tile
@@ -84,6 +87,16 @@ public:
    * \author bog
    **/
   void putBloc(size_t I, size_t J, size_t W, size_t H, bool border[4]);
+
+
+  /**
+   * \fn   bool Map::isAWall(size_t i, size_t j)
+   * \brief True if the tile at (i,j) is a wall
+   * \param i i coordinate of the tile
+   * \param j j coordinate of the tile
+   * \return true if the tile (i,j) type is WALL_XXX
+   **/
+  bool isAWall(size_t i, size_t j);
   
 };
 

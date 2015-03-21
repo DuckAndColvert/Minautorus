@@ -75,16 +75,33 @@ void Map::putBloc(size_t I, size_t J, size_t W, size_t H, bool border[4])
     {
       for(size_t j = 0; j < W+2; j++)
 	{
+	  /*
 	  if( ( i == 0 && border[0] ) || ( i == H+1 && border[1]) 
 	      || ( j == 0 && border[2] ) || ( j == W+1 && border[3])
 	      )
 	    {
-	      m_tiles[i + I][j + J]->type = WALL;
+	      m_tiles[i + I][j + J]->type = WALL_UP;
+	      }*/
+	  if( ( i == 0 && border[0] ) )
+	    {
+	      m_tiles[i + I][j + J]->type = WALL_UP;
+	    }
+	  else if( ( i == H+1 && border[1] ) )
+	    {
+	      m_tiles[i + I][j + J]->type = WALL_DOWN;
+	    }
+	  else if( ( j == 0 && border[2] ) )
+	    {
+	      m_tiles[i + I][j + J]->type = WALL_LEFT;
+	    }
+	  else if( ( j == W+1 && border[3] ) )
+	    {
+	      m_tiles[i + I][j + J]->type = WALL_RIGHT;
 	    }
 	  else
 	    {
 	      // walls can't be removed
-	      if( m_tiles[i + I][j + J]->type != WALL )
+	      if( !isAWall(i + I, j + J) )
 		{
 		  m_tiles[i + I][j + J]->type = GROUND;
 		}
@@ -108,7 +125,10 @@ void Map::createVertexTile(Tile *tile)
       color = sf::Color::Green;
       break;
 
-    case WALL:
+    case WALL_UP:
+    case WALL_DOWN:
+    case WALL_LEFT:
+    case WALL_RIGHT:
       color = sf::Color::Black;
       break;
       
@@ -143,6 +163,23 @@ void Map::createVertexTile(size_t i, size_t j,size_t w,size_t h, sf::Color color
   
 }
 
+bool Map::isAWall(size_t i, size_t j)
+{
+  assert(m_tiles[i][j]);
+  
+  switch( m_tiles[i][j]->type )
+    {
+    case WALL_UP:
+    case WALL_DOWN:
+    case WALL_LEFT:
+    case WALL_RIGHT:
+      return true;
+	    
+    default:
+      return false;
+      break;
+    }
+}
 
 Map::~Map()
 {
