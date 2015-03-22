@@ -28,12 +28,16 @@ void Map::initTiles()
 	    m_tiles[i][j]->obstacle = false;
 	    m_tiles[i][j]->type = NONE;
 	    
-	    createVertexTile(m_tiles[i][j]);
+	    if( isInTheScreen(m_tiles[i][j]) )
+	      {
+		createVertexTile(m_tiles[i][j]);
+	      }
 
 	  }
     }
 
   placeMaze(0, 0, NB_BLOC_WIDTH, NB_BLOC_HEIGHT);
+  
 
 
 }
@@ -78,13 +82,7 @@ void Map::putBloc(size_t I, size_t J, size_t W, size_t H, bool border[4])
     {
       for(size_t j = 0; j < W+2; j++)
 	{
-	  /*
-	  if( ( i == 0 && border[0] ) || ( i == H+1 && border[1]) 
-	      || ( j == 0 && border[2] ) || ( j == W+1 && border[3])
-	      )
-	    {
-	      m_tiles[i + I][j + J]->type = WALL_UP;
-	      }*/
+	 
 	  if( ( i == 0 && border[0] ) )
 	    {
 	      m_tiles[i + I][j + J]->type = WALL_UP;
@@ -152,7 +150,7 @@ void Map::createVertexTile(size_t i, size_t j,size_t w,size_t h, sf::Color color
 
   //get a pointer on the vertex at the coord (i,j)
   sf::Vertex* tile = &m_vertex_array[ (i * NB_TILE_WIDTH + j) * 4 ];
-  
+
   tile[0].position = sf::Vector2f(J,I);
   tile[1].position = sf::Vector2f(J + w, I);
   tile[2].position = sf::Vector2f(J + w, I + h);
@@ -182,6 +180,14 @@ bool Map::isAWall(size_t i, size_t j)
       return false;
       break;
     }
+}
+
+bool Map::isInTheScreen(Tile const* t)
+{
+  assert(t);
+  
+  return (t->i >= 0 && t->i < SCREEN_HEIGHT
+	  && t->j >= 0 && t->j < SCREEN_WIDTH);
 }
 
 Map::~Map()

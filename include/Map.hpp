@@ -105,8 +105,18 @@ public:
    * \param i i coordinate of the tile
    * \param j j coordinate of the tile
    * \return true if the tile (i,j) type is WALL_XXX
+   * \author bog
    **/
   bool isAWall(size_t i, size_t j);
+
+  /**
+   * \fn   bool Map::isInTheScreen(Tile const& t)
+   * \brief Look at a Tile and say if it is int the visible area of the map
+   * \param t the tile to look at
+   * \return True if the tile is on the visible area of the map
+   * \author bog
+   **/
+  bool isInTheScreen(Tile const* t);
   
 };
 
