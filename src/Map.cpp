@@ -197,6 +197,8 @@ bool Map::isInTheScreen(Tile const* t)
 
 void Map::update(sf::View const& view)
 {
+  m_visible_vertex_array.clear();
+  m_visible_vertex_array = sf::VertexArray(sf::Quads, NB_TILE_HEIGHT * NB_TILE_WIDTH * 4);
   sf::Vector2f center = sf::Vector2f( view.getCenter().x - SCREEN_WIDTH/2,
 				      view.getCenter().y - SCREEN_HEIGHT/2);
   
