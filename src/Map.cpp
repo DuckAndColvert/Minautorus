@@ -12,12 +12,6 @@ Map::Map()
 }
 
 
-void Map::display(sf::RenderWindow *win)
-{
-  win->draw(m_visible_vertex_array);
-}
-
-
 void Map::initTiles()
 {
   /* init Tiles */
@@ -229,6 +223,11 @@ void Map::update(sf::View const& view)
 	  createVertexTile(m_visible_vertex_array, m_tiles[i][j]);
 	}
     }
+}
+
+void Map::display(sf::RenderWindow *win)
+{
+  win->draw(m_visible_vertex_array);
 }
 
 Map::~Map()

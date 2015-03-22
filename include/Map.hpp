@@ -57,9 +57,10 @@ public:
   void initTiles();
   
   /**
-   * \fn void Map::createVertexTile(size_t i, size_t j,size_t w,size_t h, sf::Color color)
+   * \fn void Map::createVertexTile(sf::VertexArray &va,size_t i, size_t j,size_t w,size_t h, sf::Color color)
    * \brief Create a vertex in the  vertex array
    *
+   * \param va VertexArray in which tile is created
    * \param i the coordinate of the vertex to create (line)
    * \param j the coordinate of the vertex to create (column)
    * \param w the width  of the vertex to create
@@ -71,8 +72,9 @@ public:
   void createVertexTile(sf::VertexArray &va, size_t i, size_t j,size_t w,size_t h, sf::Color color);
 
   /**
-   * \fn   void Map::createVertexTile(Tile *tile);
+   * \fn   void Map::createVertexTile(sf::VertexArray &va, Tile *tile);
    * \brief Create a vertex related with a tile
+   * \param va VertexArray in which tile is created
    * \param tile 
    * \author bog
    **/
