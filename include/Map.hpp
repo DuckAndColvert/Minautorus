@@ -42,10 +42,12 @@ public:
    * \author bog
    **/
   void display(sf::RenderWindow *win);
+  void update(sf::View const& view);
   
   private:
   Tile* m_tiles[NB_TILE_HEIGHT][NB_TILE_WIDTH];
   sf::VertexArray m_vertex_array;
+  sf::VertexArray m_visible_vertex_array;
 
   /**
    * \fn void Map::initTiles()
@@ -66,7 +68,7 @@ public:
    *
    * \author bog
    **/
-  void createVertexTile(size_t i, size_t j,size_t w,size_t h, sf::Color color);
+  void createVertexTile(sf::VertexArray &va, size_t i, size_t j,size_t w,size_t h, sf::Color color);
 
   /**
    * \fn   void Map::createVertexTile(Tile *tile);
@@ -74,7 +76,7 @@ public:
    * \param tile 
    * \author bog
    **/
-  void createVertexTile(Tile *tile);
+  void createVertexTile(sf::VertexArray &va, Tile *tile);
 
   /**
    * \fn void Map::putBloc(size_t I, size_t J, size_t W, size_t H)
@@ -117,7 +119,7 @@ public:
    * \author bog
    **/
   bool isInTheScreen(Tile const* t);
-  
+
 };
 
 #endif

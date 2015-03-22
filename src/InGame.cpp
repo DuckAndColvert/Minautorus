@@ -26,6 +26,8 @@ void InGame::update(float dt)
     {
       m_view.move(sf::Vector2f(speed,0));
     }
+
+  m_map.update(m_view);
 }
 
 void InGame::display()
