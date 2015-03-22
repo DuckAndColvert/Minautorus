@@ -26,8 +26,15 @@ void InGame::update(float dt)
     {
       m_view.move(sf::Vector2f(speed,0));
     }
+  if( sf::Keyboard::isKeyPressed(sf::Keyboard::A) )
+    {
+      m_view.zoom(1.02);
+    }
+  if( sf::Keyboard::isKeyPressed(sf::Keyboard::E) )
+    {
+      m_view.zoom(0.98);
+    }
 
-  m_map.update(m_view);
 }
 
 void InGame::display()

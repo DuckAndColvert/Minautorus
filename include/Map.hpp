@@ -42,12 +42,10 @@ public:
    * \author bog
    **/
   void display(sf::RenderWindow *win);
-  void update(sf::View const& view);
   
   private:
   Tile* m_tiles[NB_TILE_HEIGHT][NB_TILE_WIDTH];
   sf::VertexArray m_vertex_array;
-  sf::VertexArray m_visible_vertex_array;
 
   /**
    * \fn void Map::initTiles()
@@ -57,10 +55,9 @@ public:
   void initTiles();
   
   /**
-   * \fn void Map::createVertexTile(sf::VertexArray &va,size_t i, size_t j,size_t w,size_t h, sf::Color color)
+   * \fn void Map::createVertexTile(size_t i, size_t j,size_t w,size_t h, sf::Color color)
    * \brief Create a vertex in the  vertex array
    *
-   * \param va VertexArray in which tile is created
    * \param i the coordinate of the vertex to create (line)
    * \param j the coordinate of the vertex to create (column)
    * \param w the width  of the vertex to create
@@ -69,16 +66,15 @@ public:
    *
    * \author bog
    **/
-  void createVertexTile(sf::VertexArray &va, size_t i, size_t j,size_t w,size_t h, sf::Color color);
+  void createVertexTile(size_t i, size_t j,size_t w,size_t h, sf::Color color);
 
   /**
    * \fn   void Map::createVertexTile(sf::VertexArray &va, Tile *tile);
    * \brief Create a vertex related with a tile
-   * \param va VertexArray in which tile is created
    * \param tile 
    * \author bog
    **/
-  void createVertexTile(sf::VertexArray &va, Tile *tile);
+  void createVertexTile(Tile *tile);
 
   /**
    * \fn void Map::putBloc(size_t I, size_t J, size_t W, size_t H)

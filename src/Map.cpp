@@ -5,7 +5,6 @@
 Map::Map()
 {
   m_vertex_array = sf::VertexArray(sf::Quads, NB_TILE_HEIGHT * NB_TILE_WIDTH * 4);
-  m_visible_vertex_array = sf::VertexArray(sf::Quads, NB_TILE_HEIGHT * NB_TILE_WIDTH * 4);
   
   initTiles();
   
@@ -35,7 +34,7 @@ void Map::initTiles()
     {
         for(size_t j=0; j < NB_TILE_WIDTH; j++)
 	  {
-	    createVertexTile(m_vertex_array, m_tiles[i][j]);
+	    createVertexTile( m_tiles[i][j] );
 	  }
     }
 
@@ -112,7 +111,7 @@ void Map::putBloc(size_t I, size_t J, size_t W, size_t H, bool border[4])
     }
 }
 
-void Map::createVertexTile(sf::VertexArray &va, Tile *tile)
+void Map::createVertexTile(Tile *tile)
 {
   assert(tile);
   
@@ -136,10 +135,10 @@ void Map::createVertexTile(sf::VertexArray &va, Tile *tile)
       break;
     }
   
-  createVertexTile(va,tile->i, tile->j, TILE_WIDTH, TILE_HEIGHT,color);
+  createVertexTile(tile->i, tile->j, TILE_WIDTH, TILE_HEIGHT,color);
 }
 
-void Map::createVertexTile(sf::VertexArray &va, size_t i, size_t j,size_t w,size_t h, sf::Color color)
+void Map::createVertexTile(size_t i, size_t j,size_t w,size_t h, sf::Color color)
 {
 
   //real coordinate in the windows
@@ -147,7 +146,7 @@ void Map::createVertexTile(sf::VertexArray &va, size_t i, size_t j,size_t w,size
   size_t J = j * TILE_WIDTH;
 
   //get a pointer on the vertex at the coord (i,j)
-  sf::Vertex *tile = &va[ (i * NB_TILE_WIDTH + j) * 4 ];
+  sf::Vertex *tile = &m_vertex_array[ (i * NB_TILE_WIDTH + j) * 4 ];
    
 
   tile[0].position = sf::Vector2f(J,I);
@@ -189,45 +188,10 @@ bool Map::isInTheScreen(Tile const* t)
 	  && t->j >= 0 && t->j < NB_VISIBLE_TILE_WIDTH);
 }
 
-void Map::update(sf::View const& view)
-{
-  m_visible_vertex_array.clear();
-  m_visible_vertex_array = sf::VertexArray(sf::Quads, NB_TILE_HEIGHT * NB_TILE_WIDTH * 4);
-  sf::Vector2f center = sf::Vector2f( view.getCenter().x - SCREEN_WIDTH/2,
-				      view.getCenter().y - SCREEN_HEIGHT/2);
-  
-  /* offsets */
-  ssize_t i_o_tmp = center.y/TILE_HEIGHT;
-  ssize_t j_o_tmp = center.x/TILE_WIDTH;
-
-  size_t i_o, j_o;
-  
-  if( i_o_tmp < 0 ){ i_o = 0; }
-  else if( i_o_tmp + NB_VISIBLE_TILE_HEIGHT >= NB_TILE_HEIGHT )
-    {
-      i_o = NB_TILE_HEIGHT  - NB_VISIBLE_TILE_HEIGHT;
-    }
-  else{ i_o = i_o_tmp; }
-
-  if( j_o_tmp < 0 ){ j_o = 0; }
-  else if( j_o_tmp + NB_VISIBLE_TILE_WIDTH >= NB_TILE_WIDTH )
-    {
-      j_o = NB_TILE_WIDTH - NB_VISIBLE_TILE_WIDTH;
-    }
-  else{ j_o = j_o_tmp; }
-
-  for(size_t i=i_o; i < NB_VISIBLE_TILE_HEIGHT+i_o; i++)
-    {
-      for(size_t j=j_o; j < NB_VISIBLE_TILE_WIDTH+j_o; j++)
-	{
-	  createVertexTile(m_visible_vertex_array, m_tiles[i][j]);
-	}
-    }
-}
 
 void Map::display(sf::RenderWindow *win)
 {
-  win->draw(m_visible_vertex_array);
+  win->draw(m_vertex_array);
 }
 
 Map::~Map()
@@ -243,6 +207,5 @@ Map::~Map()
     }
 
   m_vertex_array.clear();
-  m_visible_vertex_array.clear();
 
 }
