@@ -17,7 +17,7 @@ void Map::display(sf::RenderWindow *win)
 
 void Map::initTiles()
 {
-  
+  /* init Tiles */
   for(size_t i=0; i < NB_TILE_HEIGHT; i++)
     {
         for(size_t j=0; j < NB_TILE_WIDTH; j++)
@@ -27,18 +27,23 @@ void Map::initTiles()
 	    m_tiles[i][j]->j = j;
 	    m_tiles[i][j]->obstacle = false;
 	    m_tiles[i][j]->type = NONE;
-	    
+	  }
+    }
+
+  /* place a maze */
+  placeMaze(0, 0, NB_BLOC_WIDTH, NB_BLOC_HEIGHT);
+
+  /* init vertex array */
+  for(size_t i=0; i < NB_TILE_HEIGHT; i++)
+    {
+        for(size_t j=0; j < NB_TILE_WIDTH; j++)
+	  {
 	    if( isInTheScreen(m_tiles[i][j]) )
 	      {
 		createVertexTile(m_tiles[i][j]);
 	      }
-
 	  }
     }
-
-  placeMaze(0, 0, NB_BLOC_WIDTH, NB_BLOC_HEIGHT);
-  
-
 
 }
 
@@ -109,8 +114,6 @@ void Map::putBloc(size_t I, size_t J, size_t W, size_t H, bool border[4])
 	      
 	    }
 	  
-	  if( isInTheScreen(m_tiles[i + I][j + J]) )
-	     createVertexTile(m_tiles[i + I][j + J]);
 	}
     }
 }
