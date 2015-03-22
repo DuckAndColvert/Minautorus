@@ -29,7 +29,7 @@ void Map::initTiles()
 
   /* place a maze */
   placeMaze(0, 0, NB_BLOC_WIDTH, NB_BLOC_HEIGHT);
-    
+
   /* init vertex array */
   for(size_t i=0; i < NB_TILE_HEIGHT; i++)
     {
