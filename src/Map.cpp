@@ -4,7 +4,7 @@
 
 Map::Map()
 {
-  m_vertex_array = sf::VertexArray(sf::Quads, NB_TILE_HEIGHT * NB_TILE_WIDTH * 4);
+  m_vertex_array = sf::VertexArray(sf::Quads, NB_VISIBLE_TILE_HEIGHT * NB_VISIBLE_TILE_WIDTH * 4);
   initTiles();
 }
 
@@ -109,7 +109,8 @@ void Map::putBloc(size_t I, size_t J, size_t W, size_t H, bool border[4])
 	      
 	    }
 	  
-	  createVertexTile(m_tiles[i + I][j + J]);
+	  if( isInTheScreen(m_tiles[i + I][j + J]) )
+	     createVertexTile(m_tiles[i + I][j + J]);
 	}
     }
 }
@@ -149,7 +150,7 @@ void Map::createVertexTile(size_t i, size_t j,size_t w,size_t h, sf::Color color
   size_t J = j * TILE_WIDTH;
 
   //get a pointer on the vertex at the coord (i,j)
-  sf::Vertex* tile = &m_vertex_array[ (i * NB_TILE_WIDTH + j) * 4 ];
+  sf::Vertex* tile = &m_vertex_array[ (i * NB_VISIBLE_TILE_WIDTH + j) * 4 ];
 
   tile[0].position = sf::Vector2f(J,I);
   tile[1].position = sf::Vector2f(J + w, I);
@@ -186,8 +187,8 @@ bool Map::isInTheScreen(Tile const* t)
 {
   assert(t);
   
-  return (t->i >= 0 && t->i < SCREEN_HEIGHT
-	  && t->j >= 0 && t->j < SCREEN_WIDTH);
+  return (t->i >= 0 && t->i < NB_VISIBLE_TILE_HEIGHT
+	  && t->j >= 0 && t->j < NB_VISIBLE_TILE_WIDTH);
 }
 
 Map::~Map()
