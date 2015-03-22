@@ -13,9 +13,9 @@
 #define TILE_WIDTH 16
 #define TILE_HEIGHT TILE_WIDTH
 
-#define NB_BLOC_WIDTH 80
-#define NB_BLOC_HEIGHT 80
-#define BLOC_SIZE 4
+#define NB_BLOC_WIDTH 60
+#define NB_BLOC_HEIGHT 60
+#define BLOC_SIZE 8
 
 #define SCREEN_WIDTH 640
 #define SCREEN_HEIGHT 480

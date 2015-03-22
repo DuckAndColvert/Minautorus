@@ -2,6 +2,8 @@
 #include <Maze.hpp>
 #include <cassert>
 
+//TODO USING CHUNKS
+
 Map::Map()
 {
   m_vertex_array = sf::VertexArray(sf::Quads, NB_TILE_HEIGHT * NB_TILE_WIDTH * 4);
