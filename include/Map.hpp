@@ -24,6 +24,8 @@ struct Tile
   bool obstacle;
 };
 
+class Chunk;
+
 /**
  * \class Map
  * \brief Map generation and displaying
@@ -42,10 +44,18 @@ public:
    * \author bog
    **/
   void display(sf::RenderWindow *win);
+
+  /**
+   * \fn
+   * 
+   * \author bog
+   **/
+  Tile* get(size_t i, size_t j);
   
   private:
   Tile* m_tiles[NB_TILE_HEIGHT][NB_TILE_WIDTH];
-  sf::VertexArray m_vertex_array;
+  std::vector<Chunk*> m_chunks;
+  
 
   /**
    * \fn void Map::initTiles()
@@ -53,28 +63,6 @@ public:
    * \author bog
    **/
   void initTiles();
-  
-  /**
-   * \fn void Map::createVertexTile(size_t i, size_t j,size_t w,size_t h, sf::Color color)
-   * \brief Create a vertex in the  vertex array
-   *
-   * \param i the coordinate of the vertex to create (line)
-   * \param j the coordinate of the vertex to create (column)
-   * \param w the width  of the vertex to create
-   * \param h the height of the vertex to create
-   * \param color color of the vertex to create
-   *
-   * \author bog
-   **/
-  void createVertexTile(size_t i, size_t j,size_t w,size_t h, sf::Color color);
-
-  /**
-   * \fn   void Map::createVertexTile(sf::VertexArray &va, Tile *tile);
-   * \brief Create a vertex related with a tile
-   * \param tile 
-   * \author bog
-   **/
-  void createVertexTile(Tile *tile);
 
   /**
    * \fn void Map::putBloc(size_t I, size_t J, size_t W, size_t H)

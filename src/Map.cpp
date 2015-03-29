@@ -1,17 +1,22 @@
 #include <Map.hpp>
 #include <Maze.hpp>
 #include <cassert>
-
-//TODO USING CHUNKS
+#include <Chunk.hpp>
 
 Map::Map()
 {
-  m_vertex_array = sf::VertexArray(sf::Quads, NB_TILE_HEIGHT * NB_TILE_WIDTH * 4);
-  
   initTiles();
-  
 }
 
+Tile* Map::get(size_t i, size_t j)
+{
+  assert(i>=0);
+  assert(j>=0);
+  assert( i < NB_TILE_HEIGHT );
+  assert( j < NB_TILE_WIDTH );
+  
+  return m_tiles[i][j];
+}
 
 void Map::initTiles()
 {
@@ -31,14 +36,8 @@ void Map::initTiles()
   /* place a maze */
   placeMaze(0, 0, NB_BLOC_WIDTH, NB_BLOC_HEIGHT);
 
-  /* init vertex array */
-  for(size_t i=0; i < NB_TILE_HEIGHT; i++)
-    {
-        for(size_t j=0; j < NB_TILE_WIDTH; j++)
-	  {
-	    createVertexTile( m_tiles[i][j] );
-	  }
-    }
+  /* init chunks */
+  m_chunks.push_back( new Chunk(this,0,0));
 
 }
 
@@ -113,56 +112,6 @@ void Map::putBloc(size_t I, size_t J, size_t W, size_t H, bool border[4])
     }
 }
 
-void Map::createVertexTile(Tile *tile)
-{
-  assert(tile);
-  
-  sf::Color color;
-
-  switch( tile->type )
-    {
-    case GROUND:
-      color = sf::Color::Green;
-      break;
-
-    case WALL_UP:
-    case WALL_DOWN:
-    case WALL_LEFT:
-    case WALL_RIGHT:
-      color = sf::Color::Black;
-      break;
-      
-    default:
-      color = sf::Color::Red;
-      break;
-    }
-  
-  createVertexTile(tile->i, tile->j, TILE_WIDTH, TILE_HEIGHT,color);
-}
-
-void Map::createVertexTile(size_t i, size_t j,size_t w,size_t h, sf::Color color)
-{
-
-  //real coordinate in the windows
-  size_t I = i * TILE_HEIGHT;
-  size_t J = j * TILE_WIDTH;
-
-  //get a pointer on the vertex at the coord (i,j)
-  sf::Vertex *tile = &m_vertex_array[ (i * NB_TILE_WIDTH + j) * 4 ];
-   
-
-  tile[0].position = sf::Vector2f(J,I);
-  tile[1].position = sf::Vector2f(J + w, I);
-  tile[2].position = sf::Vector2f(J + w, I + h);
-  tile[3].position = sf::Vector2f(J, I + h);
-
-  //TODO Texture
-  tile[0].color = color;
-  tile[1].color = color;
-  tile[2].color = color;
-  tile[3].color = color;
-  
-}
 
 bool Map::isAWall(size_t i, size_t j)
 {
@@ -193,7 +142,11 @@ bool Map::isInTheScreen(Tile const* t)
 
 void Map::display(sf::RenderWindow *win)
 {
-  win->draw(m_vertex_array);
+  //win->draw(m_vertex_array);
+  for( Chunk *c: m_chunks )
+    {
+      c->draw(win);
+    }
 }
 
 Map::~Map()
@@ -208,6 +161,11 @@ Map::~Map()
 	}
     }
 
-  m_vertex_array.clear();
+  for( Chunk *c: m_chunks )
+    {
+      delete c;
+    }
+  
+  //m_vertex_array.clear();
 
 }
