@@ -16,27 +16,27 @@ void InGame::update(float dt)
 {
   // TODO: keyboard manager here
   int speed = 5;
-  if( sf::Keyboard::isKeyPressed(sf::Keyboard::Up) )
+  if( sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad8) )
     {
       m_view.move(sf::Vector2f(0,-speed));
     }
-  if( sf::Keyboard::isKeyPressed(sf::Keyboard::Down) )
+  if( sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad5) )
     {
       m_view.move(sf::Vector2f(0,speed));
     }
-  if( sf::Keyboard::isKeyPressed(sf::Keyboard::Left) )
+  if( sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad4) )
     {
       m_view.move(sf::Vector2f(-speed,0));
     }
-  if( sf::Keyboard::isKeyPressed(sf::Keyboard::Right) )
+  if( sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad6) )
     {
       m_view.move(sf::Vector2f(speed,0));
     }
-  if( sf::Keyboard::isKeyPressed(sf::Keyboard::A) )
+  if( sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad7) )
     {
       m_view.zoom(1.02);
     }
-  if( sf::Keyboard::isKeyPressed(sf::Keyboard::E) )
+  if( sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad9) )
     {
       m_view.zoom(0.98);
     }
