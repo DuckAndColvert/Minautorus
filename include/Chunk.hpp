@@ -4,14 +4,16 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <Global.hpp>
-
+#include <Map.hpp>
 /**
  * \class Chunk
  * \brief area of the game to update/display
  * \author bog
  **/
+/*
 class Map;
 class Tile;
+enum TileType;*/
 
 class Chunk
 {
@@ -40,10 +42,10 @@ private:
    * \param j the coordinate of the vertex to create (column)
    * \param w the width  of the vertex to create
    * \param h the height of the vertex to create
-   * \param color color of the vertex to create
+   * \param type type of the tiles to create
    * \author bog
    **/
-  void createVertexTile(size_t i, size_t j,size_t w,size_t h, sf::Color color);
+  void createVertexTile(size_t i, size_t j,size_t w,size_t h, TileType type);
 
   /**
    * \fn   void Chunk::createVertexTile(sf::VertexArray &va, Tile *tile);
@@ -56,6 +58,7 @@ private:
   sf::VertexArray m_vertex_array;
   Map *m_map;
   Tile* m_tiles[CHUNK_HEIGHT][CHUNK_WIDTH];
+  sf::Texture* m_texture;
   const size_t m_i;
   const size_t m_j;
 };

@@ -6,8 +6,10 @@
 #include <Global.hpp>
 #include <Scene.hpp>
 #include <Map.hpp>
+#include <vector>
 
 class Map;
+class Character;
 
 class InGame: public Scene
 {
@@ -22,8 +24,9 @@ private:
   InGame& operator=(InGame const& ig) = delete;
   InGame(InGame const& ig) = delete;
 
-  Map m_map;
+  Map *m_map;
   sf::View m_view;
+  std::vector<Character*> m_characters;
 
 };
 

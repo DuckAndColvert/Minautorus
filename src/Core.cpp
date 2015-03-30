@@ -12,6 +12,11 @@ Core::Core(sf::RenderWindow *win): m_window(win), m_dt(1.)
   m_texture_manager->load();
 }
 
+TextureManager* Core::getTextureManager()
+{
+  return m_texture_manager;
+}
+
 void Core::update(float dt)
 {
   if( m_currentScene )

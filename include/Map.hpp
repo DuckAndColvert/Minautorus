@@ -7,12 +7,9 @@
 
 enum TileType
   {
-    NONE,
-    GROUND,
-    WALL_UP,
-    WALL_DOWN,
-    WALL_LEFT,
-    WALL_RIGHT,
+    NONE=0,
+    GROUND=1,
+    WALL = 2
   };
 
 struct Tile
@@ -25,6 +22,7 @@ struct Tile
 };
 
 class Chunk;
+class Core;
 
 /**
  * \class Map
@@ -35,7 +33,7 @@ class Map
 {
   
 public:
-  Map();
+  Map(Core* owner);
   ~Map();
 
   /**
@@ -45,17 +43,14 @@ public:
    **/
   void display(sf::RenderWindow *win);
 
-  /**
-   * \fn
-   * 
-   * \author bog
-   **/
   Tile* get(size_t i, size_t j);
+  Core* getOwner();
   
   private:
+  Core* m_owner;
   Tile* m_tiles[NB_TILE_HEIGHT][NB_TILE_WIDTH];
   std::vector<Chunk*> m_chunks;
-  
+
 
   /**
    * \fn void Map::initTiles()

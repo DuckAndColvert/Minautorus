@@ -1,9 +1,11 @@
 #include <Map.hpp>
 #include <Maze.hpp>
 #include <cassert>
+#include <Core.hpp>
 #include <Chunk.hpp>
+#include <TextureManager.hpp>
 
-Map::Map()
+Map::Map(Core* owner): m_owner(owner)
 {
   initTiles();
 }
@@ -16,6 +18,11 @@ Tile* Map::get(size_t i, size_t j)
   assert( j < NB_TILE_WIDTH );
   
   return m_tiles[i][j];
+}
+
+Core* Map::getOwner()
+{
+  return m_owner;
 }
 
 void Map::initTiles()
@@ -44,9 +51,6 @@ void Map::initTiles()
 	    m_chunks.push_back( new Chunk(this,i*CHUNK_HEIGHT,j*CHUNK_WIDTH));
 	  }
     }
- 
-  
-
 }
 
 void Map::placeMaze(size_t I, size_t J, size_t W, size_t H)
@@ -89,22 +93,11 @@ void Map::putBloc(size_t I, size_t J, size_t W, size_t H, bool border[4])
     {
       for(size_t j = 0; j < W+2; j++)
 	{
-	 
-	  if( ( i == 0 && border[0] ) )
+	  //if it is on one border and if this border is a wall
+	  if( (i == 0 && border[0]) || (i == H+1 && border[1])
+	      || (j == 0 && border[2]) || (j == W+1 && border[3]) )
 	    {
-	      m_tiles[i + I][j + J]->type = WALL_UP;
-	    }
-	  else if( ( i == H+1 && border[1] ) )
-	    {
-	      m_tiles[i + I][j + J]->type = WALL_DOWN;
-	    }
-	  else if( ( j == 0 && border[2] ) )
-	    {
-	      m_tiles[i + I][j + J]->type = WALL_LEFT;
-	    }
-	  else if( ( j == W+1 && border[3] ) )
-	    {
-	      m_tiles[i + I][j + J]->type = WALL_RIGHT;
+	      m_tiles[i + I][j + J]->type = WALL;
 	    }
 	  else
 	    {
@@ -127,10 +120,7 @@ bool Map::isAWall(size_t i, size_t j)
   
   switch( m_tiles[i][j]->type )
     {
-    case WALL_UP:
-    case WALL_DOWN:
-    case WALL_LEFT:
-    case WALL_RIGHT:
+    case WALL:
       return true;
 	    
     default:
@@ -154,6 +144,7 @@ void Map::display(sf::RenderWindow *win)
     {
       c->draw(win);
     }
+  
 }
 
 Map::~Map()

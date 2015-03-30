@@ -1,11 +1,12 @@
 #include <Chunk.hpp>
+#include <Core.hpp>
 #include <Map.hpp>
 #include <cassert>
+#include <TextureManager.hpp>
 
 Chunk::Chunk(Map* map,size_t i, size_t j): m_map(map),m_i(i), m_j(j)
 {
   m_vertex_array = sf::VertexArray(sf::Quads, 4*CHUNK_HEIGHT*CHUNK_WIDTH);
-
   initTiles();
 }
 
@@ -43,8 +44,8 @@ void Chunk::createVertexTile(Tile *tile)
 {
   assert(tile);
 
-  sf::Color color;
-
+  /*sf::Color color;
+  
   switch( tile->type )
     {
     case GROUND:
@@ -61,12 +62,12 @@ void Chunk::createVertexTile(Tile *tile)
     default:
       color = sf::Color::Yellow;
       break;
-    }
+      }*/
 
-  createVertexTile(tile->i, tile->j, TILE_WIDTH, TILE_HEIGHT,color);
+  createVertexTile(tile->i, tile->j, TILE_WIDTH, TILE_HEIGHT, tile->type);
 }
 
-void Chunk::createVertexTile(size_t i, size_t j,size_t w,size_t h, sf::Color color)
+void Chunk::createVertexTile(size_t i, size_t j,size_t w,size_t h, TileType type)
 {
  //real coordinate in the windows
   size_t I = i * TILE_HEIGHT;
@@ -81,17 +82,30 @@ void Chunk::createVertexTile(size_t i, size_t j,size_t w,size_t h, sf::Color col
   tile[2].position = sf::Vector2f(J + w, I + h);
   tile[3].position = sf::Vector2f(J, I + h);
 
-  //TODO Texture
-  tile[0].color = color;
-  tile[1].color = color;
-  tile[2].color = color;
-  tile[3].color = color;
+  // texture 
+  size_t t_i = type/TILESET_WIDTH;
+  size_t t_j = type%TILESET_WIDTH;
+
+  size_t t_I = t_i * TILE_HEIGHT;
+  size_t t_J = t_j * TILE_WIDTH;
   
+  tile[0].texCoords = sf::Vector2f(t_J,t_I);
+  tile[1].texCoords = sf::Vector2f(t_J + TILE_WIDTH,t_I);
+  tile[2].texCoords = sf::Vector2f(t_J + TILE_WIDTH,t_I + TILE_HEIGHT);
+  tile[3].texCoords = sf::Vector2f(t_J,t_I + TILE_HEIGHT);
 }
 
 void Chunk::draw(sf::RenderWindow *win)
 {
-  win->draw(m_vertex_array);
+  //  sf::Texture *t = m_map->getTextureManager()->get("error");
+  //  assert(m_map->getTextureManager()->get("error"));
+  /*  sf::Sprite s;
+  s.setTexture(*t);
+  s.setTextureRect(sf::IntRect(0,0,32,32));
+  
+  win->draw(s);*/
+  win->draw(m_vertex_array, (m_map->getOwner()->getTextureManager()->get("tileset")));
+
 }
 
 Chunk::~Chunk()

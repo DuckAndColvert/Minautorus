@@ -10,7 +10,7 @@
 #define DATA_PATH "data/"
 #define IMG_PATH "img/"
 
-#define TILE_WIDTH 16
+#define TILE_WIDTH 32
 #define TILE_HEIGHT TILE_WIDTH
 
 /* blocs */
@@ -37,4 +37,8 @@
 
 #define NB_CHUNK_WIDTH NB_TILE_WIDTH/CHUNK_WIDTH
 #define NB_CHUNK_HEIGHT NB_TILE_HEIGHT/CHUNK_HEIGHT
+
+/* tileset */
+#define TILESET_WIDTH 8
+#define TILESET_HEIGHT TILESET_WIDTH
 #endif

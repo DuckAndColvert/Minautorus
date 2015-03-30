@@ -23,7 +23,7 @@ public:
   Core(sf::RenderWindow *win);
   ~Core();
 
-  TextureManager *getTextureManager(){return m_texture_manager;}
+  TextureManager * getTextureManager();
   
   void update(float dt);
   void display();
@@ -34,6 +34,7 @@ public:
    * \author bog
    **/ 
   void render();
+
   
 private:
   Core(Core const& c) = delete;

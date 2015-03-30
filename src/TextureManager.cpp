@@ -1,4 +1,5 @@
 #include <TextureManager.hpp>
+#include <cassert>
 
 TextureManager::TextureManager()
 {
@@ -8,7 +9,9 @@ TextureManager::TextureManager()
 
 sf::Texture* TextureManager::get(std::string name)
 {
-  return m_textures[name];
+  sf::Texture* tex = m_textures[name];
+  assert(tex);
+  return tex;
 }
 
 
@@ -19,6 +22,7 @@ void TextureManager::load()
   
   load("error", img_path + "error.png");
   load("ground", img_path + "ground.png");
+  load("tileset", img_path + "tileset.png");
 }
 
 
