@@ -37,12 +37,11 @@ void Map::initTiles()
   placeMaze(0, 0, NB_BLOC_WIDTH, NB_BLOC_HEIGHT);
 
   /* init chunks */
-  
-  for(size_t i=0; i < NB_TILE_HEIGHT; i+=CHUNK_HEIGHT)
+  for(size_t i=0; i < NB_CHUNK_HEIGHT; i++)
     {
-        for(size_t j=0; j < NB_TILE_WIDTH; j+=CHUNK_WIDTH)
+      for(size_t j=0; j < NB_CHUNK_WIDTH; j++)
 	  {
-	    m_chunks.push_back( new Chunk(this,i,j));
+	    m_chunks.push_back( new Chunk(this,i*CHUNK_HEIGHT,j*CHUNK_WIDTH));
 	  }
     }
  
@@ -151,7 +150,6 @@ bool Map::isInTheScreen(Tile const* t)
 
 void Map::display(sf::RenderWindow *win)
 {
-  //win->draw(m_vertex_array);
   for( Chunk *c: m_chunks )
     {
       c->draw(win);
