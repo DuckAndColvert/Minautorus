@@ -11,18 +11,18 @@ Chunk::Chunk(Map* map,size_t i, size_t j): m_map(map),m_i(i), m_j(j)
 
 void Chunk::initTiles()
 {
-  for( size_t i = m_j; i < CHUNK_HEIGHT + m_j; i++)
+  for(size_t i=0; i<CHUNK_HEIGHT;i++)
     {
-      for( size_t j = m_i; j < CHUNK_WIDTH + m_i; j++)
+      for(size_t j=0; j<CHUNK_WIDTH;j++)
 	{
-	  if( i>=0 && j>=0 && i < NB_TILE_HEIGHT && j < NB_TILE_WIDTH )
+	   if( m_i + i>=0 && m_j + j>=0 && m_i + i < NB_TILE_HEIGHT && m_j + j < NB_TILE_WIDTH )
 	    {
-	      m_tiles[i][j] = m_map->get(i,j);
+	      m_tiles[i][j] = m_map->get(i+m_i,j+m_j);
 	    }
-	  else
-	    {
-	      m_tiles[i][j] = nullptr;
-	    }
+	   else
+	     {
+	       m_tiles[i][j] = nullptr;
+	     }
 	}
     }
 
@@ -42,7 +42,7 @@ void Chunk::initTiles()
 void Chunk::createVertexTile(Tile *tile)
 {
   assert(tile);
-  
+
   sf::Color color;
 
   switch( tile->type )
@@ -62,19 +62,18 @@ void Chunk::createVertexTile(Tile *tile)
       color = sf::Color::Yellow;
       break;
     }
-  
+
   createVertexTile(tile->i, tile->j, TILE_WIDTH, TILE_HEIGHT,color);
 }
 
 void Chunk::createVertexTile(size_t i, size_t j,size_t w,size_t h, sf::Color color)
 {
-
-  //real coordinate in the windows
+ //real coordinate in the windows
   size_t I = i * TILE_HEIGHT;
   size_t J = j * TILE_WIDTH;
 
   //get a pointer on the vertex at the coord (i,j)
-  sf::Vertex *tile = &m_vertex_array[ (i * CHUNK_WIDTH + j) * 4 ];
+  sf::Vertex *tile = &m_vertex_array[ ((i-m_i) * CHUNK_WIDTH + (j-m_j)) * 4 ];
    
 
   tile[0].position = sf::Vector2f(J,I);

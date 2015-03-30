@@ -32,6 +32,6 @@
 #define NB_TILE_HEIGHT ((HEIGHT)/(TILE_HEIGHT))
 
 /* chunks */
-#define CHUNK_WIDTH (NB_TILE_WIDTH/4)
-#define CHUNK_HEIGHT (NB_TILE_HEIGHT/4)
+#define CHUNK_WIDTH 5
+#define CHUNK_HEIGHT 5
 #endif

@@ -37,7 +37,16 @@ void Map::initTiles()
   placeMaze(0, 0, NB_BLOC_WIDTH, NB_BLOC_HEIGHT);
 
   /* init chunks */
-  m_chunks.push_back( new Chunk(this,0,0));
+  
+  for(size_t i=0; i < NB_TILE_HEIGHT; i+=CHUNK_HEIGHT)
+    {
+        for(size_t j=0; j < NB_TILE_WIDTH; j+=CHUNK_WIDTH)
+	  {
+	    m_chunks.push_back( new Chunk(this,i,j));
+	  }
+    }
+ 
+  
 
 }
 
