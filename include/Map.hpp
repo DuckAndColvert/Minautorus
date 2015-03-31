@@ -33,7 +33,7 @@ class Map
 {
   
 public:
-  Map(Core* owner);
+  Map(sf::Texture *tex);
   ~Map();
 
   /**
@@ -43,14 +43,15 @@ public:
    **/
   void display(sf::RenderWindow *win);
 
+  sf::Texture* getTexture();
+  
   Tile* get(size_t i, size_t j);
-  Core* getOwner();
   
   private:
   Core* m_owner;
   Tile* m_tiles[NB_TILE_HEIGHT][NB_TILE_WIDTH];
   std::vector<Chunk*> m_chunks;
-
+  sf::Texture *m_texture;
 
   /**
    * \fn void Map::initTiles()

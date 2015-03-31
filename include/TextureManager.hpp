@@ -38,9 +38,8 @@ private:
    * \fn void load(std::string name, std::string path)
    * \brief load a texture and ad it in the map
    * 
-   * \param name name of the key in the map relative to the texture to load
    * \param path path to the texture
-   *
+   * \param name given to the texture
    * Load a texture designed by its path, and add it in the map at the key given by
    * the name.
    **/

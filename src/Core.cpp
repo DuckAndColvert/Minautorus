@@ -6,10 +6,13 @@
 
 Core::Core(sf::RenderWindow *win): m_window(win), m_dt(1.)
 {
-  m_currentScene = new InGame(this, m_window);
-  
   m_texture_manager = new TextureManager;
   m_texture_manager->load();
+
+  
+  m_currentScene = new InGame(this, m_window);
+  
+ 
 }
 
 TextureManager* Core::getTextureManager()

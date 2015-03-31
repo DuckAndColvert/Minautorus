@@ -5,9 +5,14 @@
 #include <Chunk.hpp>
 #include <TextureManager.hpp>
 
-Map::Map(Core* owner): m_owner(owner)
+Map::Map(sf::Texture* tex): m_texture(tex)
 {
   initTiles();
+}
+
+sf::Texture* Map::getTexture()
+{
+  return m_texture;
 }
 
 Tile* Map::get(size_t i, size_t j)
@@ -18,11 +23,6 @@ Tile* Map::get(size_t i, size_t j)
   assert( j < NB_TILE_WIDTH );
   
   return m_tiles[i][j];
-}
-
-Core* Map::getOwner()
-{
-  return m_owner;
 }
 
 void Map::initTiles()

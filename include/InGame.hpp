@@ -26,6 +26,7 @@ private:
 
   Map *m_map;
   sf::View m_view;
+  
   std::vector<Character*> m_characters;
 
 };

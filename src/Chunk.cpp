@@ -6,6 +6,7 @@
 
 Chunk::Chunk(Map* map,size_t i, size_t j): m_map(map),m_i(i), m_j(j)
 {
+  m_texture = m_map->getTexture();
   m_vertex_array = sf::VertexArray(sf::Quads, 4*CHUNK_HEIGHT*CHUNK_WIDTH);
   initTiles();
 }
@@ -97,15 +98,7 @@ void Chunk::createVertexTile(size_t i, size_t j,size_t w,size_t h, TileType type
 
 void Chunk::draw(sf::RenderWindow *win)
 {
-  //  sf::Texture *t = m_map->getTextureManager()->get("error");
-  //  assert(m_map->getTextureManager()->get("error"));
-  /*  sf::Sprite s;
-  s.setTexture(*t);
-  s.setTextureRect(sf::IntRect(0,0,32,32));
-  
-  win->draw(s);*/
-  win->draw(m_vertex_array, (m_map->getOwner()->getTextureManager()->get("tileset")));
-
+  win->draw(m_vertex_array, m_texture);
 }
 
 Chunk::~Chunk()

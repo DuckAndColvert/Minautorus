@@ -4,6 +4,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 
+class Map;
 
 /**
  * \class Character
@@ -14,14 +15,16 @@
 class Character
 {
 public:
-  Character();
+  Character(Map *map, sf::Texture* spritesheet);
   virtual ~Character();
 
-  virtual void update(float dt) = 0;
-  virtual void display(sf::RenderWindow *win) = 0;
+  virtual void update(float dt);
+  virtual void display(sf::RenderWindow *win);
   
 protected:
- sf::Sprite m_sprite;
+  sf::Sprite m_sprite;
+  Map* m_map;
+  sf::Texture *m_spritesheet;
 private:
   Character( Character const& character ) = delete;
   Character& operator=( Character const& character ) = delete;
