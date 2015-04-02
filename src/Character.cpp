@@ -12,6 +12,16 @@ Character::Character(Map *map, sf::Texture* spritesheet): m_map(map),
   m_movement = sf::Vector2f(0,0);
 }
 
+sf::Vector2f Character::getPosition()
+{
+  return m_sprite.getPosition();
+}
+
+sf::FloatRect Character::getLocalBounds()
+{
+  return m_sprite.getLocalBounds();
+}
+
 void Character::update(float dt)
 {
   /* map coordinate */
@@ -19,8 +29,8 @@ void Character::update(float dt)
   m_map_j = m_sprite.getPosition().x/TILE_WIDTH;
 
   /* movement */
-  //next position
   
+  //next position
   sf::Vector2f next;
   next.x = m_sprite.getPosition().x + m_movement.x;
   next.y = m_sprite.getPosition().y + m_movement.y;

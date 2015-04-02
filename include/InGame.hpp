@@ -10,6 +10,7 @@
 
 class Map;
 class Character;
+class Player;
 
 class InGame: public Scene
 {
@@ -25,9 +26,13 @@ private:
   InGame(InGame const& ig) = delete;
 
   Map *m_map;
+
   sf::View m_view;
+  int m_view_area;  
+  int m_view_speed;
   
   std::vector<Character*> m_characters;
+  Player *m_player;
 
 };
 

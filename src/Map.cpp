@@ -40,6 +40,7 @@ void Map::initTiles()
 	  }
     }
 
+
   /* place a maze */
   placeMaze(0, 0, NB_BLOC_WIDTH, NB_BLOC_HEIGHT);
 

@@ -25,6 +25,10 @@ public:
   virtual bool collideWithMap(sf::Vector2f const& pos);
   virtual bool collideWithTile(sf::Vector2f const& pos, Tile const* tile);
 
+
+  sf::Vector2f getPosition();
+  sf::FloatRect getLocalBounds();
+  
   virtual void moveUp();
   virtual void moveDown();
   virtual void moveLeft();
