@@ -1,7 +1,9 @@
 #include <InGame.hpp>
 #include <Character.hpp>
+#include <Player.hpp>
 #include <TextureManager.hpp>
 #include <unordered_map>
+
 InGame::InGame(Core *owner, sf::RenderWindow *win): Scene(owner, win)
 {
   m_view.reset(sf::FloatRect(0,0,SCREEN_WIDTH, SCREEN_HEIGHT));
@@ -9,12 +11,18 @@ InGame::InGame(Core *owner, sf::RenderWindow *win): Scene(owner, win)
   
   m_map = new Map(m_owner->getTextureManager()->get("tileset"));
   m_window->setView(m_view);
-  m_characters.push_back( new Character(m_map, m_owner->getTextureManager()->get("error")) );
+  m_characters.push_back( new Player(m_map, m_owner->getTextureManager()->get("error")) );
   
 }
 
 void InGame::update(float dt)
 {
+
+  for(Character* c:m_characters)
+    {
+      c->update(dt);
+    }
+  
   // TODO: keyboard manager here
   int speed = 5;
   if( sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad8) )

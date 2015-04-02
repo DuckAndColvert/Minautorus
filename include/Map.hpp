@@ -43,6 +43,35 @@ public:
    **/
   void display(sf::RenderWindow *win);
 
+  /**
+   * \fn   bool Map::isAWall(size_t i, size_t j)
+   * \brief True if the tile at (i,j) is a wall
+   * \param i i coordinate of the tile
+   * \param j j coordinate of the tile
+   * \return true if the tile (i,j) type is WALL_XXX
+   * \author bog
+   **/
+  bool isAWall(size_t i, size_t j);
+
+  /**
+   * \fn   bool Map::isInTheScreen(Tile const& t)
+   * \brief Look at a Tile and say if it is int the visible area of the map
+   * \param t the tile to look at
+   * \return True if the tile is on the visible area of the map
+   * \author bog
+   **/
+  bool isInTheScreen(Tile const* t);
+
+  /**
+   * \fn   bool Map::exists(size_t i, size_t j)
+   * \brief Say if a tile at (i,j) coordinate exists
+   * \param i i coordinate of the tile
+   * \param j j coordinate of the tile
+   * \return True if the tile is on the map
+   * \author bog
+   **/
+  bool exists(size_t i, size_t j);
+  
   sf::Texture* getTexture();
   
   Tile* get(size_t i, size_t j);
@@ -71,7 +100,9 @@ public:
    * \author bog
    **/
   void putBloc(size_t I, size_t J, size_t W, size_t H, bool border[4]);
-
+  
+  void putTile(TileType t, size_t i, size_t j);
+  
   /**
    * \fn void Map::placeMaze(size_t I, size_t J, size_t W, size_t H)
    * \brief Set a maze at the coordinate (I, J)
@@ -83,24 +114,7 @@ public:
    **/
   void placeMaze(size_t I, size_t J, size_t W, size_t H);
 
-  /**
-   * \fn   bool Map::isAWall(size_t i, size_t j)
-   * \brief True if the tile at (i,j) is a wall
-   * \param i i coordinate of the tile
-   * \param j j coordinate of the tile
-   * \return true if the tile (i,j) type is WALL_XXX
-   * \author bog
-   **/
-  bool isAWall(size_t i, size_t j);
-
-  /**
-   * \fn   bool Map::isInTheScreen(Tile const& t)
-   * \brief Look at a Tile and say if it is int the visible area of the map
-   * \param t the tile to look at
-   * \return True if the tile is on the visible area of the map
-   * \author bog
-   **/
-  bool isInTheScreen(Tile const* t);
+  
 
 };
 

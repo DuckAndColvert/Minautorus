@@ -40,8 +40,8 @@ TextureManager::~TextureManager()
   for( it = m_textures.begin(); it != m_textures.end(); it++ )
     {
       delete (*it).second;
-      m_textures.erase(it);
     }
+  
   m_textures.clear();
     
 }

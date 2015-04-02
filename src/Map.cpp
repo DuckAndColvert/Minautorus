@@ -81,6 +81,27 @@ void Map::placeMaze(size_t I, size_t J, size_t W, size_t H)
     }
 }
 
+void Map::putTile(TileType t, size_t i, size_t j)
+{
+
+  switch( t )
+    {
+    case WALL:
+      m_tiles[i][j]->i = i;
+      m_tiles[i][j]->j = j;
+      m_tiles[i][j]->obstacle = true;
+      m_tiles[i][j]->type = WALL;
+      break;
+      
+    default:
+       m_tiles[i][j]->i = i;
+       m_tiles[i][j]->j = j;
+       m_tiles[i][j]->obstacle = false;
+       m_tiles[i][j]->type = NONE;
+      break;
+    }
+}
+
 void Map::putBloc(size_t I, size_t J, size_t W, size_t H, bool border[4])
 {
   assert(border);
@@ -97,7 +118,7 @@ void Map::putBloc(size_t I, size_t J, size_t W, size_t H, bool border[4])
 	  if( (i == 0 && border[0]) || (i == H+1 && border[1])
 	      || (j == 0 && border[2]) || (j == W+1 && border[3]) )
 	    {
-	      m_tiles[i + I][j + J]->type = WALL;
+	      putTile(WALL, i + I, j + J);
 	    }
 	  else
 	    {
@@ -137,6 +158,10 @@ bool Map::isInTheScreen(Tile const* t)
 	  && t->j >= 0 && t->j < NB_VISIBLE_TILE_WIDTH);
 }
 
+bool Map::exists(size_t i, size_t j)
+{
+  return (i >= 0 && i < NB_TILE_HEIGHT && j >= 0 && j < NB_TILE_HEIGHT);
+}
 
 void Map::display(sf::RenderWindow *win)
 {
