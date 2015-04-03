@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ingame',['InGame',['../class_in_game.html',1,'']]]
+  ['edge',['Edge',['../struct_maze_generator_1_1_edge.html',1,'MazeGenerator']]]
 ];

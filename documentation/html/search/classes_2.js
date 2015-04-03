@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['map',['Map',['../class_map.html',1,'']]],
-  ['menu',['Menu',['../class_menu.html',1,'']]]
+  ['ingame',['InGame',['../class_in_game.html',1,'']]]
 ];

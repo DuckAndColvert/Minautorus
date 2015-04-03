@@ -2,6 +2,9 @@ var NAVTREE =
 [
   [ "Minautorus", "index.html", [
     [ "Minautorus", "md__r_e_a_d_m_e.html", null ],
+    [ "Namespaces", null, [
+      [ "Namespace List", "namespaces.html", "namespaces" ]
+    ] ],
     [ "Classes", null, [
       [ "Class List", "annotated.html", "annotated" ],
       [ "Class Index", "classes.html", null ],
@@ -27,7 +30,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_core_8cpp.html"
+"_character_8cpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

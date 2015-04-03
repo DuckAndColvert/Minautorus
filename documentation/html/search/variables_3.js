@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['obstacle',['obstacle',['../struct_tile.html#ac50c68f897cd0d40f5fc85a1faba68af',1,'Tile']]]
+  ['j',['j',['../struct_tile.html#a50e1154d1067f50c634818c10f65af27',1,'Tile::j()'],['../struct_maze_generator_1_1_cell.html#adcdbc1449bd4ecda87ac5916ea1eb547',1,'MazeGenerator::Cell::j()']]]
 ];

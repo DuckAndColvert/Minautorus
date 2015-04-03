@@ -35,10 +35,22 @@ void Character::update(float dt)
   next.x = m_sprite.getPosition().x + m_movement.x;
   next.y = m_sprite.getPosition().y + m_movement.y;
 
-  if( !collideWithMap( next ) )
+  //check X collisions
+  if( !collideWithMap( sf::Vector2f(next.x, next.y-m_movement.y) ) )
     {
-      m_sprite.move(m_movement);
+      m_sprite.move(m_movement.x, 0);
     }
+  
+  //check Y collisions
+  if( !collideWithMap( sf::Vector2f(next.x - m_movement.x,next.y) ) )
+    {
+      m_sprite.move(0, m_movement.y);
+    }
+
+
+
+  
+
 }
 
 void Character::moveUp()
@@ -73,8 +85,8 @@ void Character::stopY()
 
 bool Character::collideWithMap(sf::Vector2f const& pos)
 {
-  ssize_t pos_i = pos.y/TILE_HEIGHT;
-  ssize_t pos_j = pos.x/TILE_WIDTH;
+  ssize_t pos_i = (pos.y)/TILE_HEIGHT;
+  ssize_t pos_j = (pos.x)/TILE_WIDTH;
 
   for( ssize_t i = pos_i-1; i <= pos_i+1; i++ )
     {
@@ -104,8 +116,8 @@ bool Character::collideWithTile(sf::Vector2f const& pos, Tile const* tile)
   float w = m_sprite.getLocalBounds().width;
   float h = m_sprite.getLocalBounds().height;
   
-  if( ty + TILE_HEIGHT < y || ty > y + h
-      || tx + TILE_WIDTH < x || tx > x + w )
+  if( ty + TILE_HEIGHT <= y || ty >= y + h
+      || tx + TILE_WIDTH <= x || tx >= x + w )
     {
       return false;
     }

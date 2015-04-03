@@ -1,5 +1,11 @@
 var dir_d44c64559bbebec7f509842c48db8b23 =
 [
+    [ "Character.hpp", "_character_8hpp.html", [
+      [ "Character", "class_character.html", "class_character" ]
+    ] ],
+    [ "Chunk.hpp", "_chunk_8hpp.html", [
+      [ "Chunk", "class_chunk.html", "class_chunk" ]
+    ] ],
     [ "Core.hpp", "_core_8hpp.html", [
       [ "Core", "class_core.html", "class_core" ]
     ] ],
@@ -10,6 +16,9 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "Map.hpp", "_map_8hpp.html", "_map_8hpp" ],
     [ "Menu.hpp", "_menu_8hpp.html", [
       [ "Menu", "class_menu.html", "class_menu" ]
+    ] ],
+    [ "Player.hpp", "_player_8hpp.html", [
+      [ "Player", "class_player.html", "class_player" ]
     ] ],
     [ "Scene.hpp", "_scene_8hpp.html", [
       [ "Scene", "class_scene.html", "class_scene" ]

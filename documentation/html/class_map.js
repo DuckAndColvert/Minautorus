@@ -1,10 +1,13 @@
 var class_map =
 [
-    [ "Map", "class_map.html#a0f5ad0fd4563497b4214038cbca8b582", null ],
+    [ "Map", "class_map.html#a0b78ab0d7b9358eab962ccfa83214167", null ],
     [ "~Map", "class_map.html#aa403fbe09394ccf39747588f5168e3b2", null ],
-    [ "createVertexTile", "class_map.html#a6028e1a5ee18c96342ba785e16779ab3", null ],
+    [ "collideWithView", "class_map.html#af98fd76d6bb3b1a1b0fdd647b21a3e9b", null ],
     [ "display", "class_map.html#a3ccb4139e9caf118dffb3f2ba8bb6361", null ],
-    [ "initTiles", "class_map.html#a89da5c5a8b6f968dcacd03ff4014f037", null ],
-    [ "m_tiles", "class_map.html#a4b89a8f019a03d06723dd50e339affcc", null ],
-    [ "m_vertex_array", "class_map.html#a0a3a2e550cb33be3df31f769bc9b5262", null ]
+    [ "exists", "class_map.html#af4746a30f5063b50862123cc46873218", null ],
+    [ "get", "class_map.html#ae9376e450832ea3ce1c893f4ec1edc40", null ],
+    [ "getTexture", "class_map.html#ae23e53a1b9d5c7d9d1aec9795a28b0ee", null ],
+    [ "isAWall", "class_map.html#a256268fe246bf37d8231bdb61a3bda92", null ],
+    [ "isInTheScreen", "class_map.html#a54aa404e7aef41735ebf5114eab4df3b", null ],
+    [ "m_view", "class_map.html#a1fb26cd5f427038a81a03801aed05299", null ]
 ];

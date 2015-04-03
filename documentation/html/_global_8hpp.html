@@ -30,11 +30,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="duckAndColvert.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Minautorus
    </div>
-   <div id="projectbrief">A maze action adventure game</div>
   </td>
  </tr>
  </tbody>
@@ -49,6 +47,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -123,53 +122,89 @@ Macros</h2></td></tr>
 <tr class="separator:ac26a668e32beeb7eae8b6e4adbe5d1e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6acca5b567b29950c4197ebacadf6dc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_8hpp.html#ac6acca5b567b29950c4197ebacadf6dc">IMG_PATH</a>&#160;&#160;&#160;&quot;img/&quot;</td></tr>
 <tr class="separator:ac6acca5b567b29950c4197ebacadf6dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76108891dc4352082a676f2978ee446d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_8hpp.html#a76108891dc4352082a676f2978ee446d">TILE_WIDTH</a>&#160;&#160;&#160;32</td></tr>
+<tr class="separator:a76108891dc4352082a676f2978ee446d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74b119c5bb38a697fc531b7b86fb0a54"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_8hpp.html#a74b119c5bb38a697fc531b7b86fb0a54">TILE_HEIGHT</a>&#160;&#160;&#160;<a class="el" href="_global_8hpp.html#a76108891dc4352082a676f2978ee446d">TILE_WIDTH</a></td></tr>
+<tr class="separator:a74b119c5bb38a697fc531b7b86fb0a54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abde23bb1a3c99cb0367c4fc05e71b3ab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_8hpp.html#abde23bb1a3c99cb0367c4fc05e71b3ab">NB_BLOC_WIDTH</a>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:abde23bb1a3c99cb0367c4fc05e71b3ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e5ae2c65c6177566771a9388241d0b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_8hpp.html#a1e5ae2c65c6177566771a9388241d0b5">NB_BLOC_HEIGHT</a>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:a1e5ae2c65c6177566771a9388241d0b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f6c5bdde8c69b8bed7bde025bbf6d78"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_8hpp.html#a1f6c5bdde8c69b8bed7bde025bbf6d78">BLOC_SIZE</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a1f6c5bdde8c69b8bed7bde025bbf6d78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cd109632a6dcccaa80b43561b1ab700"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_8hpp.html#a2cd109632a6dcccaa80b43561b1ab700">SCREEN_WIDTH</a>&#160;&#160;&#160;640</td></tr>
 <tr class="separator:a2cd109632a6dcccaa80b43561b1ab700"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6974d08a74da681b3957b2fead2608b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_8hpp.html#a6974d08a74da681b3957b2fead2608b8">SCREEN_HEIGHT</a>&#160;&#160;&#160;480</td></tr>
 <tr class="separator:a6974d08a74da681b3957b2fead2608b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a241aeeb764887ae5e3de58b98f04b16d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_8hpp.html#a241aeeb764887ae5e3de58b98f04b16d">WIDTH</a>&#160;&#160;&#160;640</td></tr>
+<tr class="memitem:a241aeeb764887ae5e3de58b98f04b16d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_8hpp.html#a241aeeb764887ae5e3de58b98f04b16d">WIDTH</a>&#160;&#160;&#160;<a class="el" href="_global_8hpp.html#a2cd109632a6dcccaa80b43561b1ab700">SCREEN_WIDTH</a>*5</td></tr>
 <tr class="separator:a241aeeb764887ae5e3de58b98f04b16d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed89bd71aee8be823e8a20ec4e093c1e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_8hpp.html#aed89bd71aee8be823e8a20ec4e093c1e">HEIGHT</a>&#160;&#160;&#160;480</td></tr>
+<tr class="memitem:aed89bd71aee8be823e8a20ec4e093c1e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_8hpp.html#aed89bd71aee8be823e8a20ec4e093c1e">HEIGHT</a>&#160;&#160;&#160;<a class="el" href="_global_8hpp.html#a6974d08a74da681b3957b2fead2608b8">SCREEN_HEIGHT</a>*5</td></tr>
 <tr class="separator:aed89bd71aee8be823e8a20ec4e093c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae45c14dc45579f50aa8a8b296bcd4e6e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_8hpp.html#ae45c14dc45579f50aa8a8b296bcd4e6e">BLOC_WIDTH</a>&#160;&#160;&#160;16</td></tr>
-<tr class="separator:ae45c14dc45579f50aa8a8b296bcd4e6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c1c0e688345ec4bd6dbc6243989d1b4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_8hpp.html#a8c1c0e688345ec4bd6dbc6243989d1b4">BLOC_HEIGHT</a>&#160;&#160;&#160;<a class="el" href="_global_8hpp.html#ae45c14dc45579f50aa8a8b296bcd4e6e">BLOC_WIDTH</a></td></tr>
-<tr class="separator:a8c1c0e688345ec4bd6dbc6243989d1b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a594cbe4eae7783b39a74340f489f8034"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_8hpp.html#a594cbe4eae7783b39a74340f489f8034">NB_TILE_WIDTH</a>&#160;&#160;&#160;((<a class="el" href="_global_8hpp.html#a241aeeb764887ae5e3de58b98f04b16d">WIDTH</a>)/(<a class="el" href="_global_8hpp.html#ae45c14dc45579f50aa8a8b296bcd4e6e">BLOC_WIDTH</a>))</td></tr>
+<tr class="memitem:a937ccc9fbf5ac8555c31859c6cfbd0fb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_8hpp.html#a937ccc9fbf5ac8555c31859c6cfbd0fb">NB_VISIBLE_TILE_WIDTH</a>&#160;&#160;&#160;(((<a class="el" href="_global_8hpp.html#a2cd109632a6dcccaa80b43561b1ab700">SCREEN_WIDTH</a>)/(<a class="el" href="_global_8hpp.html#a76108891dc4352082a676f2978ee446d">TILE_WIDTH</a>)) + 1)</td></tr>
+<tr class="separator:a937ccc9fbf5ac8555c31859c6cfbd0fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ad1b55a0a4c275304030f3ecd3c9c2b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_8hpp.html#a8ad1b55a0a4c275304030f3ecd3c9c2b">NB_VISIBLE_TILE_HEIGHT</a>&#160;&#160;&#160;(((<a class="el" href="_global_8hpp.html#a6974d08a74da681b3957b2fead2608b8">SCREEN_HEIGHT</a>)/(<a class="el" href="_global_8hpp.html#a74b119c5bb38a697fc531b7b86fb0a54">TILE_HEIGHT</a>)) + 1)</td></tr>
+<tr class="separator:a8ad1b55a0a4c275304030f3ecd3c9c2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a594cbe4eae7783b39a74340f489f8034"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_8hpp.html#a594cbe4eae7783b39a74340f489f8034">NB_TILE_WIDTH</a>&#160;&#160;&#160;((<a class="el" href="_global_8hpp.html#a241aeeb764887ae5e3de58b98f04b16d">WIDTH</a>)/(<a class="el" href="_global_8hpp.html#a76108891dc4352082a676f2978ee446d">TILE_WIDTH</a>))</td></tr>
 <tr class="separator:a594cbe4eae7783b39a74340f489f8034"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5ea8ea05e3c9438197b98ea8b1425d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_8hpp.html#ad5ea8ea05e3c9438197b98ea8b1425d7">NB_TILE_HEIGHT</a>&#160;&#160;&#160;((<a class="el" href="_global_8hpp.html#aed89bd71aee8be823e8a20ec4e093c1e">HEIGHT</a>)/(<a class="el" href="_global_8hpp.html#a8c1c0e688345ec4bd6dbc6243989d1b4">BLOC_HEIGHT</a>))</td></tr>
+<tr class="memitem:ad5ea8ea05e3c9438197b98ea8b1425d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_8hpp.html#ad5ea8ea05e3c9438197b98ea8b1425d7">NB_TILE_HEIGHT</a>&#160;&#160;&#160;((<a class="el" href="_global_8hpp.html#aed89bd71aee8be823e8a20ec4e093c1e">HEIGHT</a>)/(<a class="el" href="_global_8hpp.html#a74b119c5bb38a697fc531b7b86fb0a54">TILE_HEIGHT</a>))</td></tr>
 <tr class="separator:ad5ea8ea05e3c9438197b98ea8b1425d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57daea2b5f42af17f83e7e3a5240290a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_8hpp.html#a57daea2b5f42af17f83e7e3a5240290a">CHUNK_WIDTH</a>&#160;&#160;&#160;(<a class="el" href="_global_8hpp.html#a594cbe4eae7783b39a74340f489f8034">NB_TILE_WIDTH</a>/8)</td></tr>
+<tr class="separator:a57daea2b5f42af17f83e7e3a5240290a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a708996a6ab44089275abf1fc88d45cf8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_8hpp.html#a708996a6ab44089275abf1fc88d45cf8">CHUNK_HEIGHT</a>&#160;&#160;&#160;(<a class="el" href="_global_8hpp.html#ad5ea8ea05e3c9438197b98ea8b1425d7">NB_TILE_HEIGHT</a>/8)</td></tr>
+<tr class="separator:a708996a6ab44089275abf1fc88d45cf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa56a50952088317f9e2197fedb9a642a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_8hpp.html#aa56a50952088317f9e2197fedb9a642a">NB_CHUNK_WIDTH</a>&#160;&#160;&#160;((<a class="el" href="_global_8hpp.html#a594cbe4eae7783b39a74340f489f8034">NB_TILE_WIDTH</a>/<a class="el" href="_global_8hpp.html#a57daea2b5f42af17f83e7e3a5240290a">CHUNK_WIDTH</a>)+1)</td></tr>
+<tr class="separator:aa56a50952088317f9e2197fedb9a642a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee77fe0b8137d67589748ae6c599a761"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_8hpp.html#aee77fe0b8137d67589748ae6c599a761">NB_CHUNK_HEIGHT</a>&#160;&#160;&#160;((<a class="el" href="_global_8hpp.html#ad5ea8ea05e3c9438197b98ea8b1425d7">NB_TILE_HEIGHT</a>/<a class="el" href="_global_8hpp.html#a708996a6ab44089275abf1fc88d45cf8">CHUNK_HEIGHT</a>)+1)</td></tr>
+<tr class="separator:aee77fe0b8137d67589748ae6c599a761"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a178690597b3808ae5f0a7af000c24c9c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_8hpp.html#a178690597b3808ae5f0a7af000c24c9c">TILESET_WIDTH</a>&#160;&#160;&#160;8</td></tr>
+<tr class="separator:a178690597b3808ae5f0a7af000c24c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e344208f2b02794b58c806bfbf7051d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_8hpp.html#a9e344208f2b02794b58c806bfbf7051d">TILESET_HEIGHT</a>&#160;&#160;&#160;<a class="el" href="_global_8hpp.html#a178690597b3808ae5f0a7af000c24c9c">TILESET_WIDTH</a></td></tr>
+<tr class="separator:a9e344208f2b02794b58c806bfbf7051d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>All the macros and constante values. </p>
 
 <p>Definition in file <a class="el" href="_global_8hpp_source.html">Global.hpp</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a8c1c0e688345ec4bd6dbc6243989d1b4"></a>
+<a class="anchor" id="a1f6c5bdde8c69b8bed7bde025bbf6d78"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BLOC_HEIGHT&#160;&#160;&#160;<a class="el" href="_global_8hpp.html#ae45c14dc45579f50aa8a8b296bcd4e6e">BLOC_WIDTH</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_global_8hpp_source.html#l00020">20</a> of file <a class="el" href="_global_8hpp_source.html">Global.hpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ae45c14dc45579f50aa8a8b296bcd4e6e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BLOC_WIDTH&#160;&#160;&#160;16</td>
+          <td class="memname">#define BLOC_SIZE&#160;&#160;&#160;3</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="_global_8hpp_source.html#l00019">19</a> of file <a class="el" href="_global_8hpp_source.html">Global.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a708996a6ab44089275abf1fc88d45cf8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CHUNK_HEIGHT&#160;&#160;&#160;(<a class="el" href="_global_8hpp.html#ad5ea8ea05e3c9438197b98ea8b1425d7">NB_TILE_HEIGHT</a>/8)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_global_8hpp_source.html#l00036">36</a> of file <a class="el" href="_global_8hpp_source.html">Global.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a57daea2b5f42af17f83e7e3a5240290a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CHUNK_WIDTH&#160;&#160;&#160;(<a class="el" href="_global_8hpp.html#a594cbe4eae7783b39a74340f489f8034">NB_TILE_WIDTH</a>/8)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_global_8hpp_source.html#l00035">35</a> of file <a class="el" href="_global_8hpp_source.html">Global.hpp</a>.</p>
 
 </div>
 </div>
@@ -192,12 +227,12 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define HEIGHT&#160;&#160;&#160;480</td>
+          <td class="memname">#define HEIGHT&#160;&#160;&#160;<a class="el" href="_global_8hpp.html#a6974d08a74da681b3957b2fead2608b8">SCREEN_HEIGHT</a>*5</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_global_8hpp_source.html#l00017">17</a> of file <a class="el" href="_global_8hpp_source.html">Global.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_global_8hpp_source.html#l00026">26</a> of file <a class="el" href="_global_8hpp_source.html">Global.hpp</a>.</p>
 
 </div>
 </div>
@@ -215,17 +250,73 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a1e5ae2c65c6177566771a9388241d0b5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NB_BLOC_HEIGHT&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_global_8hpp_source.html#l00018">18</a> of file <a class="el" href="_global_8hpp_source.html">Global.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abde23bb1a3c99cb0367c4fc05e71b3ab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NB_BLOC_WIDTH&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_global_8hpp_source.html#l00017">17</a> of file <a class="el" href="_global_8hpp_source.html">Global.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aee77fe0b8137d67589748ae6c599a761"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NB_CHUNK_HEIGHT&#160;&#160;&#160;((<a class="el" href="_global_8hpp.html#ad5ea8ea05e3c9438197b98ea8b1425d7">NB_TILE_HEIGHT</a>/<a class="el" href="_global_8hpp.html#a708996a6ab44089275abf1fc88d45cf8">CHUNK_HEIGHT</a>)+1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_global_8hpp_source.html#l00039">39</a> of file <a class="el" href="_global_8hpp_source.html">Global.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa56a50952088317f9e2197fedb9a642a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NB_CHUNK_WIDTH&#160;&#160;&#160;((<a class="el" href="_global_8hpp.html#a594cbe4eae7783b39a74340f489f8034">NB_TILE_WIDTH</a>/<a class="el" href="_global_8hpp.html#a57daea2b5f42af17f83e7e3a5240290a">CHUNK_WIDTH</a>)+1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_global_8hpp_source.html#l00038">38</a> of file <a class="el" href="_global_8hpp_source.html">Global.hpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ad5ea8ea05e3c9438197b98ea8b1425d7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define NB_TILE_HEIGHT&#160;&#160;&#160;((<a class="el" href="_global_8hpp.html#aed89bd71aee8be823e8a20ec4e093c1e">HEIGHT</a>)/(<a class="el" href="_global_8hpp.html#a8c1c0e688345ec4bd6dbc6243989d1b4">BLOC_HEIGHT</a>))</td>
+          <td class="memname">#define NB_TILE_HEIGHT&#160;&#160;&#160;((<a class="el" href="_global_8hpp.html#aed89bd71aee8be823e8a20ec4e093c1e">HEIGHT</a>)/(<a class="el" href="_global_8hpp.html#a74b119c5bb38a697fc531b7b86fb0a54">TILE_HEIGHT</a>))</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_global_8hpp_source.html#l00023">23</a> of file <a class="el" href="_global_8hpp_source.html">Global.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_global_8hpp_source.html#l00032">32</a> of file <a class="el" href="_global_8hpp_source.html">Global.hpp</a>.</p>
 
 </div>
 </div>
@@ -234,12 +325,40 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define NB_TILE_WIDTH&#160;&#160;&#160;((<a class="el" href="_global_8hpp.html#a241aeeb764887ae5e3de58b98f04b16d">WIDTH</a>)/(<a class="el" href="_global_8hpp.html#ae45c14dc45579f50aa8a8b296bcd4e6e">BLOC_WIDTH</a>))</td>
+          <td class="memname">#define NB_TILE_WIDTH&#160;&#160;&#160;((<a class="el" href="_global_8hpp.html#a241aeeb764887ae5e3de58b98f04b16d">WIDTH</a>)/(<a class="el" href="_global_8hpp.html#a76108891dc4352082a676f2978ee446d">TILE_WIDTH</a>))</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_global_8hpp_source.html#l00022">22</a> of file <a class="el" href="_global_8hpp_source.html">Global.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_global_8hpp_source.html#l00031">31</a> of file <a class="el" href="_global_8hpp_source.html">Global.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8ad1b55a0a4c275304030f3ecd3c9c2b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NB_VISIBLE_TILE_HEIGHT&#160;&#160;&#160;(((<a class="el" href="_global_8hpp.html#a6974d08a74da681b3957b2fead2608b8">SCREEN_HEIGHT</a>)/(<a class="el" href="_global_8hpp.html#a74b119c5bb38a697fc531b7b86fb0a54">TILE_HEIGHT</a>)) + 1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_global_8hpp_source.html#l00029">29</a> of file <a class="el" href="_global_8hpp_source.html">Global.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a937ccc9fbf5ac8555c31859c6cfbd0fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NB_VISIBLE_TILE_WIDTH&#160;&#160;&#160;(((<a class="el" href="_global_8hpp.html#a2cd109632a6dcccaa80b43561b1ab700">SCREEN_WIDTH</a>)/(<a class="el" href="_global_8hpp.html#a76108891dc4352082a676f2978ee446d">TILE_WIDTH</a>)) + 1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_global_8hpp_source.html#l00028">28</a> of file <a class="el" href="_global_8hpp_source.html">Global.hpp</a>.</p>
 
 </div>
 </div>
@@ -253,7 +372,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_global_8hpp_source.html#l00014">14</a> of file <a class="el" href="_global_8hpp_source.html">Global.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_global_8hpp_source.html#l00023">23</a> of file <a class="el" href="_global_8hpp_source.html">Global.hpp</a>.</p>
 
 </div>
 </div>
@@ -267,7 +386,63 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="_global_8hpp_source.html#l00022">22</a> of file <a class="el" href="_global_8hpp_source.html">Global.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a74b119c5bb38a697fc531b7b86fb0a54"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TILE_HEIGHT&#160;&#160;&#160;<a class="el" href="_global_8hpp.html#a76108891dc4352082a676f2978ee446d">TILE_WIDTH</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_global_8hpp_source.html#l00014">14</a> of file <a class="el" href="_global_8hpp_source.html">Global.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a76108891dc4352082a676f2978ee446d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TILE_WIDTH&#160;&#160;&#160;32</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 <p>Definition at line <a class="el" href="_global_8hpp_source.html#l00013">13</a> of file <a class="el" href="_global_8hpp_source.html">Global.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9e344208f2b02794b58c806bfbf7051d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TILESET_HEIGHT&#160;&#160;&#160;<a class="el" href="_global_8hpp.html#a178690597b3808ae5f0a7af000c24c9c">TILESET_WIDTH</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_global_8hpp_source.html#l00043">43</a> of file <a class="el" href="_global_8hpp_source.html">Global.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a178690597b3808ae5f0a7af000c24c9c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TILESET_WIDTH&#160;&#160;&#160;8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_global_8hpp_source.html#l00042">42</a> of file <a class="el" href="_global_8hpp_source.html">Global.hpp</a>.</p>
 
 </div>
 </div>
@@ -276,12 +451,12 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define WIDTH&#160;&#160;&#160;640</td>
+          <td class="memname">#define WIDTH&#160;&#160;&#160;<a class="el" href="_global_8hpp.html#a2cd109632a6dcccaa80b43561b1ab700">SCREEN_WIDTH</a>*5</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_global_8hpp_source.html#l00016">16</a> of file <a class="el" href="_global_8hpp_source.html">Global.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_global_8hpp_source.html#l00025">25</a> of file <a class="el" href="_global_8hpp_source.html">Global.hpp</a>.</p>
 
 </div>
 </div>

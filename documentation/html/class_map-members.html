@@ -30,11 +30,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="duckAndColvert.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Minautorus
    </div>
-   <div id="projectbrief">A maze action adventure game</div>
   </td>
  </tr>
  </tbody>
@@ -49,6 +47,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -114,13 +113,16 @@ $(document).ready(function(){initNavTree('class_map.html','');});
 
 <p>This is the complete list of members for <a class="el" href="class_map.html">Map</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_map.html#a6028e1a5ee18c96342ba785e16779ab3">createVertexTile</a>(size_t i, size_t j, size_t w, size_t h, sf::Color color)</td><td class="entry"><a class="el" href="class_map.html">Map</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_map.html#af98fd76d6bb3b1a1b0fdd647b21a3e9b">collideWithView</a>(Chunk const *chunk)</td><td class="entry"><a class="el" href="class_map.html">Map</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_map.html#a3ccb4139e9caf118dffb3f2ba8bb6361">display</a>(sf::RenderWindow *win)</td><td class="entry"><a class="el" href="class_map.html">Map</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_map.html#a89da5c5a8b6f968dcacd03ff4014f037">initTiles</a>()</td><td class="entry"><a class="el" href="class_map.html">Map</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_map.html#a4b89a8f019a03d06723dd50e339affcc">m_tiles</a></td><td class="entry"><a class="el" href="class_map.html">Map</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_map.html#a0a3a2e550cb33be3df31f769bc9b5262">m_vertex_array</a></td><td class="entry"><a class="el" href="class_map.html">Map</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_map.html#a0f5ad0fd4563497b4214038cbca8b582">Map</a>()</td><td class="entry"><a class="el" href="class_map.html">Map</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_map.html#aa403fbe09394ccf39747588f5168e3b2">~Map</a>()</td><td class="entry"><a class="el" href="class_map.html">Map</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_map.html#af4746a30f5063b50862123cc46873218">exists</a>(size_t i, size_t j)</td><td class="entry"><a class="el" href="class_map.html">Map</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_map.html#ae9376e450832ea3ce1c893f4ec1edc40">get</a>(size_t i, size_t j)</td><td class="entry"><a class="el" href="class_map.html">Map</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_map.html#ae23e53a1b9d5c7d9d1aec9795a28b0ee">getTexture</a>()</td><td class="entry"><a class="el" href="class_map.html">Map</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_map.html#a256268fe246bf37d8231bdb61a3bda92">isAWall</a>(size_t i, size_t j)</td><td class="entry"><a class="el" href="class_map.html">Map</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_map.html#a54aa404e7aef41735ebf5114eab4df3b">isInTheScreen</a>(Tile const *t)</td><td class="entry"><a class="el" href="class_map.html">Map</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_map.html#a1fb26cd5f427038a81a03801aed05299">m_view</a></td><td class="entry"><a class="el" href="class_map.html">Map</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_map.html#a0b78ab0d7b9358eab962ccfa83214167">Map</a>(sf::View *view, sf::Texture *tex)</td><td class="entry"><a class="el" href="class_map.html">Map</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_map.html#aa403fbe09394ccf39747588f5168e3b2">~Map</a>()</td><td class="entry"><a class="el" href="class_map.html">Map</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

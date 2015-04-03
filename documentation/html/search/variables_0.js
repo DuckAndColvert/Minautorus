@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['i',['i',['../struct_tile.html#a0179f980413caf8517c9ce7e8eb9e113',1,'Tile']]]
+  ['border',['border',['../struct_maze_generator_1_1_cell.html#a0e3c394cfb937b8f4e5305e1aba6f360',1,'MazeGenerator::Cell']]]
 ];

@@ -30,11 +30,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="duckAndColvert.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Minautorus
    </div>
-   <div id="projectbrief">A maze action adventure game</div>
   </td>
  </tr>
  </tbody>
@@ -49,6 +47,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -109,8 +108,7 @@ $(document).ready(function(){initNavTree('class_map.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="class_map-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Map Class Reference</div>  </div>
@@ -124,50 +122,66 @@ $(document).ready(function(){initNavTree('class_map.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0f5ad0fd4563497b4214038cbca8b582"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_map.html#a0f5ad0fd4563497b4214038cbca8b582">Map</a> ()</td></tr>
-<tr class="separator:a0f5ad0fd4563497b4214038cbca8b582"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b78ab0d7b9358eab962ccfa83214167"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_map.html#a0b78ab0d7b9358eab962ccfa83214167">Map</a> (sf::View *view, sf::Texture *tex)</td></tr>
+<tr class="separator:a0b78ab0d7b9358eab962ccfa83214167"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa403fbe09394ccf39747588f5168e3b2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_map.html#aa403fbe09394ccf39747588f5168e3b2">~Map</a> ()</td></tr>
 <tr class="separator:aa403fbe09394ccf39747588f5168e3b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ccb4139e9caf118dffb3f2ba8bb6361"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_map.html#a3ccb4139e9caf118dffb3f2ba8bb6361">display</a> (sf::RenderWindow *win)</td></tr>
 <tr class="memdesc:a3ccb4139e9caf118dffb3f2ba8bb6361"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display the map on a RenderWindow.  <a href="#a3ccb4139e9caf118dffb3f2ba8bb6361">More...</a><br /></td></tr>
 <tr class="separator:a3ccb4139e9caf118dffb3f2ba8bb6361"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a256268fe246bf37d8231bdb61a3bda92"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_map.html#a256268fe246bf37d8231bdb61a3bda92">isAWall</a> (size_t i, size_t j)</td></tr>
+<tr class="memdesc:a256268fe246bf37d8231bdb61a3bda92"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if the tile at (i,j) is a wall.  <a href="#a256268fe246bf37d8231bdb61a3bda92">More...</a><br /></td></tr>
+<tr class="separator:a256268fe246bf37d8231bdb61a3bda92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54aa404e7aef41735ebf5114eab4df3b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_map.html#a54aa404e7aef41735ebf5114eab4df3b">isInTheScreen</a> (<a class="el" href="struct_tile.html">Tile</a> const *t)</td></tr>
+<tr class="memdesc:a54aa404e7aef41735ebf5114eab4df3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Look at a <a class="el" href="struct_tile.html">Tile</a> and say if it is int the visible area of the map.  <a href="#a54aa404e7aef41735ebf5114eab4df3b">More...</a><br /></td></tr>
+<tr class="separator:a54aa404e7aef41735ebf5114eab4df3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4746a30f5063b50862123cc46873218"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_map.html#af4746a30f5063b50862123cc46873218">exists</a> (size_t i, size_t j)</td></tr>
+<tr class="memdesc:af4746a30f5063b50862123cc46873218"><td class="mdescLeft">&#160;</td><td class="mdescRight">Say if a tile at (i,j) coordinate exists.  <a href="#af4746a30f5063b50862123cc46873218">More...</a><br /></td></tr>
+<tr class="separator:af4746a30f5063b50862123cc46873218"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af98fd76d6bb3b1a1b0fdd647b21a3e9b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_map.html#af98fd76d6bb3b1a1b0fdd647b21a3e9b">collideWithView</a> (<a class="el" href="class_chunk.html">Chunk</a> const *chunk)</td></tr>
+<tr class="memdesc:af98fd76d6bb3b1a1b0fdd647b21a3e9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Say if a chunk is visible in the view.  <a href="#af98fd76d6bb3b1a1b0fdd647b21a3e9b">More...</a><br /></td></tr>
+<tr class="separator:af98fd76d6bb3b1a1b0fdd647b21a3e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae23e53a1b9d5c7d9d1aec9795a28b0ee"><td class="memItemLeft" align="right" valign="top">sf::Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_map.html#ae23e53a1b9d5c7d9d1aec9795a28b0ee">getTexture</a> ()</td></tr>
+<tr class="separator:ae23e53a1b9d5c7d9d1aec9795a28b0ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9376e450832ea3ce1c893f4ec1edc40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_tile.html">Tile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_map.html#ae9376e450832ea3ce1c893f4ec1edc40">get</a> (size_t i, size_t j)</td></tr>
+<tr class="separator:ae9376e450832ea3ce1c893f4ec1edc40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:a89da5c5a8b6f968dcacd03ff4014f037"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_map.html#a89da5c5a8b6f968dcacd03ff4014f037">initTiles</a> ()</td></tr>
-<tr class="memdesc:a89da5c5a8b6f968dcacd03ff4014f037"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the tiles of the map.  <a href="#a89da5c5a8b6f968dcacd03ff4014f037">More...</a><br /></td></tr>
-<tr class="separator:a89da5c5a8b6f968dcacd03ff4014f037"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6028e1a5ee18c96342ba785e16779ab3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_map.html#a6028e1a5ee18c96342ba785e16779ab3">createVertexTile</a> (size_t i, size_t j, size_t w, size_t h, sf::Color color)</td></tr>
-<tr class="memdesc:a6028e1a5ee18c96342ba785e16779ab3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a vertex in the vertex array.  <a href="#a6028e1a5ee18c96342ba785e16779ab3">More...</a><br /></td></tr>
-<tr class="separator:a6028e1a5ee18c96342ba785e16779ab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a4b89a8f019a03d06723dd50e339affcc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_tile.html">Tile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_map.html#a4b89a8f019a03d06723dd50e339affcc">m_tiles</a> [<a class="el" href="_global_8hpp.html#ad5ea8ea05e3c9438197b98ea8b1425d7">NB_TILE_HEIGHT</a>][<a class="el" href="_global_8hpp.html#a594cbe4eae7783b39a74340f489f8034">NB_TILE_WIDTH</a>]</td></tr>
-<tr class="separator:a4b89a8f019a03d06723dd50e339affcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a3a2e550cb33be3df31f769bc9b5262"><td class="memItemLeft" align="right" valign="top">sf::VertexArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_map.html#a0a3a2e550cb33be3df31f769bc9b5262">m_vertex_array</a></td></tr>
-<tr class="separator:a0a3a2e550cb33be3df31f769bc9b5262"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a1fb26cd5f427038a81a03801aed05299"><td class="memItemLeft" align="right" valign="top">sf::View *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_map.html#a1fb26cd5f427038a81a03801aed05299">m_view</a></td></tr>
+<tr class="separator:a1fb26cd5f427038a81a03801aed05299"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_map.html" title="Map generation and displaying. ">Map</a> generation and displaying. </p>
 <dl class="section author"><dt>Author</dt><dd>bog </dd></dl>
 
-<p>Definition at line <a class="el" href="_map_8hpp_source.html#l00028">28</a> of file <a class="el" href="_map_8hpp_source.html">Map.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_map_8hpp_source.html#l00032">32</a> of file <a class="el" href="_map_8hpp_source.html">Map.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a0f5ad0fd4563497b4214038cbca8b582"></a>
+<a class="anchor" id="a0b78ab0d7b9358eab962ccfa83214167"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">Map::Map </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">sf::View *&#160;</td>
+          <td class="paramname"><em>view</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">sf::Texture *&#160;</td>
+          <td class="paramname"><em>tex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_map_8cpp_source.html#l00004">4</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_map_8cpp_source.html#l00008">8</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
 
 </div>
 </div>
@@ -184,75 +198,34 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_map_8cpp_source.html#l00059">59</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_map_8cpp_source.html#l00196">196</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a6028e1a5ee18c96342ba785e16779ab3"></a>
+<a class="anchor" id="af98fd76d6bb3b1a1b0fdd647b21a3e9b"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Map::createVertexTile </td>
+          <td class="memname">bool Map::collideWithView </td>
           <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>i</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="class_chunk.html">Chunk</a> const *&#160;</td>
+          <td class="paramname"><em>chunk</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>j</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>w</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>h</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">sf::Color&#160;</td>
-          <td class="paramname"><em>color</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Create a vertex in the vertex array. </p>
+<p>Say if a chunk is visible in the view. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">i</td><td>the coordinate of the vertex to create (line) </td></tr>
-    <tr><td class="paramname">j</td><td>the coordinate of the vertex to create (column) </td></tr>
-    <tr><td class="paramname">w</td><td>the width of the vertex to create </td></tr>
-    <tr><td class="paramname">h</td><td>the height of the vertex to create </td></tr>
-    <tr><td class="paramname">color</td><td>color of the vertex to create</td></tr>
+    <tr><td class="paramname">chunk</td><td>chunk to test  </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section author"><dt>Author</dt><dd>bog </dd></dl>
 
-<p>Definition at line <a class="el" href="_map_8cpp_source.html#l00035">35</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_map_8cpp_source.html#l00167">167</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
 
 </div>
 </div>
@@ -273,80 +246,173 @@ Private Attributes</h2></td></tr>
 <p>Display the map on a RenderWindow. </p>
 <dl class="section author"><dt>Author</dt><dd>bog </dd></dl>
 
-<p>Definition at line <a class="el" href="_map_8cpp_source.html#l00011">11</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_map_8cpp_source.html#l00184">184</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a89da5c5a8b6f968dcacd03ff4014f037"></a>
+<a class="anchor" id="af4746a30f5063b50862123cc46873218"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Map::initTiles </td>
+          <td class="memname">bool Map::exists </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Say if a tile at (i,j) coordinate exists. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>i coordinate of the tile </td></tr>
+    <tr><td class="paramname">j</td><td>j coordinate of the tile </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the tile is on the map </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>bog </dd></dl>
+
+<p>Definition at line <a class="el" href="_map_8cpp_source.html#l00162">162</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae9376e450832ea3ce1c893f4ec1edc40"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_tile.html">Tile</a> * Map::get </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_map_8cpp_source.html#l00018">18</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae23e53a1b9d5c7d9d1aec9795a28b0ee"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture * Map::getTexture </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Initialize the tiles of the map. </p>
+<p>Definition at line <a class="el" href="_map_8cpp_source.html#l00013">13</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a256268fe246bf37d8231bdb61a3bda92"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Map::isAWall </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>True if the tile at (i,j) is a wall. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>i coordinate of the tile </td></tr>
+    <tr><td class="paramname">j</td><td>j coordinate of the tile </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the tile (i,j) type is WALL_XXX </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>bog </dd></dl>
 
-<p>Definition at line <a class="el" href="_map_8cpp_source.html#l00017">17</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_map_8cpp_source.html#l00139">139</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a54aa404e7aef41735ebf5114eab4df3b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Map::isInTheScreen </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_tile.html">Tile</a> const *&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Look at a <a class="el" href="struct_tile.html">Tile</a> and say if it is int the visible area of the map. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>the tile to look at </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the tile is on the visible area of the map </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>bog </dd></dl>
+
+<p>Definition at line <a class="el" href="_map_8cpp_source.html#l00154">154</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a4b89a8f019a03d06723dd50e339affcc"></a>
+<a class="anchor" id="a1fb26cd5f427038a81a03801aed05299"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_tile.html">Tile</a>* Map::m_tiles[<a class="el" href="_global_8hpp.html#ad5ea8ea05e3c9438197b98ea8b1425d7">NB_TILE_HEIGHT</a>][<a class="el" href="_global_8hpp.html#a594cbe4eae7783b39a74340f489f8034">NB_TILE_WIDTH</a>]</td>
+          <td class="memname">sf::View* Map::m_view</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_map_8hpp_source.html#l00043">43</a> of file <a class="el" href="_map_8hpp_source.html">Map.hpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a0a3a2e550cb33be3df31f769bc9b5262"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">sf::VertexArray Map::m_vertex_array</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_map_8hpp_source.html#l00044">44</a> of file <a class="el" href="_map_8hpp_source.html">Map.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_map_8hpp_source.html#l00085">85</a> of file <a class="el" href="_map_8hpp_source.html">Map.hpp</a>.</p>
 
 </div>
 </div>

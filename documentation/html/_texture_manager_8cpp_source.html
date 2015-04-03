@@ -30,11 +30,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="duckAndColvert.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Minautorus
    </div>
-   <div id="projectbrief">A maze action adventure game</div>
   </td>
  </tr>
  </tbody>
@@ -49,6 +47,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -110,48 +109,58 @@ $(document).ready(function(){initNavTree('_texture_manager_8cpp_source.html','')
 </div><!--header-->
 <div class="contents">
 <a href="_texture_manager_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_texture_manager_8hpp.html">TextureManager.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="class_texture_manager.html#ad76abb178b37cedf4514eb0154349935">    3</a></span>&#160;<a class="code" href="class_texture_manager.html#ad76abb178b37cedf4514eb0154349935">TextureManager::TextureManager</a>()</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;}</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;cassert&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="class_texture_manager.html#ad76abb178b37cedf4514eb0154349935">    4</a></span>&#160;<a class="code" href="class_texture_manager.html#ad76abb178b37cedf4514eb0154349935">TextureManager::TextureManager</a>()</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;}</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_texture_manager.html#a642388237fffd21d24544d22baec7221">    9</a></span>&#160;sf::Texture* <a class="code" href="class_texture_manager.html#a642388237fffd21d24544d22baec7221">TextureManager::get</a>(std::string name)</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_texture_manager.html#ad36d33a750ab91f1ca4feed701eed23e">m_textures</a>[name];</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_texture_manager.html#a642388237fffd21d24544d22baec7221">   10</a></span>&#160;sf::Texture* <a class="code" href="class_texture_manager.html#a642388237fffd21d24544d22baec7221">TextureManager::get</a>(std::string name)</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keywordflow">return</span> m_textures[name];</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_texture_manager.html#a1af3f85f4836e319178a889ecd9afd8b">   15</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_texture_manager.html#a1af3f85f4836e319178a889ecd9afd8b">TextureManager::load</a>()</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  std::string data_path = <a class="code" href="_global_8hpp.html#ac26a668e32beeb7eae8b6e4adbe5d1e1">DATA_PATH</a>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  std::string img_path = data_path + <a class="code" href="_global_8hpp.html#ac6acca5b567b29950c4197ebacadf6dc">IMG_PATH</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="class_texture_manager.html#a1af3f85f4836e319178a889ecd9afd8b">load</a>(<span class="stringliteral">&quot;error&quot;</span>, img_path + <span class="stringliteral">&quot;error.png&quot;</span>);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="class_texture_manager.html#a1af3f85f4836e319178a889ecd9afd8b">load</a>(<span class="stringliteral">&quot;ground&quot;</span>, img_path + <span class="stringliteral">&quot;ground.png&quot;</span>);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_texture_manager.html#af48a8c8be4123393d11ac269f7fcea00">   25</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_texture_manager.html#a1af3f85f4836e319178a889ecd9afd8b">TextureManager::load</a>(std::string name, std::string path)</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  sf::Texture *new_texture = <span class="keyword">new</span> sf::Texture;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  new_texture-&gt;loadFromFile(path);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="class_texture_manager.html#ad36d33a750ab91f1ca4feed701eed23e">m_textures</a>[name] = new_texture;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_texture_manager.html#a001d6d74674961db79987e3222682576">   33</a></span>&#160;<a class="code" href="class_texture_manager.html#a001d6d74674961db79987e3222682576">TextureManager::~TextureManager</a>()</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="class_texture_manager.html#ad36d33a750ab91f1ca4feed701eed23e">m_textures</a>.clear();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_texture_manager.html#a1af3f85f4836e319178a889ecd9afd8b">   16</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_texture_manager.html#a1af3f85f4836e319178a889ecd9afd8b">TextureManager::load</a>()</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  std::string data_path = <a class="code" href="_global_8hpp.html#ac26a668e32beeb7eae8b6e4adbe5d1e1">DATA_PATH</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  std::string img_path = data_path + <a class="code" href="_global_8hpp.html#ac6acca5b567b29950c4197ebacadf6dc">IMG_PATH</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="comment">/* textures loading */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="class_texture_manager.html#a1af3f85f4836e319178a889ecd9afd8b">load</a>(<span class="stringliteral">&quot;error&quot;</span>,img_path + <span class="stringliteral">&quot;error.png&quot;</span>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="class_texture_manager.html#a1af3f85f4836e319178a889ecd9afd8b">load</a>(<span class="stringliteral">&quot;ground&quot;</span>, img_path + <span class="stringliteral">&quot;ground.png&quot;</span>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="class_texture_manager.html#a1af3f85f4836e319178a889ecd9afd8b">load</a>(<span class="stringliteral">&quot;tileset&quot;</span>, img_path + <span class="stringliteral">&quot;tileset.png&quot;</span>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="comment">/**********************************/</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_texture_manager.html#a1af3f85f4836e319178a889ecd9afd8b">TextureManager::load</a>(std::string name, std::string path)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  sf::Texture *new_texture = <span class="keyword">new</span> sf::Texture;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  new_texture-&gt;loadFromFile(path);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  m_textures[name] = new_texture;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_texture_manager.html#a001d6d74674961db79987e3222682576">   37</a></span>&#160;<a class="code" href="class_texture_manager.html#a001d6d74674961db79987e3222682576">TextureManager::~TextureManager</a>()</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  std::unordered_map&lt;std::string, sf::Texture*&gt;::iterator it;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordflow">for</span>( it = m_textures.begin(); it != m_textures.end(); it++ )</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      <span class="keyword">delete</span> (*it).second;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  m_textures.clear();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 <div class="ttc" id="_global_8hpp_html_ac26a668e32beeb7eae8b6e4adbe5d1e1"><div class="ttname"><a href="_global_8hpp.html#ac26a668e32beeb7eae8b6e4adbe5d1e1">DATA_PATH</a></div><div class="ttdeci">#define DATA_PATH</div><div class="ttdef"><b>Definition:</b> <a href="_global_8hpp_source.html#l00010">Global.hpp:10</a></div></div>
-<div class="ttc" id="class_texture_manager_html_a001d6d74674961db79987e3222682576"><div class="ttname"><a href="class_texture_manager.html#a001d6d74674961db79987e3222682576">TextureManager::~TextureManager</a></div><div class="ttdeci">~TextureManager()</div><div class="ttdef"><b>Definition:</b> <a href="_texture_manager_8cpp_source.html#l00033">TextureManager.cpp:33</a></div></div>
-<div class="ttc" id="class_texture_manager_html_a642388237fffd21d24544d22baec7221"><div class="ttname"><a href="class_texture_manager.html#a642388237fffd21d24544d22baec7221">TextureManager::get</a></div><div class="ttdeci">sf::Texture * get(std::string name)</div><div class="ttdef"><b>Definition:</b> <a href="_texture_manager_8cpp_source.html#l00009">TextureManager.cpp:9</a></div></div>
-<div class="ttc" id="class_texture_manager_html_a1af3f85f4836e319178a889ecd9afd8b"><div class="ttname"><a href="class_texture_manager.html#a1af3f85f4836e319178a889ecd9afd8b">TextureManager::load</a></div><div class="ttdeci">void load()</div><div class="ttdoc">Load all the textures required by the game. </div><div class="ttdef"><b>Definition:</b> <a href="_texture_manager_8cpp_source.html#l00015">TextureManager.cpp:15</a></div></div>
+<div class="ttc" id="class_texture_manager_html_a001d6d74674961db79987e3222682576"><div class="ttname"><a href="class_texture_manager.html#a001d6d74674961db79987e3222682576">TextureManager::~TextureManager</a></div><div class="ttdeci">~TextureManager()</div><div class="ttdef"><b>Definition:</b> <a href="_texture_manager_8cpp_source.html#l00037">TextureManager.cpp:37</a></div></div>
+<div class="ttc" id="class_texture_manager_html_a642388237fffd21d24544d22baec7221"><div class="ttname"><a href="class_texture_manager.html#a642388237fffd21d24544d22baec7221">TextureManager::get</a></div><div class="ttdeci">sf::Texture * get(std::string name)</div><div class="ttdef"><b>Definition:</b> <a href="_texture_manager_8cpp_source.html#l00010">TextureManager.cpp:10</a></div></div>
+<div class="ttc" id="class_texture_manager_html_a1af3f85f4836e319178a889ecd9afd8b"><div class="ttname"><a href="class_texture_manager.html#a1af3f85f4836e319178a889ecd9afd8b">TextureManager::load</a></div><div class="ttdeci">void load()</div><div class="ttdoc">Load all the textures required by the game. </div><div class="ttdef"><b>Definition:</b> <a href="_texture_manager_8cpp_source.html#l00016">TextureManager.cpp:16</a></div></div>
 <div class="ttc" id="_texture_manager_8hpp_html"><div class="ttname"><a href="_texture_manager_8hpp.html">TextureManager.hpp</a></div></div>
-<div class="ttc" id="class_texture_manager_html_ad76abb178b37cedf4514eb0154349935"><div class="ttname"><a href="class_texture_manager.html#ad76abb178b37cedf4514eb0154349935">TextureManager::TextureManager</a></div><div class="ttdeci">TextureManager()</div><div class="ttdef"><b>Definition:</b> <a href="_texture_manager_8cpp_source.html#l00003">TextureManager.cpp:3</a></div></div>
-<div class="ttc" id="class_texture_manager_html_ad36d33a750ab91f1ca4feed701eed23e"><div class="ttname"><a href="class_texture_manager.html#ad36d33a750ab91f1ca4feed701eed23e">TextureManager::m_textures</a></div><div class="ttdeci">std::unordered_map&lt; std::string, sf::Texture * &gt; m_textures</div><div class="ttdef"><b>Definition:</b> <a href="_texture_manager_8hpp_source.html#l00049">TextureManager.hpp:49</a></div></div>
+<div class="ttc" id="class_texture_manager_html_ad76abb178b37cedf4514eb0154349935"><div class="ttname"><a href="class_texture_manager.html#ad76abb178b37cedf4514eb0154349935">TextureManager::TextureManager</a></div><div class="ttdeci">TextureManager()</div><div class="ttdef"><b>Definition:</b> <a href="_texture_manager_8cpp_source.html#l00004">TextureManager.cpp:4</a></div></div>
 <div class="ttc" id="_global_8hpp_html_ac6acca5b567b29950c4197ebacadf6dc"><div class="ttname"><a href="_global_8hpp.html#ac6acca5b567b29950c4197ebacadf6dc">IMG_PATH</a></div><div class="ttdeci">#define IMG_PATH</div><div class="ttdef"><b>Definition:</b> <a href="_global_8hpp_source.html#l00011">Global.hpp:11</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

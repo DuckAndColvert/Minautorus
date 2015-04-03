@@ -30,11 +30,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="duckAndColvert.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Minautorus
    </div>
-   <div id="projectbrief">A maze action adventure game</div>
   </td>
  </tr>
  </tbody>
@@ -49,6 +47,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -110,93 +109,260 @@ $(document).ready(function(){initNavTree('_map_8cpp_source.html','');});
 </div><!--header-->
 <div class="contents">
 <a href="_map_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_map_8hpp.html">Map.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="class_map.html#a0f5ad0fd4563497b4214038cbca8b582">    4</a></span>&#160;<a class="code" href="class_map.html#a0f5ad0fd4563497b4214038cbca8b582">Map::Map</a>()</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  <a class="code" href="class_map.html#a0a3a2e550cb33be3df31f769bc9b5262">m_vertex_array</a> = sf::VertexArray(sf::Quads, <a class="code" href="_global_8hpp.html#ad5ea8ea05e3c9438197b98ea8b1425d7">NB_TILE_HEIGHT</a> * <a class="code" href="_global_8hpp.html#a594cbe4eae7783b39a74340f489f8034">NB_TILE_WIDTH</a> * 4);</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <a class="code" href="class_map.html#a89da5c5a8b6f968dcacd03ff4014f037">initTiles</a>();</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;}</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_map.html#a3ccb4139e9caf118dffb3f2ba8bb6361">   11</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_map.html#a3ccb4139e9caf118dffb3f2ba8bb6361">Map::display</a>(sf::RenderWindow *win)</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  win-&gt;draw(<a class="code" href="class_map.html#a0a3a2e550cb33be3df31f769bc9b5262">m_vertex_array</a>);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_map.html#a89da5c5a8b6f968dcacd03ff4014f037">   17</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_map.html#a89da5c5a8b6f968dcacd03ff4014f037">Map::initTiles</a>()</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i=0; i &lt; <a class="code" href="_global_8hpp.html#ad5ea8ea05e3c9438197b98ea8b1425d7">NB_TILE_HEIGHT</a>; i++)</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> j=0; j &lt; <a class="code" href="_global_8hpp.html#a594cbe4eae7783b39a74340f489f8034">NB_TILE_WIDTH</a>; j++)</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="class_map.html#a4b89a8f019a03d06723dd50e339affcc">m_tiles</a>[i][j] = <span class="keyword">new</span> <a class="code" href="struct_tile.html">Tile</a>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="class_map.html#a4b89a8f019a03d06723dd50e339affcc">m_tiles</a>[i][j]-&gt;<a class="code" href="struct_tile.html#a0179f980413caf8517c9ce7e8eb9e113">i</a> = i;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="class_map.html#a4b89a8f019a03d06723dd50e339affcc">m_tiles</a>[i][j]-&gt;<a class="code" href="struct_tile.html#a50e1154d1067f50c634818c10f65af27">j</a> = j;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="class_map.html#a4b89a8f019a03d06723dd50e339affcc">m_tiles</a>[i][j]-&gt;<a class="code" href="struct_tile.html#ac50c68f897cd0d40f5fc85a1faba68af">obstacle</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="class_map.html#a4b89a8f019a03d06723dd50e339affcc">m_tiles</a>[i][j]-&gt;<a class="code" href="struct_tile.html#a86d32444511cf5bdd370330d7d642036">type</a> = <a class="code" href="_map_8hpp.html#ac9e486ec80ccfdb28a4f4837d419c9f1a77353523aa43282a05d23c037e67bbda">GROUND</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="class_map.html#a6028e1a5ee18c96342ba785e16779ab3">createVertexTile</a>(i, j, <a class="code" href="_global_8hpp.html#ae45c14dc45579f50aa8a8b296bcd4e6e">BLOC_WIDTH</a>, <a class="code" href="_global_8hpp.html#a8c1c0e688345ec4bd6dbc6243989d1b4">BLOC_HEIGHT</a>, sf::Color::Black);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_map.html#a6028e1a5ee18c96342ba785e16779ab3">   35</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_map.html#a6028e1a5ee18c96342ba785e16779ab3">Map::createVertexTile</a>(<span class="keywordtype">size_t</span> i, <span class="keywordtype">size_t</span> j,<span class="keywordtype">size_t</span> w,<span class="keywordtype">size_t</span> h, sf::Color color)</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="comment">//real coordinate in the windows</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordtype">size_t</span> I = i * <a class="code" href="_global_8hpp.html#a8c1c0e688345ec4bd6dbc6243989d1b4">BLOC_HEIGHT</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">size_t</span> J = j * <a class="code" href="_global_8hpp.html#ae45c14dc45579f50aa8a8b296bcd4e6e">BLOC_WIDTH</a>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="comment">//get a pointer on the vertex at the coord (i,j)</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  sf::Vertex* tile = &amp;<a class="code" href="class_map.html#a0a3a2e550cb33be3df31f769bc9b5262">m_vertex_array</a>[ (i * <a class="code" href="_global_8hpp.html#a594cbe4eae7783b39a74340f489f8034">NB_TILE_WIDTH</a> + j) * 4 ];</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  tile[0].position = sf::Vector2f(J,I);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  tile[1].position = sf::Vector2f(J + w, I);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  tile[2].position = sf::Vector2f(J + w, I + h);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  tile[3].position = sf::Vector2f(J, I + h);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">//TODO Texture</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  tile[0].color = color;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  tile[1].color = color;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  tile[2].color = color;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  tile[3].color = color;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="class_map.html#aa403fbe09394ccf39747588f5168e3b2">   59</a></span>&#160;<a class="code" href="class_map.html#aa403fbe09394ccf39747588f5168e3b2">Map::~Map</a>()</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="comment">//delete Tiles</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i=0; i &lt; <a class="code" href="_global_8hpp.html#ad5ea8ea05e3c9438197b98ea8b1425d7">NB_TILE_HEIGHT</a>; i++)</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_maze_8hpp.html">Maze.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;cassert&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_core_8hpp.html">Core.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_chunk_8hpp.html">Chunk.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_texture_manager_8hpp.html">TextureManager.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_map.html#a0b78ab0d7b9358eab962ccfa83214167">    8</a></span>&#160;<a class="code" href="class_map.html#a0b78ab0d7b9358eab962ccfa83214167">Map::Map</a>(sf::View *view, sf::Texture* tex): m_view(view), m_texture(tex)</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  initTiles();</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_map.html#ae23e53a1b9d5c7d9d1aec9795a28b0ee">   13</a></span>&#160;sf::Texture* <a class="code" href="class_map.html#ae23e53a1b9d5c7d9d1aec9795a28b0ee">Map::getTexture</a>()</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordflow">return</span> m_texture;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_map.html#ae9376e450832ea3ce1c893f4ec1edc40">   18</a></span>&#160;<a class="code" href="struct_tile.html">Tile</a>* <a class="code" href="class_map.html#ae9376e450832ea3ce1c893f4ec1edc40">Map::get</a>(<span class="keywordtype">size_t</span> i, <span class="keywordtype">size_t</span> j)</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  assert(i&gt;=0);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  assert(j&gt;=0);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  assert( i &lt; <a class="code" href="_global_8hpp.html#ad5ea8ea05e3c9438197b98ea8b1425d7">NB_TILE_HEIGHT</a> );</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  assert( j &lt; <a class="code" href="_global_8hpp.html#a594cbe4eae7783b39a74340f489f8034">NB_TILE_WIDTH</a> );</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordflow">return</span> m_tiles[i][j];</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> Map::initTiles()</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="comment">/* init Tiles */</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i=0; i &lt; <a class="code" href="_global_8hpp.html#ad5ea8ea05e3c9438197b98ea8b1425d7">NB_TILE_HEIGHT</a>; i++)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> j=0; j &lt; <a class="code" href="_global_8hpp.html#a594cbe4eae7783b39a74340f489f8034">NB_TILE_WIDTH</a>; j++)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        m_tiles[i][j] = <span class="keyword">new</span> <a class="code" href="struct_tile.html">Tile</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        m_tiles[i][j]-&gt;<a class="code" href="struct_tile.html#a0179f980413caf8517c9ce7e8eb9e113">i</a> = i;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        m_tiles[i][j]-&gt;<a class="code" href="struct_tile.html#a50e1154d1067f50c634818c10f65af27">j</a> = j;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        m_tiles[i][j]-&gt;<a class="code" href="struct_tile.html#ac50c68f897cd0d40f5fc85a1faba68af">obstacle</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        m_tiles[i][j]-&gt;<a class="code" href="struct_tile.html#a86d32444511cf5bdd370330d7d642036">type</a> = <a class="code" href="_map_8hpp.html#ac9e486ec80ccfdb28a4f4837d419c9f1ac157bdf0b85a40d2619cbc8bc1ae5fe2">NONE</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="comment">/* place a maze */</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  placeMaze(0, 0, <a class="code" href="_global_8hpp.html#abde23bb1a3c99cb0367c4fc05e71b3ab">NB_BLOC_WIDTH</a>, <a class="code" href="_global_8hpp.html#a1e5ae2c65c6177566771a9388241d0b5">NB_BLOC_HEIGHT</a>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">/* init chunks */</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i=0; i &lt; <a class="code" href="_global_8hpp.html#aee77fe0b8137d67589748ae6c599a761">NB_CHUNK_HEIGHT</a>; i++)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> j=0; j &lt; <a class="code" href="_global_8hpp.html#aa56a50952088317f9e2197fedb9a642a">NB_CHUNK_WIDTH</a>; j++)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        m_chunks.push_back( <span class="keyword">new</span> <a class="code" href="class_chunk.html">Chunk</a>(<span class="keyword">this</span>,i*<a class="code" href="_global_8hpp.html#a708996a6ab44089275abf1fc88d45cf8">CHUNK_HEIGHT</a>,j*<a class="code" href="_global_8hpp.html#a57daea2b5f42af17f83e7e3a5240290a">CHUNK_WIDTH</a>));</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keywordtype">void</span> Map::placeMaze(<span class="keywordtype">size_t</span> I, <span class="keywordtype">size_t</span> J, <span class="keywordtype">size_t</span> W, <span class="keywordtype">size_t</span> H)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="class_maze_generator_1_1_maze.html">MazeGenerator::Maze</a> maze(H, W);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  maze.compute();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> i = 0; i &lt; H; i++ )</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> j=0; j &lt; <a class="code" href="_global_8hpp.html#a594cbe4eae7783b39a74340f489f8034">NB_TILE_WIDTH</a>; j++)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> j = 0; j &lt; W; j++ )</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <span class="keyword">delete</span> <a class="code" href="class_map.html#a4b89a8f019a03d06723dd50e339affcc">m_tiles</a>[i][j];</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
-<div class="ttc" id="class_map_html_a4b89a8f019a03d06723dd50e339affcc"><div class="ttname"><a href="class_map.html#a4b89a8f019a03d06723dd50e339affcc">Map::m_tiles</a></div><div class="ttdeci">Tile * m_tiles[NB_TILE_HEIGHT][NB_TILE_WIDTH]</div><div class="ttdef"><b>Definition:</b> <a href="_map_8hpp_source.html#l00043">Map.hpp:43</a></div></div>
-<div class="ttc" id="class_map_html_a89da5c5a8b6f968dcacd03ff4014f037"><div class="ttname"><a href="class_map.html#a89da5c5a8b6f968dcacd03ff4014f037">Map::initTiles</a></div><div class="ttdeci">void initTiles()</div><div class="ttdoc">Initialize the tiles of the map. </div><div class="ttdef"><b>Definition:</b> <a href="_map_8cpp_source.html#l00017">Map.cpp:17</a></div></div>
-<div class="ttc" id="_global_8hpp_html_a8c1c0e688345ec4bd6dbc6243989d1b4"><div class="ttname"><a href="_global_8hpp.html#a8c1c0e688345ec4bd6dbc6243989d1b4">BLOC_HEIGHT</a></div><div class="ttdeci">#define BLOC_HEIGHT</div><div class="ttdef"><b>Definition:</b> <a href="_global_8hpp_source.html#l00020">Global.hpp:20</a></div></div>
-<div class="ttc" id="_map_8hpp_html_ac9e486ec80ccfdb28a4f4837d419c9f1a77353523aa43282a05d23c037e67bbda"><div class="ttname"><a href="_map_8hpp.html#ac9e486ec80ccfdb28a4f4837d419c9f1a77353523aa43282a05d23c037e67bbda">GROUND</a></div><div class="ttdef"><b>Definition:</b> <a href="_map_8hpp_source.html#l00010">Map.hpp:10</a></div></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <span class="keywordtype">bool</span> *b = maze.get(i,j)-&gt;border;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;     </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <span class="comment">/* entrance and exit */</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <span class="keywordflow">if</span>( i == H-1 &amp;&amp; j == W-1 )</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;          b[3] = false ;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      <span class="keywordflow">if</span>( i == 0 &amp;&amp; j == 0 )</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;          b[2] = false ;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      putBloc(I + i * (<a class="code" href="_global_8hpp.html#a1f6c5bdde8c69b8bed7bde025bbf6d78">BLOC_SIZE</a>+1), J + j * (<a class="code" href="_global_8hpp.html#a1f6c5bdde8c69b8bed7bde025bbf6d78">BLOC_SIZE</a>+1),</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;          <a class="code" href="_global_8hpp.html#a1f6c5bdde8c69b8bed7bde025bbf6d78">BLOC_SIZE</a>, <a class="code" href="_global_8hpp.html#a1f6c5bdde8c69b8bed7bde025bbf6d78">BLOC_SIZE</a>, b);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keywordtype">void</span> Map::putTile(<a class="code" href="_map_8hpp.html#ac9e486ec80ccfdb28a4f4837d419c9f1">TileType</a> t, <span class="keywordtype">size_t</span> i, <span class="keywordtype">size_t</span> j)</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;{</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordflow">switch</span>( t )</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="_map_8hpp.html#ac9e486ec80ccfdb28a4f4837d419c9f1afca2faad41310c7e71ec303ef789c53a">WALL</a>:</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      m_tiles[i][j]-&gt;<a class="code" href="struct_tile.html#a0179f980413caf8517c9ce7e8eb9e113">i</a> = i;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      m_tiles[i][j]-&gt;<a class="code" href="struct_tile.html#a50e1154d1067f50c634818c10f65af27">j</a> = j;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      m_tiles[i][j]-&gt;<a class="code" href="struct_tile.html#ac50c68f897cd0d40f5fc85a1faba68af">obstacle</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      m_tiles[i][j]-&gt;<a class="code" href="struct_tile.html#a86d32444511cf5bdd370330d7d642036">type</a> = <a class="code" href="_map_8hpp.html#ac9e486ec80ccfdb28a4f4837d419c9f1afca2faad41310c7e71ec303ef789c53a">WALL</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;       m_tiles[i][j]-&gt;<a class="code" href="struct_tile.html#a0179f980413caf8517c9ce7e8eb9e113">i</a> = i;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;       m_tiles[i][j]-&gt;<a class="code" href="struct_tile.html#a50e1154d1067f50c634818c10f65af27">j</a> = j;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;       m_tiles[i][j]-&gt;<a class="code" href="struct_tile.html#ac50c68f897cd0d40f5fc85a1faba68af">obstacle</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;       m_tiles[i][j]-&gt;<a class="code" href="struct_tile.html#a86d32444511cf5bdd370330d7d642036">type</a> = <a class="code" href="_map_8hpp.html#ac9e486ec80ccfdb28a4f4837d419c9f1ac157bdf0b85a40d2619cbc8bc1ae5fe2">NONE</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keywordtype">void</span> Map::putBloc(<span class="keywordtype">size_t</span> I, <span class="keywordtype">size_t</span> J, <span class="keywordtype">size_t</span> W, <span class="keywordtype">size_t</span> H, <span class="keywordtype">bool</span> border[4])</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;{</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  assert(border);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  assert( I &gt;= 0 );</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  assert( I &lt; NB_TILE_HEIGHT );</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  assert( J &gt;= 0 );</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  assert( J &lt; <a class="code" href="_global_8hpp.html#a594cbe4eae7783b39a74340f489f8034">NB_TILE_WIDTH</a> );</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; H+2; i++)</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> j = 0; j &lt; W+2; j++)</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      <span class="comment">//if it is on one border and if this border is a wall</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      <span class="keywordflow">if</span>( (i == 0 &amp;&amp; border[0]) || (i == H+1 &amp;&amp; border[1])</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;          || (j == 0 &amp;&amp; border[2]) || (j == W+1 &amp;&amp; border[3]) )</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;          putTile(<a class="code" href="_map_8hpp.html#ac9e486ec80ccfdb28a4f4837d419c9f1afca2faad41310c7e71ec303ef789c53a">WALL</a>, i + I, j + J);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;          <span class="comment">// walls can&#39;t be removed</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;          <span class="keywordflow">if</span>( !<a class="code" href="class_map.html#a256268fe246bf37d8231bdb61a3bda92">isAWall</a>(i + I, j + J) )</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;          m_tiles[i + I][j + J]-&gt;<a class="code" href="struct_tile.html#a86d32444511cf5bdd370330d7d642036">type</a> = <a class="code" href="_map_8hpp.html#ac9e486ec80ccfdb28a4f4837d419c9f1a77353523aa43282a05d23c037e67bbda">GROUND</a>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;          </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;      </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="class_map.html#a256268fe246bf37d8231bdb61a3bda92">  139</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_map.html#a256268fe246bf37d8231bdb61a3bda92">Map::isAWall</a>(<span class="keywordtype">size_t</span> i, <span class="keywordtype">size_t</span> j)</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;{</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  assert(m_tiles[i][j]);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="keywordflow">switch</span>( m_tiles[i][j]-&gt;type )</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="_map_8hpp.html#ac9e486ec80ccfdb28a4f4837d419c9f1afca2faad41310c7e71ec303ef789c53a">WALL</a>:</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;}</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="class_map.html#a54aa404e7aef41735ebf5114eab4df3b">  154</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_map.html#a54aa404e7aef41735ebf5114eab4df3b">Map::isInTheScreen</a>(<a class="code" href="struct_tile.html">Tile</a> <span class="keyword">const</span>* t)</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;{</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  assert(t);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="keywordflow">return</span> (t-&gt;<a class="code" href="struct_tile.html#a0179f980413caf8517c9ce7e8eb9e113">i</a> &gt;= 0 &amp;&amp; t-&gt;<a class="code" href="struct_tile.html#a0179f980413caf8517c9ce7e8eb9e113">i</a> &lt; <a class="code" href="_global_8hpp.html#a8ad1b55a0a4c275304030f3ecd3c9c2b">NB_VISIBLE_TILE_HEIGHT</a></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;      &amp;&amp; t-&gt;<a class="code" href="struct_tile.html#a50e1154d1067f50c634818c10f65af27">j</a> &gt;= 0 &amp;&amp; t-&gt;<a class="code" href="struct_tile.html#a50e1154d1067f50c634818c10f65af27">j</a> &lt; <a class="code" href="_global_8hpp.html#a937ccc9fbf5ac8555c31859c6cfbd0fb">NB_VISIBLE_TILE_WIDTH</a>);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;}</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="class_map.html#af4746a30f5063b50862123cc46873218">  162</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_map.html#af4746a30f5063b50862123cc46873218">Map::exists</a>(<span class="keywordtype">size_t</span> i, <span class="keywordtype">size_t</span> j)</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;{</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <span class="keywordflow">return</span> (i &gt;= 0 &amp;&amp; i &lt; NB_TILE_HEIGHT &amp;&amp; j &gt;= 0 &amp;&amp; j &lt; NB_TILE_HEIGHT);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;}</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="class_map.html#af98fd76d6bb3b1a1b0fdd647b21a3e9b">  167</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_map.html#af98fd76d6bb3b1a1b0fdd647b21a3e9b">Map::collideWithView</a>(<a class="code" href="class_chunk.html">Chunk</a> <span class="keyword">const</span>* chunk)</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;{</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="keywordtype">float</span> cx = chunk-&gt;<a class="code" href="class_chunk.html#a53ea10db2eac5a364803653d58b3212a">getPosition</a>().x;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <span class="keywordtype">float</span> cy = chunk-&gt;<a class="code" href="class_chunk.html#a53ea10db2eac5a364803653d58b3212a">getPosition</a>().y;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <span class="keywordtype">float</span> cw = <a class="code" href="_global_8hpp.html#a57daea2b5f42af17f83e7e3a5240290a">CHUNK_WIDTH</a> * <a class="code" href="_global_8hpp.html#a76108891dc4352082a676f2978ee446d">TILE_WIDTH</a>;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  <span class="keywordtype">float</span> ch = <a class="code" href="_global_8hpp.html#a708996a6ab44089275abf1fc88d45cf8">CHUNK_HEIGHT</a> * <a class="code" href="_global_8hpp.html#a74b119c5bb38a697fc531b7b86fb0a54">TILE_HEIGHT</a>;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  <span class="keywordtype">float</span> vw = <a class="code" href="class_map.html#a1fb26cd5f427038a81a03801aed05299">m_view</a>-&gt;getSize().x;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  <span class="keywordtype">float</span> vh = <a class="code" href="class_map.html#a1fb26cd5f427038a81a03801aed05299">m_view</a>-&gt;getSize().y;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <span class="keywordtype">float</span> vx = <a class="code" href="class_map.html#a1fb26cd5f427038a81a03801aed05299">m_view</a>-&gt;getCenter().x - vw/2;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <span class="keywordtype">float</span> vy = <a class="code" href="class_map.html#a1fb26cd5f427038a81a03801aed05299">m_view</a>-&gt;getCenter().y - vh/2;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  <span class="keywordflow">return</span> ! ( vy + vh &lt; cy || vy &gt; cy + ch</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;         || vx + vw &lt; cx || vx &gt; cx + cw );</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;}</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
+<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="class_map.html#a3ccb4139e9caf118dffb3f2ba8bb6361">  184</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_map.html#a3ccb4139e9caf118dffb3f2ba8bb6361">Map::display</a>(sf::RenderWindow *win)</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;{</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  <span class="keywordflow">for</span>( <a class="code" href="class_chunk.html">Chunk</a> *c: m_chunks )</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;      <span class="keywordflow">if</span>(<a class="code" href="class_map.html#af98fd76d6bb3b1a1b0fdd647b21a3e9b">collideWithView</a>(c))</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;      c-&gt;draw(win);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    }</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    }</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;}</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
+<div class="line"><a name="l00196"></a><span class="lineno"><a class="line" href="class_map.html#aa403fbe09394ccf39747588f5168e3b2">  196</a></span>&#160;<a class="code" href="class_map.html#aa403fbe09394ccf39747588f5168e3b2">Map::~Map</a>()</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;{</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  <span class="comment">//delete Tiles</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i=0; i &lt; <a class="code" href="_global_8hpp.html#ad5ea8ea05e3c9438197b98ea8b1425d7">NB_TILE_HEIGHT</a>; i++)</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    {</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> j=0; j &lt; <a class="code" href="_global_8hpp.html#a594cbe4eae7783b39a74340f489f8034">NB_TILE_WIDTH</a>; j++)</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    {</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;      <span class="keyword">delete</span> m_tiles[i][j];</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    }</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  <span class="keywordflow">for</span>( <a class="code" href="class_chunk.html">Chunk</a> *c: m_chunks )</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    {</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;      <span class="keyword">delete</span> c;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    }</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  <span class="comment">//m_vertex_array.clear();</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;}</div>
+<div class="ttc" id="_map_8hpp_html_ac9e486ec80ccfdb28a4f4837d419c9f1"><div class="ttname"><a href="_map_8hpp.html#ac9e486ec80ccfdb28a4f4837d419c9f1">TileType</a></div><div class="ttdeci">TileType</div><div class="ttdef"><b>Definition:</b> <a href="_map_8hpp_source.html#l00008">Map.hpp:8</a></div></div>
+<div class="ttc" id="_global_8hpp_html_a8ad1b55a0a4c275304030f3ecd3c9c2b"><div class="ttname"><a href="_global_8hpp.html#a8ad1b55a0a4c275304030f3ecd3c9c2b">NB_VISIBLE_TILE_HEIGHT</a></div><div class="ttdeci">#define NB_VISIBLE_TILE_HEIGHT</div><div class="ttdef"><b>Definition:</b> <a href="_global_8hpp_source.html#l00029">Global.hpp:29</a></div></div>
+<div class="ttc" id="_global_8hpp_html_a937ccc9fbf5ac8555c31859c6cfbd0fb"><div class="ttname"><a href="_global_8hpp.html#a937ccc9fbf5ac8555c31859c6cfbd0fb">NB_VISIBLE_TILE_WIDTH</a></div><div class="ttdeci">#define NB_VISIBLE_TILE_WIDTH</div><div class="ttdef"><b>Definition:</b> <a href="_global_8hpp_source.html#l00028">Global.hpp:28</a></div></div>
+<div class="ttc" id="_global_8hpp_html_a708996a6ab44089275abf1fc88d45cf8"><div class="ttname"><a href="_global_8hpp.html#a708996a6ab44089275abf1fc88d45cf8">CHUNK_HEIGHT</a></div><div class="ttdeci">#define CHUNK_HEIGHT</div><div class="ttdef"><b>Definition:</b> <a href="_global_8hpp_source.html#l00036">Global.hpp:36</a></div></div>
+<div class="ttc" id="_map_8hpp_html_ac9e486ec80ccfdb28a4f4837d419c9f1ac157bdf0b85a40d2619cbc8bc1ae5fe2"><div class="ttname"><a href="_map_8hpp.html#ac9e486ec80ccfdb28a4f4837d419c9f1ac157bdf0b85a40d2619cbc8bc1ae5fe2">NONE</a></div><div class="ttdef"><b>Definition:</b> <a href="_map_8hpp_source.html#l00010">Map.hpp:10</a></div></div>
+<div class="ttc" id="class_chunk_html_a53ea10db2eac5a364803653d58b3212a"><div class="ttname"><a href="class_chunk.html#a53ea10db2eac5a364803653d58b3212a">Chunk::getPosition</a></div><div class="ttdeci">sf::Vector2f getPosition() const </div><div class="ttdef"><b>Definition:</b> <a href="_chunk_8cpp_source.html#l00014">Chunk.cpp:14</a></div></div>
+<div class="ttc" id="_map_8hpp_html_ac9e486ec80ccfdb28a4f4837d419c9f1a77353523aa43282a05d23c037e67bbda"><div class="ttname"><a href="_map_8hpp.html#ac9e486ec80ccfdb28a4f4837d419c9f1a77353523aa43282a05d23c037e67bbda">GROUND</a></div><div class="ttdef"><b>Definition:</b> <a href="_map_8hpp_source.html#l00011">Map.hpp:11</a></div></div>
 <div class="ttc" id="_map_8hpp_html"><div class="ttname"><a href="_map_8hpp.html">Map.hpp</a></div></div>
-<div class="ttc" id="class_map_html_a3ccb4139e9caf118dffb3f2ba8bb6361"><div class="ttname"><a href="class_map.html#a3ccb4139e9caf118dffb3f2ba8bb6361">Map::display</a></div><div class="ttdeci">void display(sf::RenderWindow *win)</div><div class="ttdoc">Display the map on a RenderWindow. </div><div class="ttdef"><b>Definition:</b> <a href="_map_8cpp_source.html#l00011">Map.cpp:11</a></div></div>
-<div class="ttc" id="_global_8hpp_html_ae45c14dc45579f50aa8a8b296bcd4e6e"><div class="ttname"><a href="_global_8hpp.html#ae45c14dc45579f50aa8a8b296bcd4e6e">BLOC_WIDTH</a></div><div class="ttdeci">#define BLOC_WIDTH</div><div class="ttdef"><b>Definition:</b> <a href="_global_8hpp_source.html#l00019">Global.hpp:19</a></div></div>
-<div class="ttc" id="class_map_html_aa403fbe09394ccf39747588f5168e3b2"><div class="ttname"><a href="class_map.html#aa403fbe09394ccf39747588f5168e3b2">Map::~Map</a></div><div class="ttdeci">~Map()</div><div class="ttdef"><b>Definition:</b> <a href="_map_8cpp_source.html#l00059">Map.cpp:59</a></div></div>
-<div class="ttc" id="struct_tile_html_a86d32444511cf5bdd370330d7d642036"><div class="ttname"><a href="struct_tile.html#a86d32444511cf5bdd370330d7d642036">Tile::type</a></div><div class="ttdeci">TileType type</div><div class="ttdef"><b>Definition:</b> <a href="_map_8hpp_source.html#l00019">Map.hpp:19</a></div></div>
-<div class="ttc" id="struct_tile_html_a0179f980413caf8517c9ce7e8eb9e113"><div class="ttname"><a href="struct_tile.html#a0179f980413caf8517c9ce7e8eb9e113">Tile::i</a></div><div class="ttdeci">size_t i</div><div class="ttdef"><b>Definition:</b> <a href="_map_8hpp_source.html#l00016">Map.hpp:16</a></div></div>
-<div class="ttc" id="class_map_html_a6028e1a5ee18c96342ba785e16779ab3"><div class="ttname"><a href="class_map.html#a6028e1a5ee18c96342ba785e16779ab3">Map::createVertexTile</a></div><div class="ttdeci">void createVertexTile(size_t i, size_t j, size_t w, size_t h, sf::Color color)</div><div class="ttdoc">Create a vertex in the vertex array. </div><div class="ttdef"><b>Definition:</b> <a href="_map_8cpp_source.html#l00035">Map.cpp:35</a></div></div>
-<div class="ttc" id="class_map_html_a0f5ad0fd4563497b4214038cbca8b582"><div class="ttname"><a href="class_map.html#a0f5ad0fd4563497b4214038cbca8b582">Map::Map</a></div><div class="ttdeci">Map()</div><div class="ttdef"><b>Definition:</b> <a href="_map_8cpp_source.html#l00004">Map.cpp:4</a></div></div>
-<div class="ttc" id="class_map_html_a0a3a2e550cb33be3df31f769bc9b5262"><div class="ttname"><a href="class_map.html#a0a3a2e550cb33be3df31f769bc9b5262">Map::m_vertex_array</a></div><div class="ttdeci">sf::VertexArray m_vertex_array</div><div class="ttdef"><b>Definition:</b> <a href="_map_8hpp_source.html#l00044">Map.hpp:44</a></div></div>
-<div class="ttc" id="struct_tile_html"><div class="ttname"><a href="struct_tile.html">Tile</a></div><div class="ttdef"><b>Definition:</b> <a href="_map_8hpp_source.html#l00014">Map.hpp:14</a></div></div>
-<div class="ttc" id="_global_8hpp_html_ad5ea8ea05e3c9438197b98ea8b1425d7"><div class="ttname"><a href="_global_8hpp.html#ad5ea8ea05e3c9438197b98ea8b1425d7">NB_TILE_HEIGHT</a></div><div class="ttdeci">#define NB_TILE_HEIGHT</div><div class="ttdef"><b>Definition:</b> <a href="_global_8hpp_source.html#l00023">Global.hpp:23</a></div></div>
-<div class="ttc" id="struct_tile_html_ac50c68f897cd0d40f5fc85a1faba68af"><div class="ttname"><a href="struct_tile.html#ac50c68f897cd0d40f5fc85a1faba68af">Tile::obstacle</a></div><div class="ttdeci">bool obstacle</div><div class="ttdef"><b>Definition:</b> <a href="_map_8hpp_source.html#l00020">Map.hpp:20</a></div></div>
-<div class="ttc" id="_global_8hpp_html_a594cbe4eae7783b39a74340f489f8034"><div class="ttname"><a href="_global_8hpp.html#a594cbe4eae7783b39a74340f489f8034">NB_TILE_WIDTH</a></div><div class="ttdeci">#define NB_TILE_WIDTH</div><div class="ttdef"><b>Definition:</b> <a href="_global_8hpp_source.html#l00022">Global.hpp:22</a></div></div>
-<div class="ttc" id="struct_tile_html_a50e1154d1067f50c634818c10f65af27"><div class="ttname"><a href="struct_tile.html#a50e1154d1067f50c634818c10f65af27">Tile::j</a></div><div class="ttdeci">size_t j</div><div class="ttdef"><b>Definition:</b> <a href="_map_8hpp_source.html#l00017">Map.hpp:17</a></div></div>
+<div class="ttc" id="class_map_html_a3ccb4139e9caf118dffb3f2ba8bb6361"><div class="ttname"><a href="class_map.html#a3ccb4139e9caf118dffb3f2ba8bb6361">Map::display</a></div><div class="ttdeci">void display(sf::RenderWindow *win)</div><div class="ttdoc">Display the map on a RenderWindow. </div><div class="ttdef"><b>Definition:</b> <a href="_map_8cpp_source.html#l00184">Map.cpp:184</a></div></div>
+<div class="ttc" id="class_maze_generator_1_1_maze_html"><div class="ttname"><a href="class_maze_generator_1_1_maze.html">MazeGenerator::Maze</a></div><div class="ttdef"><b>Definition:</b> <a href="_maze_8hpp_source.html#l00026">Maze.hpp:26</a></div></div>
+<div class="ttc" id="class_map_html_af4746a30f5063b50862123cc46873218"><div class="ttname"><a href="class_map.html#af4746a30f5063b50862123cc46873218">Map::exists</a></div><div class="ttdeci">bool exists(size_t i, size_t j)</div><div class="ttdoc">Say if a tile at (i,j) coordinate exists. </div><div class="ttdef"><b>Definition:</b> <a href="_map_8cpp_source.html#l00162">Map.cpp:162</a></div></div>
+<div class="ttc" id="_global_8hpp_html_abde23bb1a3c99cb0367c4fc05e71b3ab"><div class="ttname"><a href="_global_8hpp.html#abde23bb1a3c99cb0367c4fc05e71b3ab">NB_BLOC_WIDTH</a></div><div class="ttdeci">#define NB_BLOC_WIDTH</div><div class="ttdef"><b>Definition:</b> <a href="_global_8hpp_source.html#l00017">Global.hpp:17</a></div></div>
+<div class="ttc" id="class_map_html_a256268fe246bf37d8231bdb61a3bda92"><div class="ttname"><a href="class_map.html#a256268fe246bf37d8231bdb61a3bda92">Map::isAWall</a></div><div class="ttdeci">bool isAWall(size_t i, size_t j)</div><div class="ttdoc">True if the tile at (i,j) is a wall. </div><div class="ttdef"><b>Definition:</b> <a href="_map_8cpp_source.html#l00139">Map.cpp:139</a></div></div>
+<div class="ttc" id="_texture_manager_8hpp_html"><div class="ttname"><a href="_texture_manager_8hpp.html">TextureManager.hpp</a></div></div>
+<div class="ttc" id="class_map_html_aa403fbe09394ccf39747588f5168e3b2"><div class="ttname"><a href="class_map.html#aa403fbe09394ccf39747588f5168e3b2">Map::~Map</a></div><div class="ttdeci">~Map()</div><div class="ttdef"><b>Definition:</b> <a href="_map_8cpp_source.html#l00196">Map.cpp:196</a></div></div>
+<div class="ttc" id="class_map_html_a54aa404e7aef41735ebf5114eab4df3b"><div class="ttname"><a href="class_map.html#a54aa404e7aef41735ebf5114eab4df3b">Map::isInTheScreen</a></div><div class="ttdeci">bool isInTheScreen(Tile const *t)</div><div class="ttdoc">Look at a Tile and say if it is int the visible area of the map. </div><div class="ttdef"><b>Definition:</b> <a href="_map_8cpp_source.html#l00154">Map.cpp:154</a></div></div>
+<div class="ttc" id="_global_8hpp_html_a74b119c5bb38a697fc531b7b86fb0a54"><div class="ttname"><a href="_global_8hpp.html#a74b119c5bb38a697fc531b7b86fb0a54">TILE_HEIGHT</a></div><div class="ttdeci">#define TILE_HEIGHT</div><div class="ttdef"><b>Definition:</b> <a href="_global_8hpp_source.html#l00014">Global.hpp:14</a></div></div>
+<div class="ttc" id="struct_tile_html_a86d32444511cf5bdd370330d7d642036"><div class="ttname"><a href="struct_tile.html#a86d32444511cf5bdd370330d7d642036">Tile::type</a></div><div class="ttdeci">TileType type</div><div class="ttdef"><b>Definition:</b> <a href="_map_8hpp_source.html#l00020">Map.hpp:20</a></div></div>
+<div class="ttc" id="class_chunk_html"><div class="ttname"><a href="class_chunk.html">Chunk</a></div><div class="ttdoc">area of the game to update/display </div><div class="ttdef"><b>Definition:</b> <a href="_chunk_8hpp_source.html#l00018">Chunk.hpp:18</a></div></div>
+<div class="ttc" id="struct_tile_html_a0179f980413caf8517c9ce7e8eb9e113"><div class="ttname"><a href="struct_tile.html#a0179f980413caf8517c9ce7e8eb9e113">Tile::i</a></div><div class="ttdeci">size_t i</div><div class="ttdef"><b>Definition:</b> <a href="_map_8hpp_source.html#l00017">Map.hpp:17</a></div></div>
+<div class="ttc" id="_global_8hpp_html_a76108891dc4352082a676f2978ee446d"><div class="ttname"><a href="_global_8hpp.html#a76108891dc4352082a676f2978ee446d">TILE_WIDTH</a></div><div class="ttdeci">#define TILE_WIDTH</div><div class="ttdef"><b>Definition:</b> <a href="_global_8hpp_source.html#l00013">Global.hpp:13</a></div></div>
+<div class="ttc" id="_global_8hpp_html_aee77fe0b8137d67589748ae6c599a761"><div class="ttname"><a href="_global_8hpp.html#aee77fe0b8137d67589748ae6c599a761">NB_CHUNK_HEIGHT</a></div><div class="ttdeci">#define NB_CHUNK_HEIGHT</div><div class="ttdef"><b>Definition:</b> <a href="_global_8hpp_source.html#l00039">Global.hpp:39</a></div></div>
+<div class="ttc" id="_chunk_8hpp_html"><div class="ttname"><a href="_chunk_8hpp.html">Chunk.hpp</a></div></div>
+<div class="ttc" id="_global_8hpp_html_a1f6c5bdde8c69b8bed7bde025bbf6d78"><div class="ttname"><a href="_global_8hpp.html#a1f6c5bdde8c69b8bed7bde025bbf6d78">BLOC_SIZE</a></div><div class="ttdeci">#define BLOC_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="_global_8hpp_source.html#l00019">Global.hpp:19</a></div></div>
+<div class="ttc" id="_map_8hpp_html_ac9e486ec80ccfdb28a4f4837d419c9f1afca2faad41310c7e71ec303ef789c53a"><div class="ttname"><a href="_map_8hpp.html#ac9e486ec80ccfdb28a4f4837d419c9f1afca2faad41310c7e71ec303ef789c53a">WALL</a></div><div class="ttdef"><b>Definition:</b> <a href="_map_8hpp_source.html#l00012">Map.hpp:12</a></div></div>
+<div class="ttc" id="_global_8hpp_html_aa56a50952088317f9e2197fedb9a642a"><div class="ttname"><a href="_global_8hpp.html#aa56a50952088317f9e2197fedb9a642a">NB_CHUNK_WIDTH</a></div><div class="ttdeci">#define NB_CHUNK_WIDTH</div><div class="ttdef"><b>Definition:</b> <a href="_global_8hpp_source.html#l00038">Global.hpp:38</a></div></div>
+<div class="ttc" id="_maze_8hpp_html"><div class="ttname"><a href="_maze_8hpp.html">Maze.hpp</a></div></div>
+<div class="ttc" id="class_map_html_a0b78ab0d7b9358eab962ccfa83214167"><div class="ttname"><a href="class_map.html#a0b78ab0d7b9358eab962ccfa83214167">Map::Map</a></div><div class="ttdeci">Map(sf::View *view, sf::Texture *tex)</div><div class="ttdef"><b>Definition:</b> <a href="_map_8cpp_source.html#l00008">Map.cpp:8</a></div></div>
+<div class="ttc" id="struct_tile_html"><div class="ttname"><a href="struct_tile.html">Tile</a></div><div class="ttdef"><b>Definition:</b> <a href="_map_8hpp_source.html#l00015">Map.hpp:15</a></div></div>
+<div class="ttc" id="_global_8hpp_html_ad5ea8ea05e3c9438197b98ea8b1425d7"><div class="ttname"><a href="_global_8hpp.html#ad5ea8ea05e3c9438197b98ea8b1425d7">NB_TILE_HEIGHT</a></div><div class="ttdeci">#define NB_TILE_HEIGHT</div><div class="ttdef"><b>Definition:</b> <a href="_global_8hpp_source.html#l00032">Global.hpp:32</a></div></div>
+<div class="ttc" id="struct_tile_html_ac50c68f897cd0d40f5fc85a1faba68af"><div class="ttname"><a href="struct_tile.html#ac50c68f897cd0d40f5fc85a1faba68af">Tile::obstacle</a></div><div class="ttdeci">bool obstacle</div><div class="ttdef"><b>Definition:</b> <a href="_map_8hpp_source.html#l00021">Map.hpp:21</a></div></div>
+<div class="ttc" id="_core_8hpp_html"><div class="ttname"><a href="_core_8hpp.html">Core.hpp</a></div></div>
+<div class="ttc" id="class_map_html_a1fb26cd5f427038a81a03801aed05299"><div class="ttname"><a href="class_map.html#a1fb26cd5f427038a81a03801aed05299">Map::m_view</a></div><div class="ttdeci">sf::View * m_view</div><div class="ttdef"><b>Definition:</b> <a href="_map_8hpp_source.html#l00085">Map.hpp:85</a></div></div>
+<div class="ttc" id="_global_8hpp_html_a57daea2b5f42af17f83e7e3a5240290a"><div class="ttname"><a href="_global_8hpp.html#a57daea2b5f42af17f83e7e3a5240290a">CHUNK_WIDTH</a></div><div class="ttdeci">#define CHUNK_WIDTH</div><div class="ttdef"><b>Definition:</b> <a href="_global_8hpp_source.html#l00035">Global.hpp:35</a></div></div>
+<div class="ttc" id="class_map_html_af98fd76d6bb3b1a1b0fdd647b21a3e9b"><div class="ttname"><a href="class_map.html#af98fd76d6bb3b1a1b0fdd647b21a3e9b">Map::collideWithView</a></div><div class="ttdeci">bool collideWithView(Chunk const *chunk)</div><div class="ttdoc">Say if a chunk is visible in the view. </div><div class="ttdef"><b>Definition:</b> <a href="_map_8cpp_source.html#l00167">Map.cpp:167</a></div></div>
+<div class="ttc" id="_global_8hpp_html_a594cbe4eae7783b39a74340f489f8034"><div class="ttname"><a href="_global_8hpp.html#a594cbe4eae7783b39a74340f489f8034">NB_TILE_WIDTH</a></div><div class="ttdeci">#define NB_TILE_WIDTH</div><div class="ttdef"><b>Definition:</b> <a href="_global_8hpp_source.html#l00031">Global.hpp:31</a></div></div>
+<div class="ttc" id="_global_8hpp_html_a1e5ae2c65c6177566771a9388241d0b5"><div class="ttname"><a href="_global_8hpp.html#a1e5ae2c65c6177566771a9388241d0b5">NB_BLOC_HEIGHT</a></div><div class="ttdeci">#define NB_BLOC_HEIGHT</div><div class="ttdef"><b>Definition:</b> <a href="_global_8hpp_source.html#l00018">Global.hpp:18</a></div></div>
+<div class="ttc" id="struct_tile_html_a50e1154d1067f50c634818c10f65af27"><div class="ttname"><a href="struct_tile.html#a50e1154d1067f50c634818c10f65af27">Tile::j</a></div><div class="ttdeci">size_t j</div><div class="ttdef"><b>Definition:</b> <a href="_map_8hpp_source.html#l00018">Map.hpp:18</a></div></div>
+<div class="ttc" id="class_map_html_ae23e53a1b9d5c7d9d1aec9795a28b0ee"><div class="ttname"><a href="class_map.html#ae23e53a1b9d5c7d9d1aec9795a28b0ee">Map::getTexture</a></div><div class="ttdeci">sf::Texture * getTexture()</div><div class="ttdef"><b>Definition:</b> <a href="_map_8cpp_source.html#l00013">Map.cpp:13</a></div></div>
+<div class="ttc" id="class_map_html_ae9376e450832ea3ce1c893f4ec1edc40"><div class="ttname"><a href="class_map.html#ae9376e450832ea3ce1c893f4ec1edc40">Map::get</a></div><div class="ttdeci">Tile * get(size_t i, size_t j)</div><div class="ttdef"><b>Definition:</b> <a href="_map_8cpp_source.html#l00018">Map.cpp:18</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

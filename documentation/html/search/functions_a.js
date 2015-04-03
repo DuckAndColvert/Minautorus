@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['update',['update',['../class_core.html#a1a7af92bfcdd5b7ee7cfa99b2503ac67',1,'Core::update()'],['../class_in_game.html#aa1683e3cddaf607f485c85097a94beba',1,'InGame::update()'],['../class_menu.html#a849939d460789346209a092602172d8d',1,'Menu::update()'],['../class_scene.html#a15babffcfef1e1b2e608984b6ed0c88a',1,'Scene::update()']]]
+  ['scene',['Scene',['../class_scene.html#a5ee84644a7fc3a57f2ce9d58dcc03668',1,'Scene']]],
+  ['stopx',['stopX',['../class_character.html#aef97d6f2fb5dc37d16737d570b04e4d3',1,'Character']]],
+  ['stopy',['stopY',['../class_character.html#a2df3a253b3f61a270df0afd638deb050',1,'Character']]]
 ];

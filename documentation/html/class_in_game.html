@@ -30,11 +30,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="duckAndColvert.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Minautorus
    </div>
-   <div id="projectbrief">A maze action adventure game</div>
   </td>
  </tr>
  </tbody>
@@ -49,6 +47,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -109,8 +108,6 @@ $(document).ready(function(){initNavTree('class_in_game.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_in_game-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">InGame Class Reference</div>  </div>
@@ -130,43 +127,33 @@ Inheritance diagram for InGame:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a081d73aabc51f641c48f0e8947f9ed34"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_in_game.html#a081d73aabc51f641c48f0e8947f9ed34">InGame</a> (<a class="el" href="class_core.html">Core</a> *owner)</td></tr>
-<tr class="separator:a081d73aabc51f641c48f0e8947f9ed34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa006a18f621b38e0120ec16218c4cabe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_in_game.html#aa006a18f621b38e0120ec16218c4cabe">InGame</a> (<a class="el" href="class_core.html">Core</a> *owner, sf::RenderWindow *win)</td></tr>
+<tr class="separator:aa006a18f621b38e0120ec16218c4cabe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a262692e15198054b715443c7c2736e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_in_game.html#a8a262692e15198054b715443c7c2736e">~InGame</a> ()</td></tr>
 <tr class="separator:a8a262692e15198054b715443c7c2736e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1683e3cddaf607f485c85097a94beba"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_in_game.html#aa1683e3cddaf607f485c85097a94beba">update</a> (float dt)</td></tr>
 <tr class="separator:aa1683e3cddaf607f485c85097a94beba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef3d68ce0c99f80e9f0b495b400e25d5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_in_game.html#aef3d68ce0c99f80e9f0b495b400e25d5">display</a> (sf::RenderWindow *win)</td></tr>
-<tr class="separator:aef3d68ce0c99f80e9f0b495b400e25d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b2a9f0563477ee5c7bd3bf4f178d130"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_in_game.html#a4b2a9f0563477ee5c7bd3bf4f178d130">display</a> ()</td></tr>
+<tr class="separator:a4b2a9f0563477ee5c7bd3bf4f178d130"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_scene"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_scene')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_scene.html">Scene</a></td></tr>
-<tr class="memitem:a68948a0dc668dacf0a531ef1a4cdc23a inherit pub_methods_class_scene"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a68948a0dc668dacf0a531ef1a4cdc23a">Scene</a> (<a class="el" href="class_core.html">Core</a> *owner)</td></tr>
-<tr class="separator:a68948a0dc668dacf0a531ef1a4cdc23a inherit pub_methods_class_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ee84644a7fc3a57f2ce9d58dcc03668 inherit pub_methods_class_scene"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a5ee84644a7fc3a57f2ce9d58dcc03668">Scene</a> (<a class="el" href="class_core.html">Core</a> *owner, sf::RenderWindow *win)</td></tr>
+<tr class="separator:a5ee84644a7fc3a57f2ce9d58dcc03668 inherit pub_methods_class_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b8cec2e32546713915f8c6303c951f1 inherit pub_methods_class_scene"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a3b8cec2e32546713915f8c6303c951f1">~Scene</a> ()</td></tr>
 <tr class="separator:a3b8cec2e32546713915f8c6303c951f1 inherit pub_methods_class_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:a26188c387c195dc7837199b781cfedf1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_in_game.html">InGame</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_in_game.html#a26188c387c195dc7837199b781cfedf1">operator=</a> (<a class="el" href="class_in_game.html">InGame</a> const &amp;ig)=delete</td></tr>
-<tr class="separator:a26188c387c195dc7837199b781cfedf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e9815f661f6517fbf25826a163ef7d3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_in_game.html#a1e9815f661f6517fbf25826a163ef7d3">InGame</a> (<a class="el" href="class_in_game.html">InGame</a> const &amp;ig)=delete</td></tr>
-<tr class="separator:a1e9815f661f6517fbf25826a163ef7d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a601bfb10d2061c554772b08b1a5cb1ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_map.html">Map</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_in_game.html#a601bfb10d2061c554772b08b1a5cb1ac">m_map</a></td></tr>
-<tr class="separator:a601bfb10d2061c554772b08b1a5cb1ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_class_scene"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_scene')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_scene.html">Scene</a></td></tr>
 <tr class="memitem:a95c54bee7b3de928adf98bbbcc647b67 inherit pro_attribs_class_scene"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_core.html">Core</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a95c54bee7b3de928adf98bbbcc647b67">m_owner</a></td></tr>
 <tr class="separator:a95c54bee7b3de928adf98bbbcc647b67 inherit pro_attribs_class_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae147e3df0f97bae0336f3c002ba6f94d inherit pro_attribs_class_scene"><td class="memItemLeft" align="right" valign="top">sf::RenderWindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ae147e3df0f97bae0336f3c002ba6f94d">m_window</a></td></tr>
+<tr class="separator:ae147e3df0f97bae0336f3c002ba6f94d inherit pro_attribs_class_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_in_game_8hpp_source.html#l00012">12</a> of file <a class="el" href="_in_game_8hpp_source.html">InGame.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_in_game_8hpp_source.html#l00015">15</a> of file <a class="el" href="_in_game_8hpp_source.html">InGame.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a081d73aabc51f641c48f0e8947f9ed34"></a>
+<a class="anchor" id="aa006a18f621b38e0120ec16218c4cabe"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -174,13 +161,23 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">InGame::InGame </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_core.html">Core</a> *&#160;</td>
-          <td class="paramname"><em>owner</em></td><td>)</td>
+          <td class="paramname"><em>owner</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">sf::RenderWindow *&#160;</td>
+          <td class="paramname"><em>win</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_in_game_8cpp_source.html#l00003">3</a> of file <a class="el" href="_in_game_8cpp_source.html">InGame.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_in_game_8cpp_source.html#l00008">8</a> of file <a class="el" href="_in_game_8cpp_source.html">InGame.cpp</a>.</p>
 
 </div>
 </div>
@@ -197,36 +194,12 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_in_game_8cpp_source.html#l00017">17</a> of file <a class="el" href="_in_game_8cpp_source.html">InGame.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a1e9815f661f6517fbf25826a163ef7d3"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">InGame::InGame </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_in_game.html">InGame</a> const &amp;&#160;</td>
-          <td class="paramname"><em>ig</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">delete</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Definition at line <a class="el" href="_in_game_8cpp_source.html#l00107">107</a> of file <a class="el" href="_in_game_8cpp_source.html">InGame.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aef3d68ce0c99f80e9f0b495b400e25d5"></a>
+<a class="anchor" id="a4b2a9f0563477ee5c7bd3bf4f178d130"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -236,8 +209,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void InGame::display </td>
           <td>(</td>
-          <td class="paramtype">sf::RenderWindow *&#160;</td>
-          <td class="paramname"><em>win</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -248,33 +220,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="class_scene.html#a2d40addc25f743957a93f9c2e3e2da4b">Scene</a>.</p>
+<p>Implements <a class="el" href="class_scene.html#add519ab5e2b6d8589882917f06f1445f">Scene</a>.</p>
 
-<p>Definition at line <a class="el" href="_in_game_8cpp_source.html#l00012">12</a> of file <a class="el" href="_in_game_8cpp_source.html">InGame.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a26188c387c195dc7837199b781cfedf1"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_in_game.html">InGame</a>&amp; InGame::operator= </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_in_game.html">InGame</a> const &amp;&#160;</td>
-          <td class="paramname"><em>ig</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">delete</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Definition at line <a class="el" href="_in_game_8cpp_source.html#l00096">96</a> of file <a class="el" href="_in_game_8cpp_source.html">InGame.cpp</a>.</p>
 
 </div>
 </div>
@@ -302,30 +250,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_scene.html#a15babffcfef1e1b2e608984b6ed0c88a">Scene</a>.</p>
 
-<p>Definition at line <a class="el" href="_in_game_8cpp_source.html#l00008">8</a> of file <a class="el" href="_in_game_8cpp_source.html">InGame.cpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a601bfb10d2061c554772b08b1a5cb1ac"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_map.html">Map</a> InGame::m_map</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_in_game_8hpp_source.html#l00025">25</a> of file <a class="el" href="_in_game_8hpp_source.html">InGame.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_in_game_8cpp_source.html#l00020">20</a> of file <a class="el" href="_in_game_8cpp_source.html">InGame.cpp</a>.</p>
 
 </div>
 </div>

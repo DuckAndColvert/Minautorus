@@ -30,11 +30,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="duckAndColvert.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Minautorus
    </div>
-   <div id="projectbrief">A maze action adventure game</div>
   </td>
  </tr>
  </tbody>
@@ -49,6 +47,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -124,47 +123,41 @@ $(document).ready(function(){initNavTree('_core_8hpp_source.html','');});
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="class_core.html#a5871e21653acc370622edf2fac095ec4">Core</a>(sf::RenderWindow *win);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="class_core.html#a776f8c46504b14183883c6273f93eaed">~Core</a>();</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_core.html#a7dbba0df527c9069d2d127f75a025d7f">   26</a></span>&#160;  <a class="code" href="class_texture_manager.html">TextureManager</a> *<a class="code" href="class_core.html#a7dbba0df527c9069d2d127f75a025d7f">getTextureManager</a>(){<span class="keywordflow">return</span> <a class="code" href="class_core.html#a464c55b1bbc37db9b012266471ef7071">m_texture_manager</a>;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="class_texture_manager.html">TextureManager</a> * <a class="code" href="class_core.html#a2118947f1712a690630ae7eb0fb2693b">getTextureManager</a>();</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_core.html#a1a7af92bfcdd5b7ee7cfa99b2503ac67">update</a>(<span class="keywordtype">float</span> dt);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_core.html#a0ae7dcfa587fb9629e343de647e0849b">display</a>();</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_core.html#a818e02782f3ebdd642cddcb1c666bced">render</a>();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="class_core.html#a5871e21653acc370622edf2fac095ec4">Core</a>(<a class="code" href="class_core.html">Core</a> <span class="keyword">const</span>&amp; c) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="class_core.html">Core</a>&amp; <a class="code" href="class_core.html#a0870886855411873c93c5f24c3527328">operator=</a>(<a class="code" href="class_core.html">Core</a> <span class="keyword">const</span>&amp; c) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_core.html#a464c55b1bbc37db9b012266471ef7071">   42</a></span>&#160;  <a class="code" href="class_texture_manager.html">TextureManager</a> *<a class="code" href="class_core.html#a464c55b1bbc37db9b012266471ef7071">m_texture_manager</a>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_core.html#aa33e5ac1f9ef8e47677e71635bde5c83">   43</a></span>&#160;  sf::RenderWindow *<a class="code" href="class_core.html#aa33e5ac1f9ef8e47677e71635bde5c83">m_window</a>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_core.html#a711ccde74f31659c684c5f52db35b43c">   44</a></span>&#160;  <a class="code" href="class_scene.html">Scene</a> *<a class="code" href="class_core.html#a711ccde74f31659c684c5f52db35b43c">m_currentScene</a>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">/* TIME */</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="comment">//chrono which take the m_dt</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_core.html#af625a70ffdb4bcd1ccb12e1d29dc191b">   49</a></span>&#160;  std::chrono::steady_clock::time_point <a class="code" href="class_core.html#af625a70ffdb4bcd1ccb12e1d29dc191b">m_loopTimer</a>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">//duration of the main game loop in microseconds</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  </div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_core.html#afa7a0f83c18f2107c4a7ae8f42770b60">   53</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="class_core.html#afa7a0f83c18f2107c4a7ae8f42770b60">m_dt</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="class_core.html#a5871e21653acc370622edf2fac095ec4">Core</a>(<a class="code" href="class_core.html">Core</a> <span class="keyword">const</span>&amp; c) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="class_core.html">Core</a>&amp; operator=(<a class="code" href="class_core.html">Core</a> <span class="keyword">const</span>&amp; c) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="class_texture_manager.html">TextureManager</a> *m_texture_manager;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  sf::RenderWindow *m_window;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="class_scene.html">Scene</a> *m_currentScene;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="comment">/* TIME */</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="comment">//chrono which take the m_dt</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  std::chrono::steady_clock::time_point m_loopTimer;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">//duration of the main game loop in microseconds</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">float</span> m_dt;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="class_texture_manager_html"><div class="ttname"><a href="class_texture_manager.html">TextureManager</a></div><div class="ttdoc">Texture loader. </div><div class="ttdef"><b>Definition:</b> <a href="_texture_manager_8hpp_source.html#l00018">TextureManager.hpp:18</a></div></div>
-<div class="ttc" id="class_core_html_afa7a0f83c18f2107c4a7ae8f42770b60"><div class="ttname"><a href="class_core.html#afa7a0f83c18f2107c4a7ae8f42770b60">Core::m_dt</a></div><div class="ttdeci">float m_dt</div><div class="ttdef"><b>Definition:</b> <a href="_core_8hpp_source.html#l00053">Core.hpp:53</a></div></div>
-<div class="ttc" id="class_core_html_aa33e5ac1f9ef8e47677e71635bde5c83"><div class="ttname"><a href="class_core.html#aa33e5ac1f9ef8e47677e71635bde5c83">Core::m_window</a></div><div class="ttdeci">sf::RenderWindow * m_window</div><div class="ttdef"><b>Definition:</b> <a href="_core_8hpp_source.html#l00043">Core.hpp:43</a></div></div>
-<div class="ttc" id="class_core_html_a0ae7dcfa587fb9629e343de647e0849b"><div class="ttname"><a href="class_core.html#a0ae7dcfa587fb9629e343de647e0849b">Core::display</a></div><div class="ttdeci">void display()</div><div class="ttdef"><b>Definition:</b> <a href="_core_8cpp_source.html#l00023">Core.cpp:23</a></div></div>
-<div class="ttc" id="class_core_html_a464c55b1bbc37db9b012266471ef7071"><div class="ttname"><a href="class_core.html#a464c55b1bbc37db9b012266471ef7071">Core::m_texture_manager</a></div><div class="ttdeci">TextureManager * m_texture_manager</div><div class="ttdef"><b>Definition:</b> <a href="_core_8hpp_source.html#l00042">Core.hpp:42</a></div></div>
-<div class="ttc" id="class_core_html_af625a70ffdb4bcd1ccb12e1d29dc191b"><div class="ttname"><a href="class_core.html#af625a70ffdb4bcd1ccb12e1d29dc191b">Core::m_loopTimer</a></div><div class="ttdeci">std::chrono::steady_clock::time_point m_loopTimer</div><div class="ttdef"><b>Definition:</b> <a href="_core_8hpp_source.html#l00049">Core.hpp:49</a></div></div>
+<div class="ttc" id="class_core_html_a0ae7dcfa587fb9629e343de647e0849b"><div class="ttname"><a href="class_core.html#a0ae7dcfa587fb9629e343de647e0849b">Core::display</a></div><div class="ttdeci">void display()</div><div class="ttdef"><b>Definition:</b> <a href="_core_8cpp_source.html#l00028">Core.cpp:28</a></div></div>
 <div class="ttc" id="class_core_html_a5871e21653acc370622edf2fac095ec4"><div class="ttname"><a href="class_core.html#a5871e21653acc370622edf2fac095ec4">Core::Core</a></div><div class="ttdeci">Core(sf::RenderWindow *win)</div><div class="ttdef"><b>Definition:</b> <a href="_core_8cpp_source.html#l00007">Core.cpp:7</a></div></div>
-<div class="ttc" id="class_core_html_a711ccde74f31659c684c5f52db35b43c"><div class="ttname"><a href="class_core.html#a711ccde74f31659c684c5f52db35b43c">Core::m_currentScene</a></div><div class="ttdeci">Scene * m_currentScene</div><div class="ttdef"><b>Definition:</b> <a href="_core_8hpp_source.html#l00044">Core.hpp:44</a></div></div>
 <div class="ttc" id="class_scene_html"><div class="ttname"><a href="class_scene.html">Scene</a></div><div class="ttdoc">Abstract class that describe a Scene. </div><div class="ttdef"><b>Definition:</b> <a href="_scene_8hpp_source.html#l00019">Scene.hpp:19</a></div></div>
-<div class="ttc" id="class_core_html_a818e02782f3ebdd642cddcb1c666bced"><div class="ttname"><a href="class_core.html#a818e02782f3ebdd642cddcb1c666bced">Core::render</a></div><div class="ttdeci">void render()</div><div class="ttdoc">Launch the main game loop. </div><div class="ttdef"><b>Definition:</b> <a href="_core_8cpp_source.html#l00032">Core.cpp:32</a></div></div>
+<div class="ttc" id="class_core_html_a2118947f1712a690630ae7eb0fb2693b"><div class="ttname"><a href="class_core.html#a2118947f1712a690630ae7eb0fb2693b">Core::getTextureManager</a></div><div class="ttdeci">TextureManager * getTextureManager()</div><div class="ttdef"><b>Definition:</b> <a href="_core_8cpp_source.html#l00015">Core.cpp:15</a></div></div>
+<div class="ttc" id="class_core_html_a818e02782f3ebdd642cddcb1c666bced"><div class="ttname"><a href="class_core.html#a818e02782f3ebdd642cddcb1c666bced">Core::render</a></div><div class="ttdeci">void render()</div><div class="ttdoc">Launch the main game loop. </div><div class="ttdef"><b>Definition:</b> <a href="_core_8cpp_source.html#l00037">Core.cpp:37</a></div></div>
 <div class="ttc" id="class_core_html"><div class="ttname"><a href="class_core.html">Core</a></div><div class="ttdoc">Core game management. </div><div class="ttdef"><b>Definition:</b> <a href="_core_8hpp_source.html#l00020">Core.hpp:20</a></div></div>
-<div class="ttc" id="class_core_html_a7dbba0df527c9069d2d127f75a025d7f"><div class="ttname"><a href="class_core.html#a7dbba0df527c9069d2d127f75a025d7f">Core::getTextureManager</a></div><div class="ttdeci">TextureManager * getTextureManager()</div><div class="ttdef"><b>Definition:</b> <a href="_core_8hpp_source.html#l00026">Core.hpp:26</a></div></div>
-<div class="ttc" id="class_core_html_a0870886855411873c93c5f24c3527328"><div class="ttname"><a href="class_core.html#a0870886855411873c93c5f24c3527328">Core::operator=</a></div><div class="ttdeci">Core &amp; operator=(Core const &amp;c)=delete</div></div>
-<div class="ttc" id="class_core_html_a1a7af92bfcdd5b7ee7cfa99b2503ac67"><div class="ttname"><a href="class_core.html#a1a7af92bfcdd5b7ee7cfa99b2503ac67">Core::update</a></div><div class="ttdeci">void update(float dt)</div><div class="ttdef"><b>Definition:</b> <a href="_core_8cpp_source.html#l00015">Core.cpp:15</a></div></div>
-<div class="ttc" id="class_core_html_a776f8c46504b14183883c6273f93eaed"><div class="ttname"><a href="class_core.html#a776f8c46504b14183883c6273f93eaed">Core::~Core</a></div><div class="ttdeci">~Core()</div><div class="ttdef"><b>Definition:</b> <a href="_core_8cpp_source.html#l00076">Core.cpp:76</a></div></div>
+<div class="ttc" id="class_core_html_a1a7af92bfcdd5b7ee7cfa99b2503ac67"><div class="ttname"><a href="class_core.html#a1a7af92bfcdd5b7ee7cfa99b2503ac67">Core::update</a></div><div class="ttdeci">void update(float dt)</div><div class="ttdef"><b>Definition:</b> <a href="_core_8cpp_source.html#l00020">Core.cpp:20</a></div></div>
+<div class="ttc" id="class_core_html_a776f8c46504b14183883c6273f93eaed"><div class="ttname"><a href="class_core.html#a776f8c46504b14183883c6273f93eaed">Core::~Core</a></div><div class="ttdeci">~Core()</div><div class="ttdef"><b>Definition:</b> <a href="_core_8cpp_source.html#l00081">Core.cpp:81</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
