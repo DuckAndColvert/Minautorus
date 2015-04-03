@@ -8,7 +8,7 @@ Character::Character(Map *map, sf::Texture* spritesheet): m_map(map),
   m_sprite = sf::Sprite();
   m_sprite.setTexture(*m_spritesheet);
 
-  m_velocity = sf::Vector2f(TILE_WIDTH*5,TILE_WIDTH*5);
+  m_velocity = sf::Vector2f(TILE_WIDTH*4,TILE_WIDTH*4);
   m_movement = sf::Vector2f(0,0);
 }
 
@@ -42,8 +42,6 @@ void Character::update(float dt)
   sf::Vector2f next;
   next.x = m_sprite.getPosition().x + moveX;
   next.y = m_sprite.getPosition().y + moveY;
-
-  
   
   //check X collisions
   if( !collideWithMap( sf::Vector2f(next.x, next.y-moveY) ) )
@@ -121,9 +119,13 @@ bool Character::collideWithTile(sf::Vector2f const& pos, Tile const* tile)
   float y = pos.y;
   float w = m_sprite.getLocalBounds().width;
   float h = m_sprite.getLocalBounds().height;
+
+  //for avoid feeling
+  //of not touching the wall (less than 1px)
+  float margin = 1;
   
-  if( ty + TILE_HEIGHT <= y || ty >= y + h
-      || tx + TILE_WIDTH <= x || tx >= x + w )
+  if( ty + TILE_HEIGHT - margin < y || ty + margin > y + h
+      || tx + TILE_WIDTH - margin < x || tx + margin > x + w )
     {
       return false;
     }
