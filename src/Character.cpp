@@ -121,8 +121,8 @@ bool Character::collideWithTile(sf::Vector2f const& pos, Tile const* tile)
   float h = m_sprite.getLocalBounds().height;
 
   //for avoid feeling
-  //of not touching the wall (less than 1px)
-  float margin = 1;
+  //of not touching the wall
+  float margin = 2;
   
   if( ty + TILE_HEIGHT - margin < y || ty + margin > y + h
       || tx + TILE_WIDTH - margin < x || tx + margin > x + w )
