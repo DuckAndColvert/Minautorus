@@ -8,13 +8,18 @@ Character::Character(Map *map, sf::Texture* spritesheet): m_map(map),
   m_sprite = sf::Sprite();
   m_sprite.setTexture(*m_spritesheet);
 
-  m_velocity = sf::Vector2f(2,2);
+  m_velocity = sf::Vector2f(TILE_WIDTH*5,TILE_WIDTH*5);
   m_movement = sf::Vector2f(0,0);
 }
 
 sf::Vector2f Character::getPosition()
 {
   return m_sprite.getPosition();
+}
+
+sf::Vector2f Character::getVelocity()
+{
+  return m_velocity;
 }
 
 sf::FloatRect Character::getLocalBounds()
@@ -31,25 +36,26 @@ void Character::update(float dt)
   /* movement */
   
   //next position
+  float moveX = (m_movement.x*dt)/1000000.0;
+  float moveY = (m_movement.y*dt)/1000000.0;
+    
   sf::Vector2f next;
-  next.x = m_sprite.getPosition().x + m_movement.x;
-  next.y = m_sprite.getPosition().y + m_movement.y;
+  next.x = m_sprite.getPosition().x + moveX;
+  next.y = m_sprite.getPosition().y + moveY;
 
+  
+  
   //check X collisions
-  if( !collideWithMap( sf::Vector2f(next.x, next.y-m_movement.y) ) )
+  if( !collideWithMap( sf::Vector2f(next.x, next.y-moveY) ) )
     {
-      m_sprite.move(m_movement.x, 0);
+      m_sprite.move(moveX, 0);
     }
   
   //check Y collisions
-  if( !collideWithMap( sf::Vector2f(next.x - m_movement.x,next.y) ) )
+  if( !collideWithMap( sf::Vector2f(next.x - moveX,next.y) ) )
     {
-      m_sprite.move(0, m_movement.y);
+      m_sprite.move(0, moveY);
     }
-
-
-
-  
 
 }
 

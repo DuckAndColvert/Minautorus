@@ -27,6 +27,7 @@ public:
 
 
   sf::Vector2f getPosition();
+  sf::Vector2f getVelocity();
   sf::FloatRect getLocalBounds();
   
   virtual void moveUp();

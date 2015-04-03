@@ -5,7 +5,7 @@
 #include <TextureManager.hpp>
 #include <unordered_map>
 
-InGame::InGame(Core *owner, sf::RenderWindow *win): Scene(owner, win), m_view_area(8), m_view_speed(2)//TODO: DEPEND TO PLAYER SPEED
+InGame::InGame(Core *owner, sf::RenderWindow *win): Scene(owner, win), m_view_area(8)//TODO: DEPEND TO PLAYER SPEED
 {
   m_view.reset(sf::FloatRect(0,0,SCREEN_WIDTH, SCREEN_HEIGHT));
   
@@ -14,6 +14,8 @@ InGame::InGame(Core *owner, sf::RenderWindow *win): Scene(owner, win), m_view_ar
   
   m_player = new Player(m_map, m_owner->getTextureManager()->get("error"));
   m_characters.push_back( m_player );
+
+  m_view_speed = m_player->getVelocity().x;
 
 }
 
@@ -24,27 +26,27 @@ void InGame::update(float dt)
     {
       c->update(dt);
     }
-  
+
   /* view */
   sf::Vector2f view_move(0,0);
-
+  float view_speed = (m_view_speed*dt)/1000000.0;
   //set the view movement
   if( m_player->getPosition().x - m_view.getCenter().x > m_view_area )
     {
-      view_move.x = m_view_speed;
+      view_move.x = view_speed;
     }
   else if(m_view.getCenter().x - m_player->getPosition().x > m_view_area )
     {
-      view_move.x = -m_view_speed;
+      view_move.x = -view_speed;
     }
   
   if( m_player->getPosition().y - m_view.getCenter().y > m_view_area )
     {
-      view_move.y = m_view_speed;
+      view_move.y = view_speed;
     }
   else if(m_view.getCenter().y - m_player->getPosition().y > m_view_area )
     {
-      view_move.y = -m_view_speed;
+      view_move.y = -view_speed;
     }
 
   //check the view does't get out of the map
