@@ -22,6 +22,7 @@ public:
   virtual ~Chunk();
 
   void draw(sf::RenderWindow *win);
+  sf::Vector2f getPosition() const;
 protected:
   
 private:

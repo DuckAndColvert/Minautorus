@@ -14,9 +14,9 @@
 #define TILE_HEIGHT TILE_WIDTH
 
 /* blocs */
-#define NB_BLOC_WIDTH 7
-#define NB_BLOC_HEIGHT 7
-#define BLOC_SIZE 4
+#define NB_BLOC_WIDTH 10
+#define NB_BLOC_HEIGHT 10
+#define BLOC_SIZE 3
 
 /* screen */
 #define SCREEN_WIDTH 640
@@ -32,8 +32,8 @@
 #define NB_TILE_HEIGHT ((HEIGHT)/(TILE_HEIGHT))
 
 /* chunks */
-#define CHUNK_WIDTH  (NB_TILE_WIDTH/4)
-#define CHUNK_HEIGHT (NB_TILE_HEIGHT/4)
+#define CHUNK_WIDTH  (NB_TILE_WIDTH/8)
+#define CHUNK_HEIGHT (NB_TILE_HEIGHT/8)
 
 #define NB_CHUNK_WIDTH ((NB_TILE_WIDTH/CHUNK_WIDTH)+1)
 #define NB_CHUNK_HEIGHT ((NB_TILE_HEIGHT/CHUNK_HEIGHT)+1)

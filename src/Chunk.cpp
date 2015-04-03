@@ -11,6 +11,13 @@ Chunk::Chunk(Map* map,size_t i, size_t j): m_map(map),m_i(i), m_j(j)
   initTiles();
 }
 
+sf::Vector2f Chunk::getPosition() const
+{
+  sf::Vector2f pos;
+  pos.x = m_j * TILE_WIDTH;
+  pos.y = m_i * TILE_HEIGHT;
+  return pos;
+}
 void Chunk::initTiles()
 {
   for(size_t i=0; i<CHUNK_HEIGHT;i++)

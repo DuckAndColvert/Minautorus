@@ -9,7 +9,7 @@ InGame::InGame(Core *owner, sf::RenderWindow *win): Scene(owner, win), m_view_ar
 {
   m_view.reset(sf::FloatRect(0,0,SCREEN_WIDTH, SCREEN_HEIGHT));
   
-  m_map = new Map(m_owner->getTextureManager()->get("tileset"));
+  m_map = new Map(&m_view, m_owner->getTextureManager()->get("tileset"));
   m_window->setView(m_view);
   
   m_player = new Player(m_map, m_owner->getTextureManager()->get("error"));

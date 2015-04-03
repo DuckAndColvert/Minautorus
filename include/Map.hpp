@@ -33,7 +33,7 @@ class Map
 {
   
 public:
-  Map(sf::Texture *tex);
+  Map(sf::View *view, sf::Texture *tex);
   ~Map();
 
   /**
@@ -71,7 +71,18 @@ public:
    * \author bog
    **/
   bool exists(size_t i, size_t j);
+
+
+  /**
+   * \fn bool Map::collideWithView(Chunk const& chunk)
+   * \brief Say if a chunk is visible in the view
+   * \param chunk chunk to test
+   * \bog
+   **/
+  bool collideWithView(Chunk const* chunk);
   
+  
+  sf::View *m_view;
   sf::Texture* getTexture();
   
   Tile* get(size_t i, size_t j);

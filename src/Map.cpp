@@ -5,7 +5,7 @@
 #include <Chunk.hpp>
 #include <TextureManager.hpp>
 
-Map::Map(sf::Texture* tex): m_texture(tex)
+Map::Map(sf::View *view, sf::Texture* tex): m_view(view), m_texture(tex)
 {
   initTiles();
 }
@@ -164,11 +164,31 @@ bool Map::exists(size_t i, size_t j)
   return (i >= 0 && i < NB_TILE_HEIGHT && j >= 0 && j < NB_TILE_HEIGHT);
 }
 
+bool Map::collideWithView(Chunk const* chunk)
+{
+  float cx = chunk->getPosition().x;
+  float cy = chunk->getPosition().y;
+  float cw = CHUNK_WIDTH * TILE_WIDTH;
+  float ch = CHUNK_HEIGHT * TILE_HEIGHT;
+
+  float vw = m_view->getSize().x;
+  float vh = m_view->getSize().y;
+  float vx = m_view->getCenter().x - vw/2;
+  float vy = m_view->getCenter().y - vh/2;
+
+  return ! ( vy + vh < cy || vy > cy + ch
+	     || vx + vw < cx || vx > cx + cw );
+
+}
+
 void Map::display(sf::RenderWindow *win)
 {
   for( Chunk *c: m_chunks )
     {
-      c->draw(win);
+      if(collideWithView(c))
+	{
+	  c->draw(win);
+	}
     }
   
 }
