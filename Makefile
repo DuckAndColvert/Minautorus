@@ -1,12 +1,12 @@
 EXEC= minautorus.out
-CXX= g++
-CXXFLAGS= -g -std=c++11 -I"include/" -I"lib/include/" -Wall -lsfml-graphics -lsfml-window -lsfml-system
+CXX= clang++
+CXXFLAGS= -g -std=c++11 -I"include/" -I"lib/include/" -Wall 
 SRC= $(wildcard src/*.cpp lib/src/*.cpp)
 HEADER= $(wildcard src/*.hpp lib/src/*.hpp)
 OBJ= $(SRC:.cpp=.o)
 
 $(EXEC): $(HEADER) $(OBJ) 
-	$(CXX) $(CXXFLAGS) $^ -o $@
+	$(CXX) $(CXXFLAGS) $^ -lsfml-graphics -lsfml-window -lsfml-system -o $@
 
 clean:
 	rm -f src/*.o
